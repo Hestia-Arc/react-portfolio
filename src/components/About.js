@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, NavLink } from 'react-router-dom'
 
 export default function About() {
   return (
@@ -7,9 +7,9 @@ export default function About() {
         
         {/* container 1 */}
         <div className='left'>
-            <div><Link to='who'>WHO AM I?</Link></div>
-            <div><Link to='skill'>SKILLS</Link></div>
-            <div><Link to='service'>SERVICES</Link></div>
+            <div className='about-left-tag'><NavLink to='who'>WHO AM I?</NavLink></div>
+            <div className='about-left-tag'><NavLink to='skill'>SKILLS</NavLink></div>
+            <div className='about-left-tag'><NavLink to='service'>SERVICES</NavLink></div>
         </div>
 
         {/* container2 */}

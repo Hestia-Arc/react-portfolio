@@ -145,7 +145,10 @@ ul {
 .home {
   height: 100%;
   width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem;
 }
 .home.active {
   transform: translateY();
@@ -163,8 +166,6 @@ ul {
   border-bottom: 1.8px solid #aa054a75;
 } 
 .header-tagline {
-  margin-top: 0.4rem;
-  padding: 1rem 0;
   font-size: 2rem;
   color: #a3b2b5;
   font-weight: 300;
@@ -187,17 +188,95 @@ ul {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row-reverse;
+  justify-content: space-around;
 }
 .left {
   border: 1px solid black;
-  height: 20rem;
-  width: 30%;
+  height: 100%;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
 }
 .right {
   border: 1px solid black;
   height: 100%;
-  width: 65%;
+  width: 80%;
+}
+.left a {
+  text-decoration: none;
+  color: black;
+  padding: 0.8rem 2rem;
+  /* border: 1px solid black; */
+  border-radius: 4px;
+}
+.left a.active {
+  background: grey;
+  color: #fff;
+}
+.about-left-tag {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+.who {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  height: 100%;
+}
+.who-content {
+  width: 58%;
+  height: 68%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: center;
+}
+.who-image-container {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.who-image {
+  width: 45%;
+  height: 25rem;
+  display: block;
+
+}
+.who-hr {
+  width: 78%;
+  border: 3px solid black;
+  position: absolute;
+}
+.hr1 {
+  top: 11%;
+  left: 1%;
+}
+.hr2 {
+  bottom: 11%;
+  right: 2%;
+}
+.line {
+  height: 3rem;
+  font-size: 1.2rem;
+  width: 75%;
+  line-height: 24px;
+}
+.w-1 {
+
+}
+.w-3 {
+  height: 5rem;
+}
+.w-5 {
+  height: 8rem;
+}
+.about-tag {
+  height: 5rem;
 }
 
 
