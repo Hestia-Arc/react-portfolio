@@ -30,18 +30,18 @@ function App() {
 
           {/* Navigation */}
           <nav>
-              <div>AFOLABI ESTHER</div>
+              <div className='nav-title'>AFOLABI ESTHER</div>
 
               {/* menu */}
               <div className='nav-menu'>
                   {/* Social Icons */}
-                  <div className="left-icon">
-                      <span><i className="fa-brands fa-github"></i></span>
-                      <span><i className="fa-brands fa-linkedin"></i></span>
-                      <span><i className="fa-brands fa-twitter"></i></span>
-                      <span><i className="fa-solid fa-envelope"></i></span>
+                  <div className="top-icon">
+                      <span><i className="fa-brands fa-github icon"></i></span>
+                      <span><i className="fa-brands fa-linkedin icon"></i></span>
+                      <span><i className="fa-brands fa-twitter icon"></i></span>
+                      <span><i className="fa-solid fa-envelope icon"></i></span>
                   </div>
-                  <div>Contact</div>
+                  <div className='nav-btn'>Contact</div>
               </div>
           </nav>
 
@@ -49,7 +49,7 @@ function App() {
               {/* contents */}
              {/* Routes */}
               <Routes>
-                  <Route path='home' element={<Home />}/>
+                  <Route path='home' index element={<Home />}/>
                   <Route path='about' element={<About />}>
                       <Route path='who' element={<Who />}/>
                       <Route path='skill' element={<Skill />}/>
@@ -67,13 +67,15 @@ function App() {
               </Routes>
 
           </div>
+
+
           {/* tabs */}
           <div className='header-tabs-container'>
               <hr className='horizontal-line'/>
               {/* Footer */}
               <footer>
                 <div className="copyright">Built by Esther &copy;2023 </div>
-                <div><a href="https://github.com/Hestia-Arc/Portfolio-vercel">Source code</a></div>
+                {/* <div><a href="https://github.com/Hestia-Arc/Portfolio-vercel">Source code</a></div> */}
               </footer>
               
              
