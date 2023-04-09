@@ -71,12 +71,16 @@ function App() {
 
           {/* tabs */}
           <div className='header-tabs-container'>
-              <hr className='horizontal-line'/>
+              
               {/* Footer */}
-              <footer>
-                <div className="copyright">Built by Esther &copy;2023 </div>
-                {/* <div><a href="https://github.com/Hestia-Arc/Portfolio-vercel">Source code</a></div> */}
-              </footer>
+              <span>
+                <footer>
+                    <div className="copyright">Built by Esther &copy;2023 </div>
+                    {/* <div><a href="https://github.com/Hestia-Arc/Portfolio-vercel">Source code</a></div> */}
+                </footer>
+              </span>
+
+              <hr className='horizontal-line'/>
               
              
               {/*  */}
