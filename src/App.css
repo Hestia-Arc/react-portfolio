@@ -8,6 +8,9 @@
   /* outline: 1px solid black; */
   /* font-size: calc(60% + 0.8vmin); */
 }
+html {
+  overflow-y: hidden;
+}
 
 /* CSS Variables */
 :root {
