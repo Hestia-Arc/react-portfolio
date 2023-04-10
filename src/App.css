@@ -500,120 +500,50 @@ textarea {
   body {
       padding: 0.3rem;
   }
+  /* Nav bar */
+  nav {
+    padding: 0.5rem 1rem 1rem;
+  }
+  .nav-menu {
+    display: none;
+  }
 
-  /* Header Section */
-  .header-section, .about-section, .project-section, .contact-section {
-      padding: 0.4rem;
+  /* Home */
+  .home {
+    padding: 0 1rem;
   }
-  .header-tag-greet {
-      margin-top: 4rem;
+  .header-inner {
+
   }
-  .header-tag-name {
-      font-size: 3.4rem;
+  .header-tag1 {
+    font-size: 1.5rem;
+  }
+  .header-tag2 {
+    font-size: 2.7rem;
   }
   .header-tagline {
-      font-size: 1.6rem;
+    font-size: 1.3rem;
+    margin-top: 12px;
   }
-  .button-project, .button-contact {
-      padding: 0.3rem 1rem;
-      border-radius: 15px;
-      font-size: 0.9rem;
-  }
-  .left-icon {
-      margin-left: -32px;
+  .horizontal-line, footer {
+    display: none;
   }
 
-  /* About Section */
-  .about-section {
-      height: 107rem;
+  /* Tabs */
+  .header-tabs-container {
+    padding: 0 1rem;
+    height: 2.3rem;
   }
-  .about-title {
-      font-size: 2.5rem;
+  .tab {
+    width: 23%;
   }
-  .about-me {
-      flex-direction: column;
-  }
-  .about-circle {
-      width: 18%;
-      margin: 0.5rem 0.5rem -0.5rem 0 ;
-  }
-  .about-tag {
-      font-size: 1.5rem;
-      letter-spacing: 0.3px;
-      width: 207px;
-  }
-  .content {
-      height: 30rem;
-      width: 100%;
-  }
-  .about-image-container {
-      display: none;
-  }
-  /* Skill Section */
-  .skill-title {
-      font-size: 2rem;
-
-  }
-  .skill-container {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  }
-  .skill {
-      width: 98%;
-      height: 15rem;
-      margin-bottom: 1rem;
+  .tab a {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+    border-radius: 2px;
   }
 
-  /* Project Section */
-  .project-section {
-      height: 58rem;
-  }
-  .project-title {
-      font-size: 2.5rem;
-  }
-  .project-container {
-      display: flex;
-      flex-direction: column;
-      grid-gap: 5px;
-  }
-  .box {
-      height: 16rem;
-  }
-  .box-4, .box-5, .box-6 {
-      display: none;
-  }
-
-  /* Contact Section */
-  .contact-section {
-      flex-direction: column;
-      justify-content: flex-start;
-      height: 32rem;
-  }
-  .contact-column-one {
-      width: 100%;
-      text-align: center;
-      margin-top: 0.6rem;
-  }
-  .contact-tag {
-      font-size: 2.5rem;
-      font-weight: 550;
-  }
-  .contact-tagline {
-      font-size: 1.1rem;
-      border: 1px solid lightseagreen;
-      padding: 0.3rem;
-      border-radius: 7px
-  }
-  .contact-column-two {
-      width: 100%;
-  }
-  input, textarea {
-      width: 79%;
-  }
-  .input-i {
-      padding-left: 2.3rem;
-  }
+  /* ---------------- */
   .icon-i {
       top: 23%;
       left: 4%;
