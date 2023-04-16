@@ -50,6 +50,7 @@ nav {
   justify-content: space-between;
   padding: 1rem 3rem 1.1rem;
   box-shadow: 1px 3.2px 15px lightgray;
+  height: 9%;
 }
 .nav-title {
   align-self: center;
@@ -72,22 +73,26 @@ nav {
 }
 .nav-btn {
   background: grey;
-  padding: 8px 12px;
+  /* padding: 0 auto; */
   border-radius: 2px;
   width: 31%;
-  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.75rem;
 }
 .header-inner {
-  height: 81%;
+  height: 82%;
   display: flex;
   align-items: center;
   /* border: 1px solid black; */
   /* margin-top: 1.5rem; */
 }
 .header-tabs-container {
-  height: 4rem;
+  height: 9%;
   /* border: 1px solid black; */
   display: flex;
   justify-content: space-between;
@@ -176,157 +181,57 @@ footer {
 .about-section {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-}
-.left {
-  border: 1px solid black;
-  height: 100%;
-  width: 15%;
-  display: flex;
-  flex-direction: column;
-}
-.right {
-  border: 1px solid black;
-  height: 100%;
-  width: 80%;
-}
-.left a {
-  text-decoration: none;
-  color: black;
-  padding: 0.8rem 2rem;
-  /* border: 1px solid black; */
-  border-radius: 4px;
-}
-.left a.active {
-  background: grey;
-  color: #fff;
-}
-.about-left-tag {
-  height: 4rem;
-  display: flex;
-  align-items: center;
-}
-.who {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  height: 100%;
-}
-.who-content {
-  width: 58%;
-  height: 68%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-self: center;
-}
-.who-image-container {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  /* display: flex; */
+  /* flex-direction: row-reverse; */
+  /* justify-content: space-around; */
 }
-.who-image {
-  width: 45%;
-  height: 25rem;
-  display: block;
-
-}
-.who-hr {
-  width: 78%;
-  border: 3px solid black;
+.box1 {
+  height: 89%;
+  width: 50%;
+  background: rgb(136, 138, 139);
   position: absolute;
+  top: 0;
+  left: 0;
 }
-.hr1 {
-  top: 11%;
-  left: 1%;
+.box2 {
+  height: 70%;
+  width: 20%;
+  background: rgb(39, 55, 85);
+  position: absolute;
+  top: 0;
+  right: 37%;
+  z-index: 999;
 }
-.hr2 {
-  bottom: 11%;
-  right: 2%;
-}
-.line {
-  height: 3rem;
-  font-size: 1.2rem;
-  width: 75%;
-  line-height: 24px;
-}
-.w-1 {
-
-}
-.w-3 {
-  height: 5rem;
-}
-.w-5 {
-  height: 8rem;
-}
-.about-tag {
-  height: 5rem;
-}
-
-
-
-
-/* -------------- */
-.about-title {
-  font-size: 4rem;
-  text-align: center;
-}
-.about-me {
-  display: flex;
-  justify-content: space-between;
-  background-color: #fff7ec;
-  border-radius: 20px;
-  margin: 2rem 0;
-  padding: 1rem;
-}
-.about-circle {
-  background-color: #aa054a;
-  border-radius: 50%;
-  width: 5%;
-  height: 2.5rem;
-  margin: 1rem;
-  margin-top: 0.5rem;
-  margin-bottom: -0.6rem;
-  display: inline-block;
-}
-.about-tag {
-  font-size: 1.5rem;
-  line-height: 1.4em;
-  letter-spacing: 0.7px;
-  /* font-family: 'Courier New', Courier, monospace; */
-  margin-block-start: 0;
-}
-.content {
-  height: 19rem;
-  width: 60%;
-}
-.about-image-container {
-  width: 27%;
+.box3 {
+  height: 89%;
+  width: 46%;
+  background: rgb(136, 138, 139);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
 }
 .about-image {
-  border-radius: 9px;
-  width: 65%; 
-  height: 19rem;
+  width: 75%;
+  height: 110%;
   display: block;
   margin: 0 auto;
 }
-.about-image-dash {
-  display: flex;
-  justify-content: center;
+.who-content {
+  border: 1px solid black;
+  margin-left: 25%;
+  margin-top: 5%;
+  height: 80%;
+  color: #fff;
 }
-.dash {
-  width: 4%;
-  background-color: #aa054a;
-  padding: 0.2rem 0.6rem;
-  margin: 1rem 0.5rem;
-  border-radius: 8px;
+.skill-content {
+  border: 1px solid black;
+  margin-right: 25%;
+  margin-bottom: 5%;
+  height: 80%;
+  color: #fff;
 }
-
 
 /* skills */
 .skill-title {
@@ -354,7 +259,7 @@ footer {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 
@@ -362,15 +267,11 @@ footer {
   text-align: center;
   font-size: 4rem;
   border: 1px solid black;
+  width: 15%;
 }
 .project-container {
-  width: 64%;
-  height: 20rem;
-  border: 1px solid black;
-}
-.sidebar {
-  width: 12%;
-  height: 20rem;
+  width: 80%;
+  height: 100%;
   border: 1px solid black;
 }
 
@@ -417,23 +318,40 @@ footer {
 
 /* Column one */
 .contact-column-one {
-  /* padding: ; */
-  width: 55%;
+  /* border: 1px solid black; */
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column-one-inner {
+  /* border: 1px solid black; */
+  height: 70%;
 }
 .contact-tag {
-  font-size: 4em;
+  font-size: 4rem;
 }
 .contact-tagline {
   font-size: 1.5em;
-
+  /* border: 1px solid black; */
+  height: 50%;
+  background: grey;
+  color: #fff;
+  padding: 20px;
 }
 
 /* Column two */
 .contact-column-two {
-  width: 42%;
+  width: 50%;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
 }
 .contact-form {
-  padding-top: 1rem;
+  /* border: 1px solid black; */
+  height: 70%;
+  width: 80%;
+
 }
 /* icon inside input section */
 .input-container {
@@ -455,14 +373,14 @@ footer {
 }
 /* ends  */
 input, textarea {
-  height: 2rem;
-  width: 63%;
+  height: 3rem;
+  width: 70%;
   margin: 0.5rem;
   padding: 0.2rem;
   font-size: 1.1rem;
-  border-radius: 10px;
+  border-radius: 3px;
   border-style: none;
-
+  outline: none;
   box-shadow: 0.1rem 0.1rem 0.2rem #c5c5c5 inset,
   -0.1rem -0.1rem 0.2rem #ffffff80 inset, 0.3rem 0.3rem 0.6rem #c5c5c5,
   -0.2rem -0.2rem 0.5rem #ffffff80;
@@ -478,13 +396,15 @@ textarea {
   
 }
 .contact-button {
-  padding: 0.5rem 1.2rem;
-  border-radius: 15px;
-  font-size: 1rem;
-  border: 1px solid rgba(199, 5, 79, 0.459);
-  background-color: #aa054a;
+  width: 25%;
+  height: 10%;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  background-color: grey;
   color: white;
-  margin: 0.5rem 0 0 1rem;
+  margin: 0.5rem 0 0 0.5rem;
+  border-style: none;
+  text-transform: uppercase;
 }
 
 
@@ -574,16 +494,11 @@ textarea {
   
 }
 
-/* Laptop */
+/* Small Laptop */
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
 
   
 }
 
-/* Large Laptop */
-@media screen and (min-width: 1440px) {
-
-  
-}
 
 

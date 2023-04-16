@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+// import { Outlet, Link } from 'react-router-dom'
 
 export default function Project() {
   return (
@@ -9,7 +9,7 @@ export default function Project() {
           
           {/* main */}
           <div className="project-container">
-                <Outlet />
+                
               {/* <div className="box box-1">
                   <img src="images/picture.jpg" alt="logo" className="box-image" /> 
                   <div className="box-content">
@@ -53,19 +53,6 @@ export default function Project() {
                   </div>
               </div> */}
           </div>
-          
-          {/* sidebar */}
-          <div className='sidebar'>
-              <div><Link to='todo'>TO-DO APP</Link></div>
-              <div><Link to='chat'>CHAT APP</Link></div>
-              <div><Link to='dashboard'>ADMIN DASHBOARD</Link></div>
-              <div><Link to='review'>REVIEW APP</Link></div>
-              <div><Link to='booking'>BOOKING SYSTEM</Link></div>
-              <div><Link to='blog'>BLOG</Link></div>
-          </div>
-  
-
-
 
     </div>
   )

@@ -6,18 +6,13 @@ import Contact from './components/Contact'
 import Project from './components/Project'
 
 
-// About inner
-import Who from './components/Who'
-import Skill from './components/Skill'
-import Service from './components/Service'
-
 // Project inner
-import Todo from './components/Todo'
-import Blog from './components/Blog'
-import Booking from './components/Booking'
-import Chat from './components/Chat'
-import Dashboard from './components/Dashboard'
-import Review from './components/Review'
+// import Todo from './components/Todo'
+// import Blog from './components/Blog'
+// import Booking from './components/Booking'
+// import Chat from './components/Chat'
+// import Dashboard from './components/Dashboard'
+// import Review from './components/Review'
 
 
 function App() {
@@ -49,21 +44,21 @@ function App() {
               {/* contents */}
              {/* Routes */}
               <Routes>
-                  <Route path='home' index element={<Home />}/>
-                  <Route path='about' element={<About />}>
-                      <Route path='who' element={<Who />}/>
-                      <Route path='skill' element={<Skill />}/>
-                      <Route path='service' element={<Service />}/>
-                  </Route>
+                  <Route path='/' element={<Home />}/>
+                  <Route path='about' element={<About />} />
+                      {/* <Route path='who' element={<Who />}/> */}
+                      {/* <Route path='skill' element={<Skill />}/> */}
+                      {/* <Route path='service' element={<Service />}/> */}
+                  
                   <Route path='contact' element={<Contact />}/>
-                  <Route path='project' element={<Project />} >
-                     <Route path='todo' element={<Todo />}/>
+                  <Route path='project' element={<Project />} />
+                     {/* <Route path='todo' element={<Todo />}/>
                      <Route path='blog' element={<Blog />}/>
                      <Route path='booking' element={<Booking />}/>
                      <Route path='chat' element={<Chat />}/>
                      <Route path='dashboard' element={<Dashboard />}/>
-                     <Route path='review' element={<Review />}/>
-                  </Route>
+                     <Route path='review' element={<Review />}/> */}
+                
               </Routes>
 
           </div>
@@ -84,7 +79,7 @@ function App() {
               
              
               {/*  */}
-              <div className='tab'><NavLink to='home'>HOME</NavLink></div>
+              <div className='tab'><NavLink to='/'>HOME</NavLink></div>
               <div className='tab'><NavLink to='about'>ABOUT</NavLink></div>
               <div className='tab'><NavLink to='project'>PROJECTS</NavLink></div>
               <div className='tab'><NavLink to='contact'>CONTACT</NavLink></div>
