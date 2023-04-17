@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route, NavLink, Link } from 'react-router-dom'
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
@@ -31,12 +31,12 @@ function App() {
               <div className='nav-menu'>
                   {/* Social Icons */}
                   <div className="top-icon">
-                      <span><i className="fa-brands fa-github icon"></i></span>
-                      <span><i className="fa-brands fa-linkedin icon"></i></span>
-                      <span><i className="fa-brands fa-twitter icon"></i></span>
-                      <span><i className="fa-solid fa-envelope icon"></i></span>
+                      <span><a href='https://github.com/Hestia-Arc' target='blank'><i className="fa-brands fa-github icon"></i></a></span>
+                      <span><a href='https://www.linkedin.com/in/hestiaarc00' target='blank'><i className="fa-brands fa-linkedin icon"></i></a></span>
+                      <span><a href='https://twitter.com/arc_hestia00' target='blank'><i className="fa-brands fa-twitter icon"></i></a></span>
+                      <span><a href='mailto:hestia.dev005@gmail.com'><i className="fa-solid fa-envelope icon"></i></a></span>
                   </div>
-                  <div className='nav-btn'>Contact</div>
+                  <div className='nav-btn'><Link to='contact'>Contact</Link></div>
               </div>
           </nav>
 

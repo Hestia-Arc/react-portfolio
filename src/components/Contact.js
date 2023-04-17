@@ -24,8 +24,8 @@ export default function Contact() {
                     <input type="text" className="email input-i" placeholder="Email" />
                 </div>
                 <div className="input-container">
-                    <i className="fa-solid fa-pen icon-i shift"></i>
-                    <textarea className="message input-i" rows="" cols="" placeholder="Message..."></textarea>
+                    <i className="fa-solid fa-pen icon-i-message"></i>
+                    <textarea className="input-i-message message" rows="" cols="" placeholder="Message..."></textarea>
 
                 </div>
                 
