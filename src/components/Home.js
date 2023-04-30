@@ -7,8 +7,8 @@ export default function Home() {
         <div className="header-tag1">Hi, I'm Esther</div>
         <div className="header-tag2">Frontend Web Developer</div>
         <div className="header-tagline">
-          Building aesthetic, functional <br />
-          and user-friendly websites <br />
+          Turning ideas and design concepts <br />
+          into functional & user-friendly websites <br />
           and web applications
         </div>
 

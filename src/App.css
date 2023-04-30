@@ -210,6 +210,7 @@ footer {
   top: 0;
   right: 37%;
   z-index: 999;
+  display: none;
 }
 .box3 {
   height: 89%;
@@ -230,25 +231,52 @@ footer {
   border: 1px solid #fff;
   border-bottom: none;
   border-right: none;
-  margin-left: 25%;
+  margin-left: 15%;
   margin-top: 5%;
   height: 94%;
   color: #fff;
+  padding: 10px;
+  padding-left: 1rem;
+}
+.who-tag {
+  font-size: 2rem;
+ 
+}
+.who-tag2 {
+   margin: 5px 0 10px 0;
+   font-size: 1.2rem;
+}
+.who-p-flex {
+  display: flex;
+  margin: 10px 0;
+}
+.who-dot-box {
+  height: 1.1rem;
+  background: #fff;
+  width: 3%;
+  margin-right: 1rem;
+  margin-top: 5px;
+}
+.line {
+  width: 80%;
+  font-size: 1.2rem;
+  line-height: 28px;
 }
 .skill-content {
-  border: 2px solid #fff;
-  
-  margin-right: 25%;
+  border: 1px solid #fff;
+  border-top: none;
+  margin-right: 16%;
   margin-bottom: 5%;
-  height: 80%;
+  height: 87%;
   color: #fff;
+  padding-top: 1rem;
 }
 
 /* skills */
-.skill-title {
-  font-size: 3rem;
-  text-align: center;
-  margin: 0 0 1rem 0;
+.skill-content-header {
+  font-size: 2rem;
+  border-bottom: 1px solid white;
+  margin: 0 1rem;
 }
 .skill-container {
   display: flex;
@@ -481,6 +509,10 @@ textarea {
   .header-tagline {
     font-size: 1.3rem;
     margin-top: 12px;
+    width: 90%;
+  }
+  .header-tagline br {
+    display: none;
   }
   .horizontal-line, footer {
     display: none;
