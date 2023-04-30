@@ -19,10 +19,6 @@ function App() {
   return (
     <div className="App">
 
-      
-         {/* Header Section  */}
-      <header >   
-
           {/* Navigation */}
           <nav>
               <div className='nav-title'>AFOLABI ESTHER</div>
@@ -40,7 +36,7 @@ function App() {
               </div>
           </nav>
 
-          <div className='header-inner'>
+        
               {/* contents */}
              {/* Routes */}
               <Routes>
@@ -60,8 +56,6 @@ function App() {
                      <Route path='review' element={<Review />}/> */}
                 
               </Routes>
-
-          </div>
 
 
           {/* tabs */}
@@ -84,10 +78,6 @@ function App() {
               <div className='tab'><NavLink to='project'>PROJECTS</NavLink></div>
               <div className='tab'><NavLink to='contact'>CONTACT</NavLink></div>
           </div>
-          
-                  
-       
-      </header>
 
     </div>
   );

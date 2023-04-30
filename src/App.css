@@ -8,9 +8,6 @@
   /* outline: 1px solid black; */
   /* font-size: calc(60% + 0.8vmin); */
 }
-html {
-  overflow-y: hidden;
-}
 
 /* CSS Variables */
 :root {
@@ -34,7 +31,9 @@ html {
 
 
 .App {
-  height: 100%;
+  height: 100vh;
+  position: relative;
+  padding: 5rem 0;
 }
 
 
@@ -51,6 +50,12 @@ nav {
   padding: 1rem 3rem 1.1rem;
   box-shadow: 1px 3.2px 15px lightgray;
   height: 9%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #fff;
 }
 .nav-title {
   align-self: center;
@@ -91,13 +96,6 @@ nav {
 .nav-btn a:hover {
   opacity: 0.7;
 }
-.header-inner {
-  height: 82%;
-  display: flex;
-  align-items: center;
-  /* border: 1px solid black; */
-  /* margin-top: 1.5rem; */
-}
 .header-tabs-container {
   height: 9%;
   /* border: 1px solid black; */
@@ -107,6 +105,12 @@ nav {
   position: relative;
   padding: 0 3rem;
   border-top: 1px solid lightgray;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  background: #fff;
 }
 .horizontal-line {
   width: 36%;
@@ -189,17 +193,17 @@ footer {
 .about-section {
   height: 100%;
   width: 100%;
-  position: relative;
+  /* position: relative; */
   /* display: flex; */
   /* flex-direction: row-reverse; */
   /* justify-content: space-around; */
 }
 .box1 {
-  height: 89%;
+  height: 75%;
   width: 50%;
   background: rgb(136, 138, 139);
   position: absolute;
-  top: 0;
+  top: 9%;
   left: 0;
 }
 .box2 {
@@ -213,12 +217,12 @@ footer {
   display: none;
 }
 .box3 {
-  height: 89%;
+  height: 75%;
   width: 46%;
   background: rgb(136, 138, 139);
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 9%;
   z-index: 0;
 }
 .about-image {
@@ -299,9 +303,8 @@ footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
+
 }
-
-
 .project-title {
   text-align: center;
   font-size: 4rem;
@@ -310,6 +313,9 @@ footer {
   font-weight: 600;
   margin-top: 1rem;
 }
+.mobile-project-container {
+  display: none;
+}
 .project-container {
   width: 80%;
   height: 100%;
@@ -317,11 +323,12 @@ footer {
 }
 .project-flex-one {
   /* border: 1px solid black; */
-  height: 100%;
-  width: 100%;
+  height: 60%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 2rem
 }
 /* .project-flex-two {
   border: 1px solid black;
@@ -485,6 +492,11 @@ textarea {
   body {
       padding: 0.3rem;
   }
+  .App {
+    padding: 0;
+    padding-top: 3.7rem;
+    height: 38rem;
+  }
   /* Nav bar */
   nav {
     padding: 0.5rem 1rem 1rem;
@@ -496,9 +508,11 @@ textarea {
   /* Home */
   .home {
     padding: 0 1rem;
+    height: 30rem;
   }
   .header-inner {
-
+    height: 0;
+    align-items: none;
   }
   .header-tag1 {
     font-size: 1.5rem;
@@ -550,8 +564,65 @@ textarea {
 
 
 
+/* Project Section */
+  .project-container {
+    display: none;
+  }
+  .mobile-project-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-section {
+    flex-direction: column;
+  }
+  .project-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  .project-flex-one {
+    flex-direction: column;
+  }
+  .m-box {
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    height: 19rem;
+    /* border: 1px solid black; */
+    width: 85%;
+    border-radius: 5px;
+    box-shadow: 7px 10px 10px -3px grey;
+  }
+  .box-tag {
+    font-size: 1.2rem;
+  }
 
 
+  /* Contact Section */
+  .contact-section {
+    flex-direction: column;
+    height: 33rem;
+  }
+  .contact-column-one {
+    width: 100%;
+    height: 10rem;
+  }
+  .contact-tag {
+    font-size: 2rem;
+  }
+  .contact-tagline {
+    font-size: 1rem;
+    height: 62%;
+  }
+  .contact-column-two {
+    width: 100%;
+  }
+  .contact-form {
+    height: 25rem;
+    width: 100%;
+  }
+  input, textarea {
+    width: 90%;
+  }
 }
 
 /* Tablet */
