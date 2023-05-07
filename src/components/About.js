@@ -11,10 +11,12 @@ export default function About() {
                 <div className='skill-content-header'>SKILLS</div>
             </div>
         </div>
+        
         <div className='box2'>
-            <img src={myPicture} alt="Esther" className="about-image" />
-        </div>
-        <div className='box3'>
+            <div className='about-photo'>
+                <img src={myPicture} alt="Esther" className="about-image" />
+            </div>
+
             <div className="who-content">
                 <h2 className="who-tag"> Meet Me...</h2>
                 <div className='who-tag2'>Esther is an avid learner who is :</div> <br /> 
@@ -60,10 +62,7 @@ export default function About() {
             <div className='about-left-tag'><NavLink to='service'>SERVICES</NavLink></div>
         </div> */}
 
-        {/* container2
-        <div className='right'>
-            <Outlet />
-        </div> */}
+       
         
     </div>
   )
