@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./App.module.css";
 // import Box from "@mui/material/Box";
-import Stack from '@mui/material/Stack';
+// import Stack from '@mui/material/Stack';
 // import Container from '@mui/material/Container';
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import Home from './components/Home'
-// import About from './components/About'
-// import Contact from './components/Contact'
-// import Project from './components/Project'
+import NavBar from "./UI/NavBar";
+import About from './components/About'
+import Contact from './components/Contact'
+import Project from './components/Project'
 
 // Project inner
 // import Todo from './components/Todo'
@@ -20,52 +21,18 @@ import Home from './components/Home'
 function App() {
   return (
     <div className={styles["App"]}>
-      {/* ----------------------------- */}
-      {/* NAVIGATION */}
-      {/* ----------------------------- */}
-      <nav>
-        <div className={styles["nav-title"]}>Afolabi Esther</div>
-        <Stack direction="row" justifyContent="center" alignItems="center" spacing={4}>
-        <span>
-            <a href="https://github.com/Hestia-Arc" target="blank">
-            <i className="fa-brands fa-github icon"></i>
-            </a>
-        </span>
-        <span>
-            <a href="https://www.linkedin.com/in/hestiaarc00" target="blank">
-            <i className="fa-brands fa-linkedin icon"></i>
-            </a>
-        </span>
-        <span>
-            <a href="https://twitter.com/arc_hestia00" target="blank">
-            <i className="fa-brands fa-twitter icon"></i>
-            </a>
-        </span>
-        <span>
-            <a href="mailto:hestia.dev005@gmail.com">
-            <i className="fa-solid fa-envelope icon"></i>
-            </a>
-        </span>
-        <div className={styles["nav-btn"]}>
-        <Link to="contact">Contact</Link>
-        </div>
-  
-        </Stack>
-      </nav>
-    
+      
+      <NavBar />
+      
 
 
       {/* contents */}
       {/* Routes */}
       <Routes>
         <Route path='/' element={<Home />}/>
-        {/* <Route path='about' element={<About />} /> */}
-        {/* <Route path='who' element={<Who />}/> */}
-        {/* <Route path='skill' element={<Skill />}/> */}
-        {/* <Route path='service' element={<Service />}/> */}
-
-        {/* <Route path='contact' element={<Contact />}/> */}
-        {/* <Route path='project' element={<Project />} /> */}
+        <Route path='about' element={<About />} />
+        <Route path='contact' element={<Contact />}/>
+        <Route path='project' element={<Project />} />
         {/* <Route path='todo' element={<Todo />}/>
                      <Route path='blog' element={<Blog />}/>
                      <Route path='booking' element={<Booking />}/>
