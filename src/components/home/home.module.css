@@ -1,0 +1,41 @@
+/* ---------------------------- */
+/* Home */
+
+.home {
+    composes: home from '../../App.module.css';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  .home.active {
+    transform: translateY();
+  }
+  .header-tag1 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .header-tag2 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    text-shadow: 3px 3px 3px black;
+  }
+  .header-tag-job {
+    border-bottom: 1.8px solid #aa054a75;
+  }
+  .header-tagline {
+    font-size: 1.8rem;
+    color: #55696d;
+    font-weight: 300;
+  }
+  .header-button-container {
+    margin-top: 1rem;
+  }
+  .button-project,
+  .button-contact {
+    padding: 0.5rem 1.2rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    /* border: 1px solid rgba(199, 5, 79, 0.459); */
+    /* background-color: #aa054a; */
+  }

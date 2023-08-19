@@ -1,0 +1,89 @@
+.about-section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .box1 {
+    height: 90%;
+    width: 50%;
+    background: rgb(136, 138, 139);
+    align-self: flex-start;
+  }
+  .box2 {
+    height: 85%;
+    width: 46%;
+    background: rgb(136, 138, 139);
+    align-self: flex-end;
+  }
+  .about-photo {
+    display: none;
+  }
+  .about-image {
+    width: 75%;
+    height: 110%;
+    display: block;
+    margin: 0 auto;
+  }
+  .who-content {
+    border: 1px solid #fff;
+    border-bottom: none;
+    border-right: none;
+    margin-left: 15%;
+    margin-top: 5%;
+    height: 94%;
+    color: #fff;
+    padding: 10px;
+    padding-left: 1rem;
+  }
+  .who-tag {
+    font-size: 2rem;
+  }
+  .who-tag2 {
+    margin: 5px 0 10px 0;
+    font-size: 1.2rem;
+  }
+  .who-p-flex {
+    display: flex;
+    margin: 10px 0;
+  }
+  .who-dot-box {
+    height: 1.1rem;
+    background: #fff;
+    width: 3%;
+    margin-right: 1rem;
+    margin-top: 5px;
+  }
+  .line {
+    width: 80%;
+    font-size: 1.2rem;
+    line-height: 28px;
+  }
+  .skill-content {
+    border: 1px solid #fff;
+    border-top: none;
+    margin-right: 16%;
+    margin-bottom: 5%;
+    height: 87%;
+    color: #fff;
+    padding-top: 1rem;
+  }
+  
+  /* skills */
+  .skill-content-header {
+    font-size: 2rem;
+    border-bottom: 1px solid white;
+    margin: 0 1rem;
+  }
+  .skill-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .skill {
+    text-align: center;
+    font-size: 1rem;
+    height: 10rem;
+    width: 23%;
+    background-color: #fff7ec;
+    border-radius: 10px;
+  }

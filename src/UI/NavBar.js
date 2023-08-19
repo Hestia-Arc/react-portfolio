@@ -9,7 +9,7 @@ function NavBar() {
     <>
         <nav>
         <div className={styles["nav-title"]}>Afolabi Esther</div>
-        <Stack direction="row" justifyContent="center" alignItems="center" spacing={4}>
+        <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={4}>
         <span>
             <a href="https://github.com/Hestia-Arc" target="blank">
             <i className="fa-brands fa-github icon"></i>

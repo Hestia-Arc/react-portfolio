@@ -1,5 +1,5 @@
 import React from 'react'
-import myPicture from '../images/myPicture.jpg'
+import myPicture from '../../images/myPicture.jpg'
 // import { Outlet, NavLink } from 'react-router-dom'
 
 export default function About() {
