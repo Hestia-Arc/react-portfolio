@@ -1,98 +1,152 @@
 .project {
-    composes: project from '../../App.module.css';
-    position: relative;
-
-  }
-  
-.middle {
-    margin: 5px 0;
-    overflow-y: scroll;
+  composes: project from "../../App.module.css";
+  position: relative;
 }
+
+.middle {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding-right: 20px;
+  border-right: 1px solid grey;
+  /* overflow-y: scroll; */
+}
+.post {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.post-2 {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  bottom: 0;
+  padding-right: 50px;
+  /* background: red; */
+  width: 60%;
+  /* right: 0; */
+}
+.accord {
+  height: 100%;
+  overflow-y: scroll;
+  
+}
+
+.accord::-webkit-scrollbar {
+  width: 12px;
+}
+
+.accord::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.accord::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+.accord ::-webkit-scrollbar-thumb:hover {
+  background: rgb(54, 56, 58);
+}
+
+/* ----------------------------------------- */
 .project-item {
-    
-    border-bottom: 1px solid rgba(117, 117, 117, 0.342);
-    padding: 10px 0;
-    height: 6rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  border-bottom: 1px solid rgba(117, 117, 117, 0.342);
+  padding: 10px 0;
+  height: 6rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .project-item-title {
-    font-size: 32px;
+  font-size: 32px;
 }
 .project-desc {
-    border: 1px solid black;
-    max-width: 40%;
-    background-color: aqua;
-    position: absolute;
-    top: 13%;
-    left: 0;
-    bottom: 10%;
+  border: 1px solid black;
+  width: 40%;
+  /* height: ; */
+  /* background-color: aqua; */
+  position: absolute;
+  top: 13%;
+  left: 0;
+  bottom: 10%;
 }
 .project-img {
-    width: 100%;
-    height: 100%;
+  object-fit: cover;
 }
 .project-none {
-    display: none;
+  display: none;
 }
 .project-hover {
-    padding: 40px 0;
-    font-size: 50px;
+  padding: 40px 0;
+  font-size: 50px;
+}
+.project-hover::before {
+  /* content: url("../../images/p2.jpg") no-repeat; */
+  display: block;
+  height: 171px; /*adjust as needed*/
+  width: 480px;
+  background: url("../../images/p2.jpg") no-repeat;
+  /* transform: translate(-900px, -6px); */
+  /* content: url('../../images/p2.jpg');
+    max-width: 100px; */
 }
 
-  /* ---------------------------------- */
-  .project-title {
-    text-align: center;
-    font-size: 4rem;
-    /* border: 1px solid black; */
-    width: 19%;
-    font-weight: 600;
-    margin-top: 1rem;
-  }
-  .mobile-project-container {
-    display: none;
-  }
-  .project-container {
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-  }
-  .project-flex-one {
-    /* border: 1px solid black; */
-    height: 90%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 2rem;
-  }
-  /* .project-flex-two {
+/* ---------------------------------- */
+.project-title {
+  text-align: center;
+  font-size: 4rem;
+  /* border: 1px solid black; */
+  width: 19%;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.mobile-project-container {
+  display: none;
+}
+.project-container {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+.project-flex-one {
+  /* border: 1px solid black; */
+  height: 90%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+/* .project-flex-two {
     border: 1px solid black;
     height: 38%;
     width: 50%;
   } */
-  .box {
-    background-color: rgba(128, 128, 128, 0.274);
-    height: 90%;
-    width: 45%;
-    border-radius: 5px;
-    box-shadow: 7px 10px 10px -3px grey;
-  }
-  .box-image {
-    width: 100%;
-    height: 60%;
-    display: block;
-    margin: 0 auto;
-  }
-  .box-content {
-    padding: 1rem 1.5rem;
-  }
-  .box-tag {
-    font-size: 2rem;
-    font-weight: 600;
-    /* margin-top: 1rem; */
-  }
-  .box-paragraph {
-    margin-top: 1rem;
-  }
+.box {
+  background-color: rgba(128, 128, 128, 0.274);
+  height: 90%;
+  width: 45%;
+  border-radius: 5px;
+  box-shadow: 7px 10px 10px -3px grey;
+}
+.box-image {
+  width: 100%;
+  height: 60%;
+  display: block;
+  margin: 0 auto;
+}
+.box-content {
+  padding: 1rem 1.5rem;
+}
+.box-tag {
+  font-size: 2rem;
+  font-weight: 600;
+  /* margin-top: 1rem; */
+}
+.box-paragraph {
+  margin-top: 1rem;
+}

@@ -2,13 +2,19 @@ import React from "react";
 import style from "./project.module.css";
 // import { Outlet, Link } from 'react-router-dom'
 import { Box, Typography } from "@mui/material";
-import { project } from "../../data/projectList";
-import { ImageHover } from "./ImageHover";
+
+import ProjectAccordion from "./ProjectAccordion";
+import AccordTest from "./AccordTest";
+import { Link, Outlet } from "react-router-dom";
+// import { ImageHover } from "./ImageHover";
+
+
+
+
+// -----------------------------------
 
 export default function Project() {
-  // const unhover = () => {
-  //     setOpen('')
-  //   }
+  
 
   return (
     <>
@@ -21,7 +27,8 @@ export default function Project() {
             height: "10%",
             display: "flex",
             justifyContent: "space-between",
-            borderBottom: 1,
+            alignItems: 'center'
+            // borderBottom: 1,
           }}
           className={style["top"]}
         >
@@ -30,7 +37,7 @@ export default function Project() {
             <Typography variant="h6">/10</Typography>
           </Box>
           <Box>
-            <Typography variant="h3">Projects</Typography>
+            <Typography variant="h5">Projects</Typography>
           </Box>
         </Box>
 
@@ -38,11 +45,26 @@ export default function Project() {
         {/* MIDDLE */}
         {/* ------------------------------------- */}
         <Box sx={{ height: "80%" }} className={style["middle"]}>
-          {project.map((project) => {
+          <div className={style['post']}>
+            <Typography variant="h2">WELCOME</Typography>
+            <div className={style['post-2']}><Outlet /></div>
+            </div>
+          <Box sx={{flex: 1}}>
+            
+            <ProjectAccordion />
+          </Box>
+          {/* {project.map((project) => {
             const { id, name, img, description } = project;
 
-            return <ImageHover id={id} img={img} name={name} des={description} />;
-          })}
+            return(
+              <>
+              
+
+              </>
+            )
+            
+            // <ImageHover id={id} img={img} name={name} des={description} />;
+          })} */}
         </Box>
 
         {/* ------------------------------------ */}

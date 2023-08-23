@@ -46,7 +46,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: 10% 82% 8%;
   grid-template-areas:
     "hd   hd   hd   hd"
     "main main main main"
@@ -121,24 +121,25 @@ nav {
   border-top: 1px solid lightgray;
 }
 .horizontal-line {
-  width: 40%;
+  width: 55%;
   border-color: lightgray;
+}
+.nav-link, .nav-active {
+  font-size: 14px;
+  width: 100%;
+  text-decoration: none;
+  padding: 5px 10px;
 }
 
 .nav-link {
-  width: 100%;
-  text-decoration: none;
   color: black;
   padding: 10px 20px;
   /* border: 1px solid black; */
  
 }
 .nav-active {
-  width: 100%;
-  padding: 10px 20px;
   background: grey;
   color: #fff;
-  text-decoration: none;
   border-radius: 4px;
 }
 

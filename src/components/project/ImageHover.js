@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./project.module.css";
-import { Box } from "@mui/material";
+// import { Box } from "@mui/material";
 
 export const ImageHover = ({ id, img, name, des }) => {
   const [hover, setHover] = useState(false);
@@ -13,26 +13,55 @@ export const ImageHover = ({ id, img, name, des }) => {
   return (
     <div className={style["project-item"]}>
       <span>
-                  <small>{id }</small>
-                </span>
-      <div
-        key={id}
-        onMouseEnter={show}
-        onMouseLeave={() => setHover(false)}
-        
+        <small>{id}</small>
+      </span>
+      <div key={id} 
+      // onClick={() => setHover('true')} 
       >
-        
         {/* {name} */}
-
-        {hover ? <div className={style["project-hover"]}>{name}</div> : <div className={style["project-item-title"]}>{name}</div> }
+        <div className={style["project-hover"]}>{name}</div>
+        {/* {hover ? (
+          <div className={style["project-hover"]}>{name}</div>
+        ) : (
+          <div className={style["project-item-title"]}>{name}</div>
+        )} */}
         {/* {des} */}
       </div>
 
-      {hover && (
-        <Box maxWidth={'100%'} className={style["project-desc"]}>
-          <img src={img} alt="icon" className={style["project-img"]} />
-        </Box>
-      )}
+      {/* {hover && (
+        <div
+          style={{ backgroundImage: `url(${img}) no-repeat center` }}
+          className={style["project-desc"]}
+        >
+          {/* //   <img src={img} alt="icon" className={style["project-img"]} /> 
+        </div>
+      )} */}
     </div>
   );
 };
+
+
+
+
+
+
+
+// ON MOUSE-HOVER FUNCTIONALITY
+//  <div key={id} onMouseEnter={show} onMouseLeave={() => setHover(false)}> 
+        // {name} 
+
+        // {hover ? (
+        //   <div className={style["project-hover"]}>{name}</div>
+        // ) : (
+        //   <div className={style["project-item-title"]}>{name}</div>
+        // )}
+        //  {des} 
+    //   </div>
+
+    //   {hover && (
+        // <div
+        //   style={{ backgroundImage: `url(${img}) no-repeat center` }}
+        //   className={style["project-desc"]}
+        // >
+          //   <img src={img} alt="icon" className={style["project-img"]} /> 
+        // </div>

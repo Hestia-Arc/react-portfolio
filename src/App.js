@@ -10,6 +10,7 @@ import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Project from "./components/project/Project";
 import { Box } from "@mui/material";
+import ImgIcon from "./components/project/ImgIcon";
 
 // Project inner
 // import Todo from './components/Todo'
@@ -33,13 +34,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="project" element={<Project />} />
-        {/* <Route path='todo' element={<Todo />}/>
-                     <Route path='blog' element={<Blog />}/>
-                     <Route path='booking' element={<Booking />}/>
-                     <Route path='chat' element={<Chat />}/>
-                     <Route path='dashboard' element={<Dashboard />}/>
-                     <Route path='review' element={<Review />}/> */}
+        <Route path="project" element={<Project />} >
+          <Route path='project/imgicon' element={<ImgIcon />}/>
+        </Route>
       </Routes>
 
       {/* ---------------------------- */}
@@ -48,7 +45,7 @@ function App() {
       <div className={styles["tabs-container"]}>
         <Box sx={{
             display: "flex",
-            flexDirection: 'column',
+            // flexDirection: 'column',
             alignItems: "center",
           }}>
           <small className={styles["copyright"]}>Built by Esther &copy;2023 </small>
