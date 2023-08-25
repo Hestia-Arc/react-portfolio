@@ -23,7 +23,7 @@ import ImgIcon from "./components/project/ImgIcon";
 function App() {
   return (
     <>
-    <Box sx={{padding: '0px 50px', background: '#fefefe'}}>
+    
     <div className={styles["App"]}>
       <NavBar />
 
@@ -100,7 +100,7 @@ function App() {
         </Box>
       </div>
     </div>
-    </Box>
+    
     </>
   );
 }
