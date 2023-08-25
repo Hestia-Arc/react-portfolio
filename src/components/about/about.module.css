@@ -68,10 +68,18 @@
   font-weight: 600;
 }
 .float-frame {
-  /* border: 1px solid black; */
+  border: 1px solid black;
   height: 380px;
   width: 70%;
   position: absolute;
   bottom: 0;
+  right: 0;
+}
+.about-frame {
+  /* border: 1px solid black; */
+  height: 380px;
+  width: 68%;
+  position: absolute;
+  bottom: 3%;
   right: 0;
 }

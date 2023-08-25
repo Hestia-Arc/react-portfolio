@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./about.module.css";
 import picture from "../../images/image2.jpg";
-import { Box } from "@mui/material";
+import { Avatar, Box } from "@mui/material";
 // import { Outlet, NavLink } from 'react-router-dom'
 
 export default function About() {
@@ -55,8 +55,9 @@ export default function About() {
 
         <div className={style["float"]}>
           <div className={style["float-content"]}>A little about me</div>
-          <div className={style["float-frame"]}>
-            <img src={picture} alt="Developer's " style={{height: '400px', width: '280px'}} />
+          <div className={style["about-frame"]}>
+            <Avatar src={picture} alt="Developer's" sx={{ width: 280, height: 330 }} />
+            
           </div>
         </div>
       </Box>
