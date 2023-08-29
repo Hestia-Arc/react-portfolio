@@ -47,13 +47,15 @@ function App() {
             display: "flex",
             // flexDirection: 'column',
             alignItems: "center",
-          }}>
+          }}
+          className={styles['m-copyright']}
+          >
           <small className={styles["copyright"]}>Built by Esther &copy;2023 </small>
-          <small>
+          {/* <small>
             <a href="https://github.com/Hestia-Arc/Portfolio-vercel">
               Source code
             </a>
-          </small>
+          </small> */}
         </Box>
 
         <hr className={styles["horizontal-line"]} />
@@ -64,6 +66,7 @@ function App() {
             justifyContent: "space-between",
             alignItems: "center",
           }}
+          className={styles['m-tabs']}
         >
           <NavLink
             to="/"

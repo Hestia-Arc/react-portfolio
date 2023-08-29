@@ -8,14 +8,9 @@ import AccordTest from "./AccordTest";
 import { Link, Outlet } from "react-router-dom";
 // import { ImageHover } from "./ImageHover";
 
-
-
-
 // -----------------------------------
 
 export default function Project() {
-  
-
   return (
     <>
       <Box className={style["project"]}>
@@ -27,7 +22,7 @@ export default function Project() {
             height: "10%",
             display: "flex",
             justifyContent: "space-between",
-            alignItems: 'center'
+            alignItems: "center",
             // borderBottom: 1,
           }}
           className={style["top"]}
@@ -45,14 +40,12 @@ export default function Project() {
         {/* MIDDLE */}
         {/* ------------------------------------- */}
         <Box sx={{ height: "80%" }} className={style["middle"]}>
-          <div className={style['post']}>
-            <Typography variant="h2">WELCOME</Typography>
-            <div className={style['post-2']}><Outlet /></div>
-            </div>
-          <Box sx={{flex: 1}}>
-            
-            <ProjectAccordion />
-          </Box>
+          <div className={style["post-2"]}>
+            <Outlet />
+          </div>
+
+          <ProjectAccordion />
+
           {/* {project.map((project) => {
             const { id, name, img, description } = project;
 

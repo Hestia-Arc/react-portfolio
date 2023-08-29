@@ -13,7 +13,7 @@ export default function About() {
       <Box className={style["container"]}>
         <Box className={style["content"]}>
           {/* PARAGRAPH 1 */}
-          <div style={{ width: "45%" }}>
+          <div style={{ width: "45%" }} className={style["m-text"]}>
             <div className="who-tag2">Esther is an avid learner who is :</div>{" "}
             <br />
             <div className="line w-1">
@@ -34,7 +34,7 @@ export default function About() {
           </div>
 
           {/* PARAGRAPH 2 */}
-          <div style={{ width: "45%" }}>
+          <div style={{ width: "45%" }} className={style["m-text"]}>
             <div className="line w-3">
               {" "}
               Focused on developing high quality products and services
@@ -56,7 +56,7 @@ export default function About() {
         <div className={style["float"]}>
           <div className={style["float-content"]}>A little about me</div>
           <div className={style["about-frame"]}>
-            <Avatar src={picture} alt="Developer's" sx={{ width: 280, height: 330 }} />
+            <Avatar src={picture} alt="Developer's" sx={{ width: 280, height: 330 }} className={style['avatar']}/>
             
           </div>
         </div>

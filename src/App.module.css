@@ -167,26 +167,55 @@ nav {
 
 
 
-/* ------------------------- */
-/*About Section*/
 
-
-/* ------------------------------------------------------ */
-/* Project Section */
-
-
-/* ------------------------------------------ */
-/* Contact section */
 
 /* ------------------------------------ */
 /* MEDIA QUERIES */
 /* ------------------ -----------------*/
 /* Mobile */
 @media screen and (min-width: 320px) and (max-width: 767px) {
+
+  .App {
+    padding: 5px 15px;
+    grid-template-rows: 10% 84% 6%;
+  }
+  .home, .about, .project, .contact {
+    /* grid-area: main; */
+    /* display: none; */
+    
+  }
+  nav {
+    padding: 5px 0;
+  }
+  .nav-title {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .nav-btn {
+    height: 60%;
+    font-size: 10px;
+  }
+  .horizontal-line, .m-copyright {
+    display: none !important;
+  }
+  .nav-link, .nav-active {
+    font-size: 12px;
+    width: 100%;
+    text-decoration: none;
+    padding: 3px 9px;
+    text-align: center;
+  }
+  .m-tabs {
+    width: 100% !important;
+  }
+  
 }
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .App {
+    padding: 5px 20px;
+  }
 }
 
 /* Small Laptop */
