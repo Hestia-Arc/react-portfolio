@@ -180,7 +180,7 @@ nav {
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
   .App {
-    padding: 5px 15px;
+    padding: 0px 15px;
     /* grid-template-rows: 10% 84% 6%; */
   }
   .home, .about, .project, .contact {
