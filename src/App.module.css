@@ -70,9 +70,13 @@ nav {
   grid-area: hd;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 0px
   /* box-shadow: 1px 3.2px 15px lightgray; */
   /* background: #fff; */
+}
+.m-toggle {
+  display: none;
 }
 .nav-title {
   align-self: center;
@@ -177,7 +181,7 @@ nav {
 
   .App {
     padding: 5px 15px;
-    grid-template-rows: 10% 84% 6%;
+    /* grid-template-rows: 10% 84% 6%; */
   }
   .home, .about, .project, .contact {
     /* grid-area: main; */
@@ -186,6 +190,15 @@ nav {
   }
   nav {
     padding: 5px 0;
+  }
+  .large-links {
+    display: none !important;
+  }
+  .m-toggle {
+    display: block;
+    height: 54%;
+    width: 40px;
+    /* border: 1px solid black; */
   }
   .nav-title {
     font-size: 14px;

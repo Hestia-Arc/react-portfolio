@@ -4,8 +4,8 @@ import style from "./project.module.css";
 import { Box, Typography } from "@mui/material";
 
 import ProjectAccordion from "./ProjectAccordion";
-import AccordTest from "./AccordTest";
-import { Link, Outlet } from "react-router-dom";
+// import AccordTest from "./AccordTest";
+import { Outlet } from "react-router-dom";
 // import { ImageHover } from "./ImageHover";
 
 // -----------------------------------

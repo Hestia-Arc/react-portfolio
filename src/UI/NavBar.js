@@ -2,6 +2,7 @@ import React from 'react'
 import Stack from '@mui/material/Stack';
 import styles from "../App.module.css";
 import { Link } from 'react-router-dom';
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 
 function NavBar() {
@@ -9,7 +10,7 @@ function NavBar() {
     <>
         <nav>
         <div className={styles["nav-title"]}>Afolabi Esther</div>
-        <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={4}>
+        <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={4} className={styles["large-links"]}>
         <span>
             <a href="https://github.com/Hestia-Arc" target="blank">
             <i className="fa-brands fa-github icon"></i>
@@ -35,6 +36,9 @@ function NavBar() {
         </div>
   
         </Stack>
+        <div className={styles["m-toggle"]}>
+          <MenuOutlinedIcon/>
+        </div>
       </nav>
     
     </>
