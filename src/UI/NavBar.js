@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Stack from '@mui/material/Stack';
 import styles from "../App.module.css";
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 
 function NavBar() {
+  const [active, setActive] = useState(false)
   return (
     <>
         <nav>
@@ -36,9 +37,11 @@ function NavBar() {
         </div>
   
         </Stack>
-        <div className={styles["m-toggle"]}>
-          <MenuOutlinedIcon/>
+        <div className={styles["m-toggle"]} onClick={() => setActive(!active)}>
+          <MenuOutlinedIcon />
+          
         </div>
+        <div className={active ?  styles["m-menu"] : styles["m-menu-hidden"]}></div>
       </nav>
     
     </>

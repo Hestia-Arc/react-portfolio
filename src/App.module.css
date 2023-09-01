@@ -17,6 +17,20 @@
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: ThinFont;
+  src: url("./fonts/Poppins-Thin.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: LightFont;
+  src: url("./fonts/Poppins-Light.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
 /* ------------------------- */
 /* CSS Variables */
@@ -181,7 +195,7 @@ nav {
 
   .App {
     padding: 0px 15px;
-    /* grid-template-rows: 10% 84% 6%; */
+    grid-template-rows: 8% 78% 8%;
   }
   .home, .about, .project, .contact {
     /* grid-area: main; */
@@ -190,6 +204,7 @@ nav {
   }
   nav {
     padding: 5px 0;
+    position: relative;
   }
   .large-links {
     display: none !important;
@@ -198,7 +213,20 @@ nav {
     display: block;
     height: 54%;
     width: 40px;
+    
     /* border: 1px solid black; */
+  }
+  .m-menu {
+    display: block;
+    background: grey;
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    z-index: 999;
+  }
+  .m-menu-hidden {
+    display: none;
   }
   .nav-title {
     font-size: 14px;
