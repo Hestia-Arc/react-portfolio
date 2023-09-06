@@ -21,16 +21,16 @@ export default function Project() {
           sx={{
             height: "10%",
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "flex-end",
             alignItems: "center",
             // borderBottom: 1,
           }}
           className={style["top"]}
         >
-          <Box sx={{ display: "flex" }}>
+          {/* <Box sx={{ display: "flex" }}>
             <Typography variant="h3">2</Typography>
             <Typography variant="h6">/10</Typography>
-          </Box>
+          </Box> */}
           <Box>
             <Typography variant="h5">Projects</Typography>
           </Box>

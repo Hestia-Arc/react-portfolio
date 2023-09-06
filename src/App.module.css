@@ -89,7 +89,7 @@ nav {
   /* box-shadow: 1px 3.2px 15px lightgray; */
   /* background: #fff; */
 }
-.m-toggle {
+.m-toggle, .m-menu {
   display: none;
 }
 .nav-title {
@@ -106,6 +106,10 @@ nav {
   margin-left: 10px;
   align-self: center;
   /* color: #16446b; */
+}
+.large-links a {
+  text-decoration: none;
+  color: grey;
 }
 .icon {
   padding: 0 15px;
@@ -195,7 +199,7 @@ nav {
 
   .App {
     padding: 0px 15px;
-    grid-template-rows: 8% 78% 8%;
+    grid-template-rows: 8% 83% 8%;
   }
   .home, .about, .project, .contact {
     /* grid-area: main; */
@@ -212,18 +216,28 @@ nav {
   .m-toggle {
     display: block;
     height: 54%;
-    width: 40px;
+    width: 30px;
     
     /* border: 1px solid black; */
   }
   .m-menu {
     display: block;
     background: grey;
-    height: 250px;
+    height: 90vh;
     width: 100%;
     position: absolute;
     top: 60px;
+    left: 0;
+    right: 0;
     z-index: 999;
+    text-align: center;
+    padding: 40px 30px 20px 30px;
+    color: #fff;
+    /* transition: all 1s ease-in; */
+  }
+  .m-menu a {
+    text-decoration: none;
+    color: #fff;
   }
   .m-menu-hidden {
     display: none;
@@ -259,6 +273,9 @@ nav {
   }
 }
 
-/* Small Laptop */
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
+/* large Laptop */
+@media screen and  (min-width: 2056px) {
+  .App {
+    padding: 5px 270px;
+  }
 }

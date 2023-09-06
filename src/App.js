@@ -92,14 +92,14 @@ function App() {
           >
             PROJECTS
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="contact"
             className={(navData) =>
               navData.isActive ? styles["nav-active"] : styles["nav-link"]
             }
           >
             CONTACT
-          </NavLink>
+          </NavLink> */}
         </Box>
       </div>
     </div>
