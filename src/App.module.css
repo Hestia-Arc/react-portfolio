@@ -36,7 +36,8 @@
 /* CSS Variables */
 :root {
   /* --primary-color: rgb(235, 235, 238); */
-  --secondary-color: grey;
+  --primary-color: #344955;
+  --secondary-color: #f9aa33;
   --normal-font: ;
   --bold-font: ;
 }
@@ -70,7 +71,7 @@ body, html {
     padding: 0 50px;
   /* gap: 10px; */
   /* border: 2px solid black; */
-  /* background-color: #f3f3f3; */
+  background-color: #f3f3f3;
 }
 .home, .about, .project, .contact {
   grid-area: main;
@@ -95,21 +96,29 @@ nav {
 .nav-title {
   align-self: center;
   font-weight: 600;
+  color: var(--primary-color);
   font-size: 1.2rem;
 }
 .nav-menu {
-  width: 25%;
+  width: 32%;
   display: flex;
   justify-content: space-between;
+  background-color: var(--primary-color);
 }
 .top-icon {
   margin-left: 10px;
   align-self: center;
   /* color: #16446b; */
 }
+.large-links {
+  background: #34495533;
+  box-shadow: 1px 1px 5px #344955;
+ padding: 5px 10px;
+ border-radius: 5px;
+}
 .large-links a {
   text-decoration: none;
-  color: grey;
+  color: var(--secondary-color);
 }
 .icon {
   padding: 0 15px;
@@ -142,30 +151,40 @@ nav {
 .tabs-container {
   grid-area: ft;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  border-top: 1px solid lightgray;
+  border-top: 2px solid var(--primary-color);
+  border-top-right-radius: 8px;
   /* padding: 0px 50px; */
+  color: #f3f3f3;
 }
 .horizontal-line {
   width: 55%;
   border-color: lightgray;
+}
+.l-tabs {
+  background-color: var(--primary-color);
+  box-shadow: 1px 1px 5px #344955;
+ padding: 5px 10px;
+ border-radius: 5px;
+ width: 28%;
 }
 .nav-link, .nav-active {
   font-size: 14px;
   width: 100%;
   text-decoration: none;
   padding: 5px 10px;
+  text-align: center;
 }
 
 .nav-link {
-  color: black;
+  color: #f3f3f3;
   padding: 10px 20px;
   /* border: 1px solid black; */
  
 }
 .nav-active {
-  background: grey;
+  background: var(--secondary-color);
   color: #fff;
   border-radius: 4px;
 }
@@ -222,7 +241,7 @@ nav {
   }
   .m-menu {
     display: block;
-    background: grey;
+    background: var(--primary-color);
     height: 90vh;
     width: 100%;
     position: absolute;
@@ -232,7 +251,7 @@ nav {
     z-index: 999;
     text-align: center;
     padding: 40px 30px 20px 30px;
-    color: #fff;
+    color: #f3f3f3;
     /* transition: all 1s ease-in; */
   }
   .m-menu a {

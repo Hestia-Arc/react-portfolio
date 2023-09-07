@@ -43,22 +43,22 @@ function App() {
       {/* TABS */}
       {/* ---------------------------- */}
       <div className={styles["tabs-container"]}>
-        <Box sx={{
+        {/* <Box sx={{
             display: "flex",
-            // flexDirection: 'column',
+            flexDirection: 'column',
             alignItems: "center",
           }}
           className={styles['m-copyright']}
           >
           <small className={styles["copyright"]}>Built by Esther &copy;2023 </small>
-          {/* <small>
+          <small>
             <a href="https://github.com/Hestia-Arc/Portfolio-vercel">
               Source code
             </a>
-          </small> */}
-        </Box>
+          </small>
+        </Box> */}
 
-        <hr className={styles["horizontal-line"]} />
+        {/* <hr className={styles["horizontal-line"]} /> */}
 
         <Box
           sx={{
@@ -66,7 +66,7 @@ function App() {
             justifyContent: "space-between",
             alignItems: "center",
           }}
-          className={styles['m-tabs']}
+          className={`${styles['l-tabs']} ${styles['m-tabs']}`}
         >
           <NavLink
             to="/"
