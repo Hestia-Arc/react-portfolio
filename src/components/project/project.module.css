@@ -1,5 +1,5 @@
 .project {
-  composes: project from "../../App.module.css";
+  
   position: relative;
 }
 

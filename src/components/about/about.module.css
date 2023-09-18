@@ -1,5 +1,5 @@
 .about {
-  composes: about from "../../App.module.css";
+  
   overflow-y: scroll;
 }
 .about::-webkit-scrollbar {

@@ -1,31 +1,20 @@
 import React from "react";
-import styles from "./App.module.css";
-// import Box from "@mui/material/Box";
-// import Stack from '@mui/material/Stack';
-// import Container from '@mui/material/Container';
 import { Routes, Route, NavLink } from "react-router-dom";
 import Home from "./components/home/Home";
-import NavBar from "./UI/NavBar";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Project from "./components/project/Project";
-import { Box } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import ImgIcon from "./components/project/ImgIcon";
+import { theme } from "./theme";
 
-// Project inner
-// import Todo from './components/Todo'
-// import Blog from './components/Blog'
-// import Booking from './components/Booking'
-// import Chat from './components/Chat'
-// import Dashboard from './components/Dashboard'
-// import Review from './components/Review'
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
     
-    <div className={styles["App"]}>
-      <NavBar />
+    <Box sx={{p: '0 200px', }}>
+      
 
       {/* ------------------------------ */}
       {/* ROUTES*/}
@@ -42,7 +31,7 @@ function App() {
       {/* ---------------------------- */}
       {/* TABS */}
       {/* ---------------------------- */}
-      <div className={styles["tabs-container"]}>
+      {/* <div className={styles["tabs-container"]}>
         {/* <Box sx={{
             display: "flex",
             flexDirection: 'column',
@@ -56,10 +45,9 @@ function App() {
               Source code
             </a>
           </small>
-        </Box> */}
+        </Box> 
 
-        {/* <hr className={styles["horizontal-line"]} /> */}
-
+        {/* <hr className={styles["horizontal-line"]} /> *
         <Box
           sx={{
             display: "flex",
@@ -99,12 +87,12 @@ function App() {
             }
           >
             CONTACT
-          </NavLink> */}
+          </NavLink> 
         </Box>
-      </div>
-    </div>
+      </div> */}
+    </Box>
     
-    </>
+    </ThemeProvider>
   );
 }
 
