@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import Stack from "@mui/material/Stack";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+// import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { Box, Divider, Typography, styled } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
+import { Link } from "react-router-dom";
 
 const NavContainer = styled("nav")({
   height: "120px",
   padding: "10px 0px",
+
+  a: {
+    textDecoration: "none",
+    color: "black",
+  },
 });
 
 function NavBar() {
   // const [active, setActive] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   return (
     <NavContainer>
@@ -65,8 +71,20 @@ function NavBar() {
         }}
       >
         <Stack direction="row" spacing={4}>
+
+        <Link to='about'>
+          <Typography variant="h6">About</Typography>
+          </Link>
+
+          <Link to='project'>
           <Typography variant="h6">Portfolio</Typography>
+          </Link>
+          
+
+          <Link to='contact'>
           <Typography variant="h6">Contact</Typography>
+          </Link>
+          
         </Stack>
       </Box>
     </NavContainer>
