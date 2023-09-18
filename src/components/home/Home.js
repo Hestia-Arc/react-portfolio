@@ -34,7 +34,7 @@ export default function Home() {
       <HomeContainer>
         <NavBar />
 
-       <MainBox>
+       <MainBox loading='lazy' >
         <Typography variant="h3">Crafting Innovative Solutions</Typography>
         <Typography variant="h6">Crafting Innovative Solutions</Typography>
 
