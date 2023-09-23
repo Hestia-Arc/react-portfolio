@@ -8,7 +8,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import { Link } from "react-router-dom";
 
-const NavContainer = styled("nav")({
+const NavContainer = styled("nav")(({theme}) => ({
   height: "120px",
   padding: "10px 0px",
 
@@ -16,7 +16,21 @@ const NavContainer = styled("nav")({
     textDecoration: "none",
     color: "black",
   },
-});
+
+
+  // [theme.breakpoints.down("sm")]: {
+  //   padding: "0px 30px",
+  //   height: "568px",
+  // },
+  // [theme.breakpoints.between("sm", "md")]: {
+  //   padding: "0px 50px",
+  //   height: "568px",
+  // },
+  // [theme.breakpoints.up("xl")]: {
+  //   padding: "0px 400px",
+  //   height: "778px",
+  // },
+}));
 
 function NavBar() {
   // const [active, setActive] = useState(false);
@@ -31,8 +45,9 @@ function NavBar() {
           alignItems: "center",
         }}
       >
-        <Typography variant="h4">Esther</Typography>
+        <Typography variant="h3">Esther</Typography>
         <Stack
+        sx={{display: {xs: 'none', sm: 'block'} }}
           direction="row"
           justifyContent="space-between"
           alignItems="center"
@@ -66,11 +81,11 @@ function NavBar() {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "flex-end",
+          justifyContent: {xs: 'center',sm:"flex-end"},
           alignItems: "center",
         }}
       >
-        <Stack direction="row" spacing={4}>
+        <Stack direction="row" spacing={4} >
 
         <Link to='about'>
           <Typography variant="h6">About</Typography>

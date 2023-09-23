@@ -25,7 +25,8 @@ const MainBox = styled(Box)({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  color: '#f3f3f3'
+  color: '#f3f3f3',
+  textAlign: 'center'
 })
 
 export default function Home() {

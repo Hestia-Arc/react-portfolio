@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import picture from "../../images/image2.jpg";
-import { Avatar, Box, styled, Stack, Typography} from "@mui/material";
+import { Avatar, Box, styled, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -20,7 +20,7 @@ const AboutBox = styled(Box)({
 const NavBox = styled(Box)({
   padding: "10px 0",
   display: "flex",
-  justifyContent: "flex-end",
+  justifyContent: 'center',
   alignItems: "center",
   position: "sticky",
   top: 0,
@@ -62,7 +62,7 @@ export default function About() {
         <NavBox
           sx={{
             boxShadow: scrollActive ? "0px 15px 10px -15px #111" : "",
-            height: scrollActive ? "90px" : "",
+            height: scrollActive ? {xs: '70px', sm: "90px"} : "",
           }}
         >
           <Stack direction="row" spacing={4}>
@@ -95,20 +95,21 @@ export default function About() {
             {/* ==================== */}
             {/* TITLE */}
             <Stack alignItems="flex-end" spacing={0.5}>
-              <Typography variant="h4">Meet me</Typography>
+              <Typography variant="h3">Meet me</Typography>
               {/* <Divider orientation="vertical" variant="middle" flexItem /> */}
               <Typography>Creativity. Reliability. Competent.</Typography>
             </Stack>
 
             <Stack
-              direction="row"
+              direction={{xs:'column-reverse', sm: "row"}}
               justifyContent="space-between"
               spacing={2}
-              // alignItems="center"
+              alignItems="center"
               sx={{
-                height: 400,
+                minHeight: '20rem',
                 //  border: "1px solid black"
                 borderTop: "1px solid black",
+               
               }}
             >
               {/* ==================== */}
@@ -118,16 +119,16 @@ export default function About() {
                   flex: 6,
                   // border: "1px solid black",
                   display: "flex",
-                  // justifyContent: "center",
                 }}
               >
                 <Stack
                   spacing={3}
                   sx={{
+                  
                     border: "solid 1px #ebebeb",
                     boxShadow: "2px 6px 12px rgba(0,0,0,.1)",
                     padding: 4,
-                    width: "60%",
+                    width: {xs: '100%', sm: "60%"},
                   }}
                 >
                   <TextBox>
@@ -152,11 +153,10 @@ export default function About() {
               {/* ==================== */}
               {/* AVATAR */}
               <Stack
-                alignItems="flex-end"
+                alignItems={{xs: 'center',sm: "flex-end"}}
                 spacing={8}
                 sx={{
                   flex: 2,
-
                   paddingTop: 5,
                   // border: "1px solid black",
                 }}
@@ -170,37 +170,39 @@ export default function About() {
                 <Stack
                   spacing={2}
                   direction="row"
-          justifyContent="space-between"
-          alignItems="center"
+                  justifyContent="space-between"
+                  alignItems="center"
                   sx={{
                     height: "50px",
                     width: "100%",
                     border: "2px solid #ebebeb",
                     borderRadius: "10px",
-                    p: '0px 15px'
+                    p: "0px 15px",
                   }}
                 >
-
-<span>
-            <a href="https://github.com/Hestia-Arc" target="blank">
-              <GitHubIcon />
-            </a>
-          </span>
-          <span>
-            <a href="https://www.linkedin.com/in/hestiaarc00" target="blank">
-              <LinkedInIcon />
-            </a>
-          </span>
-          <span>
-            <a href="https://twitter.com/arc_hestia00" target="blank">
-              <TwitterIcon />
-            </a>
-          </span>
-          <span>
-            <a href="mailto:hestia.dev005@gmail.com">
-              <MarkEmailUnreadRoundedIcon />
-            </a>
-          </span>
+                  <span>
+                    <a href="https://github.com/Hestia-Arc" target="blank">
+                      <GitHubIcon />
+                    </a>
+                  </span>
+                  <span>
+                    <a
+                      href="https://www.linkedin.com/in/hestiaarc00"
+                      target="blank"
+                    >
+                      <LinkedInIcon />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://twitter.com/arc_hestia00" target="blank">
+                      <TwitterIcon />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="mailto:hestia.dev005@gmail.com">
+                      <MarkEmailUnreadRoundedIcon />
+                    </a>
+                  </span>
                 </Stack>
               </Stack>
             </Stack>
@@ -225,7 +227,7 @@ export default function About() {
           </Box>
 
           {/*EXPERIENCE  */}
-          <Box>
+          <Box sx={{marginBottom: 10}}>
             <Typography variant="h4" sx={{ borderBottom: "1px solid #ebebeb" }}>
               Experiences
             </Typography>

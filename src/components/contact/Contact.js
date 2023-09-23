@@ -1,39 +1,77 @@
-import React from 'react'
+import { Box, Stack, Typography, styled } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+const NavBox = styled(Box)({
+  padding: "10px 0",
+  // height: '280px',
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  position: "sticky",
+  top: 0,
+  left: 0,
+  right: 0,
+  zIndex: 999,
+  background: "#fff",
+  borderBottom: "1px solid grey",
+
+  a: {
+    textDecoration: "none",
+    color: "black",
+  },
+});
 
 export default function Contact() {
+  const [scrollActive, setScrollActive] = useState(false);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.scrollY > 10) {
+        setScrollActive(true);
+      } else {
+        setScrollActive(false);
+      }
+    };
+  }, []);
+
   return (
-    <div className="contact-section">
-         
-        {/* Column 1 */}
-        <div className="contact-column-one">
-            <div className='column-one-inner'>
-                <div className="contact-tag">Contact Me...</div>    
-                <div className="contact-tagline">Open to job and internship opportunities</div>
-            </div>
-        </div>
+    <Box>
+      {/* ------------------------------------ */}
+      {/* NAVIGATION */}
+      {/* ------------------------------------- */}
+      <NavBox
+        sx={{
+          boxShadow: scrollActive ? "0px 15px 10px -15px #111" : "",
+          height: scrollActive ? { xs: "70px", sm: "90px" } : "",
+        }}
+      >
+        <Stack direction="row" spacing={4}>
+          <Link to="../">
+            <Typography variant="h6">Home</Typography>
+          </Link>
 
-        {/* Column 2 */}
-        <div className="contact-column-two">
-            <form action="" className="contact-form">
-                <div className="input-container">
-                    <i className="fa-solid fa-user icon-i"></i>
-                    <input type="text" className="form-name input-i" placeholder="Name" />
-                </div>
-                <div className="input-container">
-                    <i className="fa-solid fa-envelope icon-i"></i>
-                    <input type="text" className="email input-i" placeholder="Email" />
-                </div>
-                <div className="input-container">
-                    <i className="fa-solid fa-pen icon-i-message"></i>
-                    <textarea className="input-i-message message" rows="" cols="" placeholder="Message..."></textarea>
+          <Link to="../about">
+            <Typography variant="h6">About</Typography>
+          </Link>
 
-                </div>
-                
-                <button type="submit" className="contact-button">Submit</button>
-            </form>
-        </div>
+          <Link to="../project">
+            <Typography variant="h6">Portfolio</Typography>
+          </Link>
+        </Stack>
+      </NavBox>
 
 
-    </div>
-  )
+      {/* ------------------------------------ */}
+      {/* CONTACT */}
+      {/* ------------------------------------- */}
+
+      <Box sx={{ margin: "40px 0" }}>
+        <Box sx={{textAlign: 'center', marginBottom: 7}}>
+          <Typography variant="h3">Contact</Typography>
+        </Box>
+        
+      </Box>
+    </Box>
+  );
 }
