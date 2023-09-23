@@ -1,52 +1,48 @@
 import React from "react";
-import style from "./home.module.css";
-import { Box, Divider } from "@mui/material";
-import { motion } from "framer-motion";
+import { Box, Typography, styled } from "@mui/material";
+// import { motion } from "framer-motion";
+import NavBar from "./NavBar";
+import MainImage from '../../images/p8.jpg'
+
+
+const HomeContainer = styled(Box)({
+  // border: '1px solid black'
+})
+
+
+const MainBox = styled(Box)({
+  // border: '1px solid black',
+  height: 550,
+  margin: '20px 0',
+  borderRadius: '10px',
+  boxShadow: '3px 6px 17px rgba(0,0,0,.3)',
+  backgroundColor: 'rgba(0,0,0,.3)',
+  background: `url(${MainImage})`,
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  color: '#f3f3f3',
+  textAlign: 'center'
+})
 
 export default function Home() {
   return (
-    <>
-      <Box className={style["home"]}>
-        {/* <div className={style["header-tag1"]}>Hi, I'm Esther</div> */}
+    
+      <HomeContainer>
+        <NavBar />
 
-        <motion.div
-          animate={{ y: [100, -50, 0 ] }}
-          transition={{ ease: "easeOut", duration: 2 }}
-          className={style["box-border"]}
-        >
-          {/* <Divider textAlign="left" className={style["header-tag2"]}>Excited to have you here</Divider> */}
+       <MainBox loading='lazy' >
+        <Typography variant="h3">Crafting Innovative Solutions</Typography>
+        <Typography variant="h6">Crafting Innovative Solutions</Typography>
 
-          <div className={style["header-tag2"]}>
-            Excited to <br />
-            have you here
-          </div>
-
+       </MainBox>
           
 
-          <Box className={style["header-tagline"]}>
-            <Divider className={style["m-hr"]} />
-            {/* <Fade cascade damping={0.2}>
-              <div style={{ paddingLeft: 15 }}>
-               <p> Turning ideas and design concepts </p>
-               <p> into functional & user-friendly websites </p>
-                <p>and web applications</p>
-              </div>
-            </Fade> */}
-
-            <motion.div
-              animate={{ x: [-1000, 30, 0] }}
-              transition={{ ease: "easeOut", duration: 4 }}
-              style={{ paddingLeft: 15 }}
-            >
-              <p> Turning ideas and design concepts </p>
-              <p> into functional & user-friendly websites </p>
-              <p>and web applications</p>
-            </motion.div>
-          </Box>
-
-          <div className={style["header-button-container"]}></div>
-        </motion.div>
-      </Box>
-    </>
+      </HomeContainer>
+    
   );
 }
