@@ -7,6 +7,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import { Link } from "react-router-dom";
+import FlareRoundedIcon from '@mui/icons-material/FlareRounded';
+
 
 const NavContainer = styled("nav")(({theme}) => ({
   height: "120px",
@@ -66,7 +68,7 @@ function NavBar() {
           alignItems: "center",
         }}
       >
-        <Typography variant="h3">Esther</Typography>
+        <FlareRoundedIcon sx={{fontSize: '37px'}}/>
         <Stack
         sx={{display: {xs: 'none', sm: 'block'} }}
           direction="row"

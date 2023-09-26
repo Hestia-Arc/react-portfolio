@@ -10,6 +10,7 @@ import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRound
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
 import CV from "../../EstherCV.pdf";
 import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
+import Footer from "../Footer";
 
 const AboutBox = styled(Box)({
   position: "relative",
@@ -303,6 +304,8 @@ export default function About() {
             </Box>
           </Box>
         </Box>
+
+        <Footer/>
       </AboutBox>
     </>
   );
