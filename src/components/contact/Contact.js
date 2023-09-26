@@ -19,6 +19,12 @@ const NavBox = styled(Box)({
   a: {
     textDecoration: "none",
     color: "black",
+    transition: 'transform 0.5s',
+
+    '&:hover': {
+      color: '#ff004f',
+      transform: 'translateY(-5px)',
+    }
   },
 });
 

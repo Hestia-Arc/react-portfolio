@@ -15,7 +15,14 @@ const NavContainer = styled("nav")(({theme}) => ({
   a: {
     textDecoration: "none",
     color: "black",
+    transition: 'transform 0.5s',
+
+    '&:hover': {
+      color: '#d32f2f',
+      transform: 'translateY(-5px)',
+    }
   },
+  
 
 
   // [theme.breakpoints.down("sm")]: {
@@ -32,6 +39,20 @@ const NavContainer = styled("nav")(({theme}) => ({
   // },
 }));
 
+const LinkIcon = styled('a')({
+  a: {
+    textDecoration: "none",
+    color: "black",
+    transition: 'transform 0.5s',
+
+    '&:hover': {
+      color: '#ff004f',
+      transform: 'translateY(-5px)',
+    }
+  },
+})
+
+// ------------------------------
 function NavBar() {
   // const [active, setActive] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
@@ -54,9 +75,9 @@ function NavBar() {
           spacing={4}
         >
           <span>
-            <a href="https://github.com/Hestia-Arc" target="blank">
+            <LinkIcon href="https://github.com/Hestia-Arc" target="blank">
               <GitHubIcon />
-            </a>
+            </LinkIcon>
           </span>
           <span>
             <a href="https://www.linkedin.com/in/hestiaarc00" target="blank">
@@ -96,9 +117,9 @@ function NavBar() {
           </Link>
           
 
-          <Link to='contact'>
+          {/* <Link to='contact'>
           <Typography variant="h6">Contact</Typography>
-          </Link>
+          </Link> */}
           
         </Stack>
       </Box>
