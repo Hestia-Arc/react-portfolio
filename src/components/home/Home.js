@@ -37,7 +37,7 @@ export default function Home() {
 
        <MainBox loading='lazy' >
         <Typography variant="h3">Crafting Innovative Solutions</Typography>
-        <Typography variant="h6">Crafting Innovative Solutions</Typography>
+        <Typography variant="h6">Building usable and functional web applications </Typography>
 
        </MainBox>
           
