@@ -1,11 +1,12 @@
 import React from "react";
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Project from "./components/project/Project";
 import { Box, ThemeProvider, GlobalStyles } from "@mui/material";
 import { theme } from "./theme";
+import MainImage from "./images/back.jpg";
 
 function App() {
   return (
@@ -27,7 +28,22 @@ function App() {
           },
         }}
       />
-      <Box sx={{ p: {xs: '0 10px',sm: '0 50px',md: "0 100px", lg: '0 200px', xl: '0 600px'}, }}>
+      <Box
+        sx={{
+          // backgroundColor: "rgba(0,0,0,.3)",
+          // background: `url(${MainImage})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          p: {
+            xs: "0 10px",
+            sm: "0 50px",
+            md: "0 100px",
+            lg: "0 200px",
+            xl: "0 600px",
+          },
+        }}
+      >
         {/* ------------------------------ */}
         {/* ROUTES*/}
         {/* ------------------------------ */}
@@ -35,20 +51,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="project" element={<Project />}/>
+          <Route path="project" element={<Project />} />
         </Routes>
 
-       
-          
-          {/* <small className={styles["copyright"]}>Built by Esther &copy;2023 </small>
+        {/* <small className={styles["copyright"]}>Built by Esther &copy;2023 </small>
           <small>
             <a href="https://github.com/Hestia-Arc/Portfolio-vercel">
               Source code
             </a>
           </small> */}
-        
-
-       
       </Box>
     </ThemeProvider>
   );

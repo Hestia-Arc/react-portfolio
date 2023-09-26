@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Season from "../../images/season app.png";
 import Movie from "../../images/proj-movie2.png";
 import Nature from "../../images/proj-nature.png";
+import Footer from "../Footer";
 
 const NavBox = styled(Box)({
   padding: "10px 0",
@@ -126,6 +127,8 @@ export default function Project() {
           />
         </Stack>
       </Box>
+
+      <Footer />
     </Box>
   );
 }
