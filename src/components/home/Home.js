@@ -11,7 +11,7 @@ const HomeContainer = styled(Box)({
 
 const MainBox = styled(Box)({
   // border: '1px solid black',
-  height: 500,
+  height: '50vh',
   margin: "20px 0",
   borderRadius: "10px",
   fontFamily: 'Fredoka',
@@ -49,7 +49,7 @@ export default function Home() {
           A Front-end Developer
         </Typography>
 
-        <Box sx={{width: '50%'}}>
+        <Box sx={{width: {xs: '80%',sm: '50%'}, marginTop: '10px'}}>
           <Typography variant="h7">
             I am an avid learner who is genuinely interested in technology and
             passionate about bringing digital experiences to life.
