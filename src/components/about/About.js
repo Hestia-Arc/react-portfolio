@@ -8,16 +8,23 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
-import CV from "../../EstherCV.pdf";
+import CV from "../../data/Resume-Afolabi Esther.pdf";
 import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
 import Footer from "../Footer";
+import darkbg from "../../data/footerbg.jpg";
 
-const AboutBox = styled(Box)({
+const AboutBox = styled(Box)(theme =>({
   position: "relative",
+  minHeight: "50rem",
+  background: `linear-gradient(to right, rgba(1,1,2, 0.7), rgba(1,1,3, 0.7)), url(${darkbg})`,
+  backgroundPosition: "top left",
+  backgroundRepeat: "repeat",
+  backgroundSize: "cover",
+  color: "#fff",
 
   a: {
     textDecoration: "none",
-    color: "black",
+    color: "red",
     transition: "transform 0.5s",
 
     "&:hover": {
@@ -25,7 +32,7 @@ const AboutBox = styled(Box)({
       transform: "translateY(-5px)",
     },
   },
-});
+}));
 
 const NavBox = styled(Box)({
   padding: "10px 0",
@@ -42,21 +49,20 @@ const NavBox = styled(Box)({
 
   a: {
     textDecoration: "none",
-    color: "black",
+    color: "#fff",
   },
 });
 
 const TextBox = styled(Box)({
   fontSize: 20,
-  fontFamily: 'Fredoka',
+  fontFamily: "Fredoka",
   fontWeight: 300,
-  lineHeight: '1.8rem'
-
+  lineHeight: "1.8rem",
 });
 
 const SkillBox = (props) => {
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
+    <Box sx={{ display: "flex", alignItems: "center", color: "#fff" }}>
       <TaskAltRoundedIcon color="blue" />
       <Typography variant="h5" sx={{ marginLeft: "5px" }}>
         {props.name}
@@ -92,11 +98,11 @@ export default function About() {
         >
           <Stack direction="row" spacing={4}>
             <Link to="../">
-              <Typography variant="h6">Home</Typography>
+              <Typography variant="smText">Home</Typography>
             </Link>
 
             <Link to="../project">
-              <Typography variant="h6">Portfolio</Typography>
+              <Typography variant="smText">Portfolio</Typography>
             </Link>
 
             {/* <Link to="../contact">
@@ -241,7 +247,7 @@ export default function About() {
           {/* -------------------------------------------------- */}
 
           {/* SKILLS */}
-          <Box>
+          <Box sx={{}}>
             <Typography variant="h3" sx={{ borderBottom: "1px solid #ebebeb" }}>
               Skills
             </Typography>
@@ -287,13 +293,20 @@ export default function About() {
                   <i>Front-end Web Developer</i>
                 </Typography>
 
-                <Typography variant="h6" sx={{fontWeight: 300}}>
-                  Contributed to the development of client-side web applications <br/>
+                <Typography variant="h6" sx={{ fontWeight: 300 }}>
+                  Contributed to the development of client-side web applications{" "}
+                  <br />
                   using Reactjs and other Frontend technologies.
                 </Typography>
-                <ul style={{fontFamily: 'Fredoka', fontSize: 18, fontWeight: 300}}>
+                <ul
+                  style={{
+                    fontFamily: "Fredoka",
+                    fontSize: 18,
+                    fontWeight: 300,
+                  }}
+                >
                   <li>
-                    Implemented responsive designs on multiple projects <br/>
+                    Implemented responsive designs on multiple projects <br />
                     resulting in improved user experience and engagement.
                   </li>
 
@@ -305,7 +318,7 @@ export default function About() {
           </Box>
         </Box>
 
-        <Footer/>
+        <Footer />
       </AboutBox>
     </>
   );

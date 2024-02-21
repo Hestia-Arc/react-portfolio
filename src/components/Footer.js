@@ -3,9 +3,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <Box sx={{display: 'flex',justifyContent: 'center', alignItems: 'center', height: '60px', margin: '20px 0'}}>
+    <Box sx={{}}>
         <Typography>
-            &copy; 2023. Built by Hestia
+            &copy; 2024. Built by Hestia
         </Typography>
     </Box>
   )

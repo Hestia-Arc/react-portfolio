@@ -9,6 +9,7 @@ const NavBox = styled(Box)({
   display: "flex",
   justifyContent: "flex-end",
   alignItems: "center",
+  color: '#fff'
 });
 
 function ElevationScroll(props) {
