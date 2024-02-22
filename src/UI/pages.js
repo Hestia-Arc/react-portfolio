@@ -1,14 +1,17 @@
 import { Box, styled } from "@mui/material";
-// import { theme } from "../theme";
 
-export const PaddedBox = styled(Box)({
+export const PaddedBox = styled(Box)(props => ({
   padding: '0 5rem',
 
-  // [theme.breakpoints.down("sm")]: {
-  //   padding: '0 1rem',
+  [props.theme.breakpoints.down("sm")]:
+  {
+    padding: '0 1rem',
 
-  // },
+  },
   
+
+    // [`@media screen and (max-width: ${props.theme.breakpoints.values.sm}px)`]:
+
 //   {
 //     xs: "0 10px",
 //     sm: "0 50px",
@@ -16,7 +19,7 @@ export const PaddedBox = styled(Box)({
 //     lg: "0 200px",
 //     xl: "0 600px",
 //   },
-});
+}));
 
 
 export const Overlay = styled(Box)({

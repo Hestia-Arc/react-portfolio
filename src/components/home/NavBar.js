@@ -1,13 +1,14 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 // import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import { Box, Divider, Typography, styled } from "@mui/material";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
+import { Box, Typography, styled, useTheme } from "@mui/material";
+// import LinkedInIcon from "@mui/icons-material/LinkedIn";
+// import GitHubIcon from "@mui/icons-material/GitHub";
+// import TwitterIcon from "@mui/icons-material/Twitter";
+// import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import { Link } from "react-router-dom";
 import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
+import { tokens } from "../../theme";
 
 const NavContainer = styled("nav")(({ theme }) => ({
   height: "70px",
@@ -42,21 +43,23 @@ const NavContainer = styled("nav")(({ theme }) => ({
   // },
 }));
 
-const LinkIcon = styled("a")({
-  a: {
-    textDecoration: "none",
-    color: "black",
-    transition: "transform 0.5s",
+// const LinkIcon = styled("a")({
+//   a: {
+//     textDecoration: "none",
+//     color: "black",
+//     transition: "transform 0.5s",
 
-    "&:hover": {
-      color: "#ff004f",
-      transform: "translateY(-5px)",
-    },
-  },
-});
+//     "&:hover": {
+//       color: "#ff004f",
+//       transform: "translateY(-5px)",
+//     },
+//   },
+// });
 
 // ------------------------------
 function NavBar() {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
   // const [active, setActive] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
 
@@ -71,7 +74,12 @@ function NavBar() {
         }}
       >
         <FlareRoundedIcon sx={{ fontSize: "37px" }} />
-        <Stack direction="row" spacing={4}>
+        <Stack direction="row" spacing={4} sx={{
+              [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
+display: 'none'
+              }
+
+        }}>
           <Link to="about">
             <Typography variant="h6">About</Typography>
           </Link>

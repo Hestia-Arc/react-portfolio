@@ -1,6 +1,6 @@
-import { useMediaQuery } from "@mui/material";
+// import { useMediaQuery } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import { createContext, useEffect, useMemo, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 
 // --2-- THEME SETTINGS
 
@@ -276,9 +276,9 @@ export const themeSettings = (mode) => {
         fontWeight: 600,
       },
       xxsText: {
-        fontSize: "1.1rem",
-        lineHeight: 1.2,
-        fontWeight: 600,
+        fontSize: "0.5rem",
+        lineHeight: "1rem",
+        fontWeight: 400,
       },
       xsText: {
         fontSize: "0.75rem",
@@ -322,15 +322,15 @@ export const ColorModeContext = createContext({
 //---1--- CUSTOM HOOK
 export const useMode = () => {
   const [mode, setMode] = useState("light");
-  const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
+  // const isDarkModeEnabled = useMediaQuery("(prefers-color-scheme: dark)");
 
-  useEffect(() => {
-    if (isDarkModeEnabled) {
-      setMode("dark");
-    } else {
-      setMode("light");
-    }
-  }, [isDarkModeEnabled]);
+  // useEffect(() => {
+  //   if (isDarkModeEnabled) {
+  //     setMode("dark");
+  //   } else {
+  //     setMode("light");
+  //   }
+  // }, [isDarkModeEnabled]);
 
   const colorMode = useMemo(
     () => ({
