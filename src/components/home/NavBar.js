@@ -8,7 +8,7 @@ import { Box, Typography, styled, useTheme } from "@mui/material";
 // import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import { Link } from "react-router-dom";
 import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
-import { tokens } from "../../theme";
+// import { tokens } from "../../theme";
 
 const NavContainer = styled("nav")(({ theme }) => ({
   height: "70px",
@@ -59,7 +59,7 @@ const NavContainer = styled("nav")(({ theme }) => ({
 // ------------------------------
 function NavBar() {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  // const colors = tokens(theme.palette.mode);
   // const [active, setActive] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
 

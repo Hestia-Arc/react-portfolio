@@ -1,5 +1,12 @@
 import React, { useContext } from "react";
-import { Box, Button, Stack, Typography, styled, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Stack,
+  Typography,
+  styled,
+  useTheme,
+} from "@mui/material";
 import NavBar from "./NavBar";
 import MainImageDark from "../../data/bg-4.jpeg";
 import MainImageLight from "../../data/bg-1.jpeg";
@@ -93,7 +100,7 @@ export default function Home() {
             <Box
               sx={{
                 // border: "1px solid black",
-                height: "55vh",
+                height: "467px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -101,47 +108,136 @@ export default function Home() {
 
                 [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
                   {
-                    marginTop: "6.5rem",
+                    height: "553px",
                   },
               }}
             >
-              <Typography variant="mdDisplay" fontWeight={500}>
-                Front-end Developer
-              </Typography>
+              {/* NAME */}
+              <Stack
+                sx={{
+                  width: "fit-content",
+                  // border: "1px solid blue",
 
-              <Stack>
-                <Typography
-                  variant="lgText"
-                  fontWeight={400}
-                  sx={{ opacity: 0.6 }}
+                  [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+                    {
+                      width: "100%",
+                    },
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column", sm: "row" },
+                    alignItems: { xs: "start", sm: "center" },
+                  }}
                 >
-                  Hi, I'm Esther
-                </Typography>
+                  <Typography variant="xxlText">
+                    Hi there, I'm Esther{" "}
+                  </Typography>
 
+                  <Box
+                    sx={{
+                      borderBottom: "0.5px solid yellow",
+                      width: "62%",
+                      opacity: "0.6",
+                      marginLeft: "0.5rem",
+
+                      [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+                        {
+                          width: "70%",
+                          marginLeft: "0rem",
+                          marginTop: "0.5rem",
+                          marginBottom: "0.3rem",
+                        },
+                    }}
+                  ></Box>
+                </Box>
+
+                <Typography
+                  variant="smDisplay"
+                  fontWeight={500}
+                  sx={{
+                    textTransform: "uppercase",
+                    //  letterSpacing: 20
+
+                    [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+                      {
+                        fontSize: "2.5rem",
+                      },
+                  }}
+                >
+                  Front-end Developer
+                </Typography>
+                {/* <Typography
+                  variant="xxlText"
+                  fontWeight={500}
+                  sx={{ textTransform: "uppercase" }}
+                >
+                  Front-end Developer
+                </Typography> */}
+              </Stack>
+
+              {/* TAGLINE */}
+              <Stack
+                sx={{
+                  borderLeft: "0.5px solid yellow",
+                  padding: "0.5rem 0.8rem",
+                }}
+              >
                 <Typography
                   variant="lgText"
                   fontWeight={400}
-                  sx={{ opacity: 0.6 }}
+                  sx={{ color: colors.grey[600] }}
                 >
                   Building intuitive web experience & innovative solutions.
                 </Typography>
+                <Typography sx={{ color: colors.grey[600] }}>
+                  "Don't watch the clock. Do what it does. Keep going." -Sam
+                  Levenson
+                </Typography>
 
-                <Stack direction="row" spacing={2} mt={2.2}>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  spacing={2}
+                  mt={2.2}
+                  sx={{
+                    [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+                      {
+                        // width: "39%",
+                      },
+                  }}
+                >
                   <Button
                     variant="contained"
                     // startIcon={<ArticleRoundedIcon />}
                     sx={{
-                      width: "55%",
+                      width: "120px",
                       background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
                       border: `0.5px solid ${colors.grey[800]}`,
+
+                      [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+                        {
+                          width: "113px",
+                        },
                     }}
                   >
                     Contact
                   </Button>
 
+                  <a href="../project">
+                    <Typography variant="smText">DOWNLOAD CV</Typography>
+                  </a>
+
                   <FlareRoundedIcon
                     onClick={colorMode.toggleColorMode}
-                    sx={{ fontSize: "37px" }}
+                    sx={{
+                      fontSize: "37px",
+                      [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+                        {
+                          display: "none",
+                        },
+                    }}
                   />
 
                   {/* <Button
@@ -155,11 +251,7 @@ export default function Home() {
                   >
                     Resume
                   </Button> */}
-
-                  
                 </Stack>
-
-               
               </Stack>
             </Box>
           </PaddedBox>
@@ -199,22 +291,7 @@ export default function Home() {
       </Box>
 
       {/* footer */}
-      <Box
-        sx={{
-          height: "20rem",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "end",
-          // background: "#333",
-          background: `linear-gradient(to right, rgba(1,1,2, 0.3), rgba(1,1,3, 0.66), rgba(1,1,3, 0.66)), url(${darkbg})`,
-          backgroundPosition: "left",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-        pb={2}
-      >
-        <Footer />
-      </Box>
+     <Footer bg={true}/>
     </HomeContainer>
   );
 }

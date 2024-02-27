@@ -22,7 +22,7 @@ import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
 import Footer from "../Footer";
 import darkbg from "../../data/c-bg.png";
 import { tokens } from "../../theme";
-import { PaddedBox } from "../../UI/pages";
+// import { PaddedBox } from "../../UI/pages";
 
 const AboutBox = styled(Box)((theme) => ({
   position: "relative",
@@ -128,7 +128,7 @@ export default function About() {
           </Stack>
         </NavBox>
 
-        <PaddedBox>
+        {/* <PaddedBox> */}
           {/* --------------------------------------- */}
           {/* ABOUT */}
           {/* --------------------------------------- */}
@@ -464,7 +464,7 @@ export default function About() {
           </Box>
 
           <Footer />
-        </PaddedBox>
+        {/* </PaddedBox> */}
       </AboutBox>
     </>
   );
