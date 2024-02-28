@@ -20,6 +20,7 @@ function Footer(props) {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
+      pt={4}
     >
       <PaddedBox>
         <Box

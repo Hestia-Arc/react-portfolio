@@ -29,7 +29,7 @@ const HomeContainer = styled(Box)((props) => ({
   minWidth: "1350px",
   maxWidth: "1400px",
   margin: "0 auto",
-  backgroundColor: "#ccc",
+  // backgroundColor: "rgba(0,0,0,0.2)",
 
   [props.theme.breakpoints.down("sm")]: {
     minWidth: "325px",
@@ -290,8 +290,12 @@ export default function Home() {
         {/* </Overlay> */}
       </Box>
 
+      <Box sx={{height: "400px", backgroundColor: colors.goldAccent[800]}}>
+
+      </Box>
+
       {/* footer */}
-     <Footer bg={true}/>
+      <Footer bg={true}/>
     </HomeContainer>
   );
 }

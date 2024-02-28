@@ -16,7 +16,8 @@ function App() {
         <GlobalStyles
           styles={{
             "*::-webkit-scrollbar": {
-              width: "8px",
+              width: "7px",
+              height: "4px"
             },
             "*::-webkit-scrollbar-track": {
               "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.4)",

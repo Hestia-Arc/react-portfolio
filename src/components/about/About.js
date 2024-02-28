@@ -22,6 +22,7 @@ import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
 import Footer from "../Footer";
 import darkbg from "../../data/c-bg.png";
 import { tokens } from "../../theme";
+import { PaddedBox } from "../../UI/pages";
 // import { PaddedBox } from "../../UI/pages";
 
 const AboutBox = styled(Box)((theme) => ({
@@ -128,261 +129,209 @@ export default function About() {
           </Stack>
         </NavBox>
 
-        {/* <PaddedBox> */}
-          {/* --------------------------------------- */}
-          {/* ABOUT */}
-          {/* --------------------------------------- */}
-          <Box>
-            {/*MEET ME------------------------ */}
-            <Stack
-              spacing={5}
+        {/* --------------------------------------- */}
+        {/* ABOUT */}
+        {/* --------------------------------------- */}
+        <PaddedBox mb={5}>
+          {/* ==================== */}
+          {/* TITLE */}
+          <Stack
+            alignItems="flex-end"
+            spacing={0.5}
+            mt={6}
+            pb={2}
+            sx={{ borderBottom: `0.5px solid ${colors.grey[800]}` }}
+          >
+            <Typography variant="xsDisplay">Meet me</Typography>
+            {/* <Divider orientation="vertical" variant="middle" flexItem /> */}
+            <Typography variant="smText" sx={{ color: colors.grey[500] }}>
+              Creativity. Reliability. Competent.
+            </Typography>
+          </Stack>
+
+          {/* ------------ */}
+          <Stack
+            direction="row"
+            sx={{
+              border: "1px solid white",
+            }}
+          >
+            {/* ==================== */}
+            {/* ABOUT CONTENT */}
+            <Box
               sx={{
-                padding: "60px 0",
-                // : "1px solid black"
+                flex: 2,
+                // border: "1px solid black",
               }}
             >
-              {/* ==================== */}
-              {/* TITLE */}
-              <Stack alignItems="flex-end" spacing={0.5}>
-                <Typography variant="xsDisplay">Meet me</Typography>
-                {/* <Divider orientation="vertical" variant="middle" flexItem /> */}
-                <Typography variant="smText" sx={{ color: colors.grey[500] }}>
-                  Creativity. Reliability. Competent.
-                </Typography>
-              </Stack>
-
               <Stack
-                direction={{ xs: "column-reverse", sm: "row" }}
-                justifyContent="space-between"
-                spacing={2}
-                alignItems="center"
+                spacing={3}
                 sx={{
-                  minHeight: "20rem",
-                  //  border: "1px solid black"
-                  borderTop: `0.5px solid ${colors.grey[800]}`,
+                  border: `solid 1px ${colors.grey[900]}`,
+                  boxShadow: "2px 6px 12px rgba(0,0,0,.1)",
+                  // padding: 4,
+                  // width: { xs: "100%", sm: "60%" },
                 }}
               >
-                {/* ==================== */}
-                {/* ABOUT CONTENT */}
-                <Box
+                <TextBox variant="baseText">
+                  {" "}
+                  As a driven and detail-oriented Frontend Developer, I leverage
+                  my experience in building user-friendly web interfaces that
+                  drive results.
+                </TextBox>
+
+                <TextBox variant="baseText">
+                  Adept in building modern, responsive and functional UIs using
+                  React, MUI/Chakra UI, tailored to specific user needs,
+                  ensuring an accessible and seamless experience across all
+                  devices.
+                </TextBox>
+
+                <TextBox variant="baseText">
+                  {" "}
+                  <TaskAltRoundedIcon color="blue" /> Effective time management{" "}
+                </TextBox>
+
+                <TextBox variant="baseText">
+                  {" "}
+                  <TaskAltRoundedIcon color="blue" /> Writes clean &
+                  maintainable code.
+                </TextBox>
+
+                <TextBox variant="baseText">
+                  <TaskAltRoundedIcon />A passion for exploring emerging
+                  technologies.
+                </TextBox>
+
+                <Stack>
+                  More in my toolbelt includes; <br />
+                  <TextBox>-HTML,CSS3, JavaScript.</TextBox>
+                  <TextBox variant="baseText">
+                    {" "}
+                    -CSS Preprocessor/framework (SASS & Bootstrap){" "}
+                  </TextBox>
+                  <TextBox variant="baseText">
+                    {" "}
+                    -Version control system (Git)
+                  </TextBox>
+                  <TextBox variant="baseText"> -React Query </TextBox>
+                  <TextBox variant="baseText">
+                    {" "}
+                    -Testing framework (Jest) for code quality assurance.
+                  </TextBox>
+                  <TextBox variant="baseText">
+                    {" "}
+                    -User-centric design principles.
+                  </TextBox>
+                  <TextBox variant="baseText">
+                    I thrive in collaborative environments where I can learn
+                    from others and continuously challenge myself.
+                  </TextBox>
+                  <TextBox variant="baseText">
+                    Seeking exciting frontend challenges! Share your current
+                    project's UI pain points and let's brainstorm solutions
+                    together. Don't hesitate to reach out - I'm happy to help!
+                  </TextBox>
+                </Stack>
+
+                <TextBox variant="baseText">
+                  I am an avid learner who is genuinely interested in technology
+                  and passionate about bringing digital experiences to life.
+                </TextBox>
+                <TextBox variant="baseText">
+                  Keen to evaluate and learn new technologies, collaborative
+                  with great communication skills. Focused on developing high
+                  quality products and services.{" "}
+                </TextBox>
+              </Stack>
+            </Box>
+
+            {/* ==================== */}
+            {/* AVATAR */}
+            <Box
+              sx={{
+                flex: 1,
+                // border: "1px solid black",
+              }}
+            >
+              <Avatar
+                src={picture}
+                alt="Developer's"
+                sx={{ width: 220, height: 250 }}
+                loading="lazy"
+              />
+
+              <Stack spacing={1} alignItems="center" sx={{ width: "100%" }}>
+                <Stack
+                  spacing={2}
+                  direction="row"
+                  justifyContent="space-evenly"
+                  alignItems="center"
                   sx={{
-                    flex: 6,
-                    // border: "1px solid black",
-                    display: "flex",
+                    height: "50px",
+                    width: "100%",
+                    // border: `1px solid ${colors.grey[900]}`,
+                    // borderRadius: "6px",
+                    // p: "0px 15px",
                   }}
                 >
-                  <Stack
-                    spacing={3}
+                  <span>
+                    <a href="https://github.com/Hestia-Arc" target="blank">
+                      <GitHubIcon />
+                    </a>
+                  </span>
+                  <span>
+                    <a
+                      href="https://www.linkedin.com/in/hestiaarc00"
+                      target="blank"
+                    >
+                      <LinkedInIcon />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="https://twitter.com/arc_hestia00" target="blank">
+                      <TwitterIcon />
+                    </a>
+                  </span>
+                  <span>
+                    <a href="mailto:hestia.dev005@gmail.com">
+                      <MarkEmailUnreadRoundedIcon />
+                    </a>
+                  </span>
+                </Stack>
+                <a href={CV} download="Esther's Cv" style={{ width: "100%" }}>
+                  <Button
+                    variant="contained"
+                    startIcon={<ArticleRoundedIcon />}
                     sx={{
-                      border: `solid 1px ${colors.grey[900]}`,
-                      boxShadow: "2px 6px 12px rgba(0,0,0,.1)",
-                      // padding: 4,
-                      width: { xs: "100%", sm: "60%" },
+                      width: "100%",
+                      background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
+                      border: `0.5px solid ${colors.grey[800]}`,
                     }}
                   >
-                    <TextBox variant="baseText">
-                      {" "}
-                      As a driven and detail-oriented Frontend Developer, I
-                      leverage my experience in building user-friendly web
-                      interfaces that drive results.
-                    </TextBox>
-
-                    <TextBox variant="baseText">
-                      Adept in building modern, responsive and functional UIs
-                      using React, MUI/Chakra UI, tailored to specific user
-                      needs, ensuring an accessible and seamless experience
-                      across all devices.
-                    </TextBox>
-
-                    <TextBox variant="baseText">
-                      {" "}
-                      <TaskAltRoundedIcon color="blue" /> Effective time
-                      management{" "}
-                    </TextBox>
-
-                    <TextBox variant="baseText">
-                      {" "}
-                      <TaskAltRoundedIcon color="blue" /> Writes clean &
-                      maintainable code.
-                    </TextBox>
-
-                    <TextBox variant="baseText">
-                      <TaskAltRoundedIcon />A passion for exploring emerging
-                      technologies.
-                    </TextBox>
-
-                    <Stack>
-                      More in my toolbelt includes; <br />
-                      <TextBox>-HTML,CSS3, JavaScript.</TextBox>
-                      <TextBox variant="baseText">
-                        {" "}
-                        -CSS Preprocessor/framework (SASS & Bootstrap){" "}
-                      </TextBox>
-                      <TextBox variant="baseText">
-                        {" "}
-                        -Version control system (Git)
-                      </TextBox>
-                      <TextBox variant="baseText"> -React Query </TextBox>
-                      <TextBox variant="baseText">
-                        {" "}
-                        -Testing framework (Jest) for code quality assurance.
-                      </TextBox>
-                      <TextBox variant="baseText">
-                        {" "}
-                        -User-centric design principles.
-                      </TextBox>
-                      <TextBox variant="baseText">
-                        I thrive in collaborative environments where I can learn
-                        from others and continuously challenge myself.
-                      </TextBox>
-                      <TextBox variant="baseText">
-                        Seeking exciting frontend challenges! Share your current
-                        project's UI pain points and let's brainstorm solutions
-                        together. Don't hesitate to reach out - I'm happy to
-                        help!
-                      </TextBox>
-                    </Stack>
-
-                    <TextBox variant="baseText">
-                      I am an avid learner who is genuinely interested in
-                      technology and passionate about bringing digital
-                      experiences to life.
-                    </TextBox>
-                    <TextBox variant="baseText">
-                      Keen to evaluate and learn new technologies, collaborative
-                      with great communication skills. Focused on developing
-                      high quality products and services.{" "}
-                    </TextBox>
-                  </Stack>
-                </Box>
-
-                {/* ==================== */}
-                {/* AVATAR */}
-                <Stack
-                  alignItems={{ xs: "center" }}
-                  spacing={6}
-                  sx={{
-                    flex: 2,
-                    paddingTop: 5,
-                    // border: "1px solid black",
-                  }}
-                >
-                  <Avatar
-                    src={picture}
-                    alt="Developer's"
-                    sx={{ width: 220, height: 250 }}
-                    loading="lazy"
-                  />
-
-                  <Stack spacing={1} alignItems="center" sx={{ width: "100%" }}>
-                    <Stack
-                      spacing={2}
-                      direction="row"
-                      justifyContent="space-evenly"
-                      alignItems="center"
-                      sx={{
-                        height: "50px",
-                        width: "100%",
-                        // border: `1px solid ${colors.grey[900]}`,
-                        // borderRadius: "6px",
-                        // p: "0px 15px",
-                      }}
-                    >
-                      <span>
-                        <a href="https://github.com/Hestia-Arc" target="blank">
-                          <GitHubIcon />
-                        </a>
-                      </span>
-                      <span>
-                        <a
-                          href="https://www.linkedin.com/in/hestiaarc00"
-                          target="blank"
-                        >
-                          <LinkedInIcon />
-                        </a>
-                      </span>
-                      <span>
-                        <a
-                          href="https://twitter.com/arc_hestia00"
-                          target="blank"
-                        >
-                          <TwitterIcon />
-                        </a>
-                      </span>
-                      <span>
-                        <a href="mailto:hestia.dev005@gmail.com">
-                          <MarkEmailUnreadRoundedIcon />
-                        </a>
-                      </span>
-                    </Stack>
-                    <a
-                      href={CV}
-                      download="Esther's Cv"
-                      style={{ width: "100%" }}
-                    >
-                      <Button
-                        variant="contained"
-                        startIcon={<ArticleRoundedIcon />}
-                        sx={{
-                          width: "100%",
-                          background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
-                          border: `0.5px solid ${colors.grey[800]}`,
-                        }}
-                      >
-                        Resume
-                      </Button>
-                    </a>
-                  </Stack>
-                </Stack>
+                    Resume
+                  </Button>
+                </a>
               </Stack>
-            </Stack>
+            </Box>
+          </Stack>
+        </PaddedBox>
 
-            {/* -------------------------------------------------- */}
-
-            {/* SKILLS */}
-            <Box sx={{ position: "relative" }}>
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                  height: "500px",
-                  width: "500px",
-                  // border: "1px solid white",
-                }}
-                p={1}
-              >
-                <Grid
-                  container
-                  columnSpacing={2}
-                  columns={12}
-                  justifyContent="center"
-                  sx={{height: '100%'}}
-                >
-
-                  {/* item1 */}
-                  <Grid item xs={4}>
-                    <Box
-                      sx={{ height: "100%", border: "1px solid white" }}
-                    ></Box>
-                  </Grid>
-
-                  {/* item2 */}
-                  <Grid item xs={4}>
-                    <Box
-                      sx={{ height: "20px", border: "1px solid white" }}
-                    ></Box>
-                  </Grid>
-
-                  {/* item3 */}
-                  <Grid item xs={4}>
-                    <Box
-                      sx={{ height: "20px", border: "1px solid white" }}
-                    ></Box>
-                  </Grid>
-                </Grid>
-              </Box>
-
+        {/* --------------------------------------- */}
+        {/* SKILLS */}
+        <PaddedBox mb={5}>
+          <Stack direction="row">
+            {/* BOX-1 */}
+            <Stack
+              spacing={4}
+              sx={{
+                flex: 1,
+                minHeight: 400,
+                // border: "1px solid #ebebeb",
+                borderRadius: "10px",
+                marginTop: "20px ",
+              }}
+            >
               <Typography
                 variant="xsDisplay"
                 // sx={{ borderBottom: "1px solid #ebebeb" }}
@@ -390,82 +339,316 @@ export default function About() {
                 Skills
               </Typography>
 
-              <Box
-                sx={{
-                  minHeight: 400,
-                  // border: "1px solid #ebebeb",
-                  borderRadius: "10px",
-                  marginTop: "20px ",
-                }}
-              >
-                <Stack spacing={3}>
-                  <SkillBox name="HTML, CSS, and Javascript" />
-                  <SkillBox name="CSS Preprocessors" />
-                  <SkillBox name="CSS and JS frameworks" />
-                  <SkillBox name="Version Control" />
-                  <SkillBox name="Responsive Web design" />
-                </Stack>
+              <Box sx={{ width: "400px" }}>
+                <Typography
+                  variant="xsText"
+                  // sx={{ borderBottom: "1px solid #ebebeb" }}
+                >
+                  I am an avid learner who is genuinely interested in technology
+                  and passionate about bringing digital experiences to life.
+                  Keen to evaluate and learn new technologies, collaborative
+                  with great communication skills. Focused on developing high
+                  quality products and services.
+                </Typography>
               </Box>
-            </Box>
+            </Stack>
 
-            {/*EXPERIENCE  */}
+            {/* BOX-2 */}
             <Box
               sx={{
-                paddingBottom: 10,
+                flex: 1,
+                // position: "absolute",
+                // top: 0,
+                // right: 0,
+                // height: "500px",
+                // width: "500px",
+                // border: "1px solid white",
+              }}
+              p={1}
+            >
+              <Grid
+                container
+                // rowSpacing={2}
+                // columnSpacing={2}
+                columns={12}
+                alignItems="flex-start"
+                // justifyContent="center"
+                sx={{ height: "100%" }}
+              >
+                {/* row-1 */}
+                <Grid item xs={12}>
+                  <BrickDesignTwo tag1="Jest" tag2="CSS" tag3="Javascript" />
+                </Grid>
+
+                {/* row-2 */}
+                <Grid item xs={12}>
+                  <BrickDesignOne
+                    tag1="React Query"
+                    tag2="Git/GitHub"
+                    tag3="Fetch API/ Axios"
+                  />
+                </Grid>
+
+                {/* row-3 */}
+                <Grid item xs={12}>
+                  <BrickDesignTwo
+                    tag1="ReactJS"
+                    tag2="Typescript"
+                    tag3="Material UI"
+                  />
+                </Grid>
+
+                {/* row-4 */}
+                <Grid item xs={12}>
+                  <BrickDesignOne
+                    tag1="TailwindCSS"
+                    tag2="Bootstrap"
+                    tag3="Responsive UI"
+                    tag4="SASS"
+                  />
+                </Grid>
+
+                {/* row-5 */}
+                <Grid item xs={12}>
+                  <BrickDesignTwo tag1="HTML" tag2="CSS" tag3="Javascript" />
+                </Grid>
+              </Grid>
+            </Box>
+          </Stack>
+        </PaddedBox>
+
+        {/* --------------------------------------- */}
+        {/*EXPERIENCE  */}
+        {/* ------------------------------------- */}
+
+        <PaddedBox mb={5}>
+          <Stack direction="row">
+            {/* BOX-1 */}
+            <Stack
+              spacing={4}
+              sx={{
+                flex: 1,
+                minHeight: 400,
+                // border: "1px solid #ebebeb",
+                borderRadius: "10px",
+                marginTop: "20px ",
               }}
             >
               <Typography
                 variant="xsDisplay"
-                sx={{ borderBottom: "1px solid #ebebeb" }}
+                // sx={{ borderBottom: "1px solid #ebebeb" }}
               >
                 Experiences
               </Typography>
 
-              <Box
+              <Box sx={{ width: "400px" }}>
+                <Typography
+                  variant="xsText"
+                  // sx={{ borderBottom: "1px solid #ebebeb" }}
+                >
+                  I am an avid learner who is genuinely interested in technology
+                  and passionate about bringing digital experiences to life.
+                  Keen to evaluate and learn new technologies, collaborative
+                  with great communication skills. Focused on developing high
+                  quality products and services.
+                </Typography>
+              </Box>
+            </Stack>
+
+            {/* BOX-2 */}
+            <Box
+              sx={{
+                flex: 1,
+                // position: "absolute",
+                // top: 0,
+                // right: 0,
+                // height: "500px",
+                // width: "500px",
+                // border: "1px solid white",
+              }}
+              p={1}
+              pt={8}
+            >
+              {/* exp 1 */}
+              <Stack
+                spacing={2}
                 sx={{
-                  minHeight: 400,
-                  // border: "1px solid #ebebeb",
-                  borderRadius: "10px",
-                  margin: "20px 0",
+                  borderBottom: `1px solid ${colors.grey[800]}`,
+                  paddingBottom: 3,
                 }}
               >
-                <Stack spacing={2}>
-                  <Typography variant="h5" sx={{ fontWeight: 600 }}>
-                    Huygensoft Limited
+                <Typography variant="xxlText">Huygensoft Limited</Typography>
+                <Stack>
+                  <Typography>
+                    Front-end Developer | Lagos, Nigeria | 2022 - present
                   </Typography>
-                  <Typography>2022 - Till Date</Typography>
-                  <Typography variant="h6">
-                    <i>Front-end Web Developer</i>
+                  <Typography
+                    sx={{ backgroundColor: colors.grey[900], padding: 1 }}
+                  >
+                    Tools:{" "}
                   </Typography>
+                </Stack>
 
-                  <Typography variant="h6" sx={{ fontWeight: 300 }}>
-                    Contributed to the development of client-side web
+                {/* -..... */}
+                <Stack>
+                  <Typography variant="smText">
+                    - Contributed to the development of client-side web
                     applications <br />
                     using Reactjs and other Frontend technologies.
                   </Typography>
-                  <ul
-                    style={{
-                      fontFamily: "Fredoka",
-                      fontSize: 18,
-                      fontWeight: 300,
-                    }}
-                  >
-                    <li>
-                      Implemented responsive designs on multiple projects <br />
-                      resulting in improved user experience and engagement.
-                    </li>
-
-                    <li> Implemented dynamic and interactive pages.</li>
-                    <li>Utilization of advanced tools for development.</li>
-                  </ul>
+                  <Typography>
+                    -Implemented responsive designs on multiple projects <br />
+                    resulting in improved user experience and engagement.
+                  </Typography>
+                  <Typography>
+                    -Implemented dynamic and interactive pages.
+                  </Typography>
+                  <Typography>
+                    -Implemented dynamic and interactive pages.
+                  </Typography>
+                  {/* <Typography></Typography> */}
+                  {/* <Typography></Typography> */}
+                  {/* <Typography></Typography> */}
+                  {/* <Typography></Typography> */}
                 </Stack>
-              </Box>
-            </Box>
-          </Box>
+              </Stack>
 
-          <Footer />
-        {/* </PaddedBox> */}
+              {/* exp 2 */}
+              <Stack spacing={2} mt={5}>
+                <Typography variant="xxlText">Huygensoft Limited</Typography>
+                <Stack>
+                  <Typography>
+                    Front-end Developer | Lagos, Nigeria | 2022 - present
+                  </Typography>
+                  <Typography
+                    sx={{ backgroundColor: colors.grey[900], padding: 1 }}
+                  >
+                    Tools:{" "}
+                  </Typography>
+                </Stack>
+
+                {/* -..... */}
+                <Stack>
+                  <Typography variant="smText">
+                    - Contributed to the development of client-side web
+                    applications <br />
+                    using Reactjs and other Frontend technologies.
+                  </Typography>
+                  <Typography>
+                    -Implemented responsive designs on multiple projects <br />
+                    resulting in improved user experience and engagement.
+                  </Typography>
+                  <Typography>
+                    -Implemented dynamic and interactive pages.
+                  </Typography>
+                  <Typography>
+                    -Implemented dynamic and interactive pages.
+                  </Typography>
+                  {/* <Typography></Typography> */}
+                  {/* <Typography></Typography> */}
+                  {/* <Typography></Typography> */}
+                  {/* <Typography></Typography> */}
+                </Stack>
+              </Stack>
+            </Box>
+          </Stack>
+        </PaddedBox>
+
+        <Footer />
       </AboutBox>
     </>
+  );
+}
+
+function BrickDesignOne({ tag1, tag2, tag3, tag4 }) {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  const StyledBox = styled(Box)({
+    border: `1px solid ${colors.goldAccent[800]}`,
+    width: "150px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  });
+
+  return (
+    <Stack
+      direction="row"
+      spacing={2}
+      sx={{
+        height: "3rem",
+        // border: "1px solid white"
+      }}
+    >
+      <StyledBox>
+        <Typography>{tag1}</Typography>
+      </StyledBox>
+      <StyledBox>
+        <Typography>{tag2}</Typography>
+      </StyledBox>
+      <StyledBox>
+        <Typography>{tag3}</Typography>
+      </StyledBox>
+      <Box
+        sx={{
+          border: `1px solid ${colors.grey[800]}`,
+          width: "100px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Typography>{tag4}</Typography>
+      </Box>
+    </Stack>
+  );
+}
+
+function BrickDesignTwo({ tag1, tag2, tag3 }) {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  const StyledBox = styled(Box)({
+    border: `1px solid ${colors.grey[700]}`,
+    width: "150px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  });
+
+  return (
+    <Stack
+      direction="row"
+      spacing={2}
+      sx={{
+        height: "3rem",
+        // border: "1px solid white"
+      }}
+    >
+      <Box
+        sx={{
+          border: `1px solid ${colors.grey[800]}`,
+          borderLeft: "none",
+          width: "40px",
+        }}
+      ></Box>
+      <StyledBox>
+        <Typography>{tag1}</Typography>
+      </StyledBox>
+      <StyledBox>
+        <Typography>{tag2}</Typography>
+      </StyledBox>
+      <StyledBox>
+        <Typography>{tag3}</Typography>
+      </StyledBox>
+      <Box
+        sx={{
+          border: `1px solid ${colors.grey[800]}`,
+          borderRight: "none",
+          width: "40px",
+        }}
+      ></Box>
+    </Stack>
   );
 }

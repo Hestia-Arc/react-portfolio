@@ -130,17 +130,16 @@ export default function Project() {
         </Box> */}
 
         <Box
-          // direction={{ xs: "column", sm: "row" }}
-          // alignItems={{ xs: "center", sm: "flex-start" }}
-          // justifyContent="center"
           // divider={<Divider orientation="vertical" flexItem />}
-          // spacing={{ xs: 5, sm: 3 }}
           sx={{
             Height: "40rem",
             display: "flex",
             alignItems: "flex-end",
             overflowX: "auto",
+           
           }}
+          pb={3}
+          px={7}
         >
           <ProjectBox
             handleClick={() => setCardIndex(1)}
