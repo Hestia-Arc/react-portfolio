@@ -1,31 +1,33 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 // import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import { Box, Divider, Typography, styled } from "@mui/material";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
+import { Box, Typography, styled, useTheme } from "@mui/material";
+// import LinkedInIcon from "@mui/icons-material/LinkedIn";
+// import GitHubIcon from "@mui/icons-material/GitHub";
+// import TwitterIcon from "@mui/icons-material/Twitter";
+// import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import { Link } from "react-router-dom";
-import FlareRoundedIcon from '@mui/icons-material/FlareRounded';
+import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
+// import { tokens } from "../../theme";
 
-
-const NavContainer = styled("nav")(({theme}) => ({
-  height: "120px",
+const NavContainer = styled("nav")(({ theme }) => ({
+  height: "70px",
   padding: "10px 0px",
+  // border: "1px solid black",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 
   a: {
     textDecoration: "none",
-    color: "black",
-    transition: 'transform 0.5s',
+    color: "#fff",
+    transition: "transform 0.5s",
 
-    '&:hover': {
-      color: '#d32f2f',
-      transform: 'translateY(-5px)',
-    }
+    "&:hover": {
+      color: "#d32f2f",
+      transform: "translateY(-5px)",
+    },
   },
-  
-
 
   // [theme.breakpoints.down("sm")]: {
   //   padding: "0px 30px",
@@ -41,21 +43,23 @@ const NavContainer = styled("nav")(({theme}) => ({
   // },
 }));
 
-const LinkIcon = styled('a')({
-  a: {
-    textDecoration: "none",
-    color: "black",
-    transition: 'transform 0.5s',
+// const LinkIcon = styled("a")({
+//   a: {
+//     textDecoration: "none",
+//     color: "black",
+//     transition: "transform 0.5s",
 
-    '&:hover': {
-      color: '#ff004f',
-      transform: 'translateY(-5px)',
-    }
-  },
-})
+//     "&:hover": {
+//       color: "#ff004f",
+//       transform: "translateY(-5px)",
+//     },
+//   },
+// });
 
 // ------------------------------
 function NavBar() {
+  const theme = useTheme();
+  // const colors = tokens(theme.palette.mode);
   // const [active, setActive] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
 
@@ -66,11 +70,41 @@ function NavBar() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          width: "100%",
         }}
       >
-        <FlareRoundedIcon sx={{fontSize: '37px'}}/>
+        <FlareRoundedIcon sx={{ fontSize: "37px" }} />
+        <Stack direction="row" spacing={4} sx={{
+              [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
+display: 'none'
+              }
+
+        }}>
+          <Link to="about">
+            <Typography variant="h6">About</Typography>
+          </Link>
+
+          <Link to="project">
+            <Typography variant="h6">Portfolio</Typography>
+          </Link>
+
+          {/* <Link to='contact'>
+  <Typography variant="h6">Contact</Typography>
+  </Link> */}
+        </Stack>
+      </Box>
+
+      {/* <Divider sx={{ margin: "20px 0" }} /> */}
+      {/* 
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: { xs: "center", sm: "flex-end" },
+          alignItems: "center",
+        }}
+      >
         <Stack
-        sx={{display: {xs: 'none', sm: 'block'} }}
+          sx={{ display: { xs: "none", sm: "block" } }}
           direction="row"
           justifyContent="space-between"
           alignItems="center"
@@ -97,34 +131,7 @@ function NavBar() {
             </a>
           </span>
         </Stack>
-      </Box>
-
-      <Divider sx={{ margin: "20px 0" }} />
-
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: {xs: 'center',sm:"flex-end"},
-          alignItems: "center",
-        }}
-      >
-        <Stack direction="row" spacing={4} >
-
-        <Link to='about'>
-          <Typography variant="h6">About</Typography>
-          </Link>
-
-          <Link to='project'>
-          <Typography variant="h6">Portfolio</Typography>
-          </Link>
-          
-
-          {/* <Link to='contact'>
-          <Typography variant="h6">Contact</Typography>
-          </Link> */}
-          
-        </Stack>
-      </Box>
+      </Box> */}
     </NavContainer>
   );
 }
