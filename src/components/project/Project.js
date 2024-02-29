@@ -3,14 +3,18 @@ import {
   Box,
   Stack,
   Typography,
+  colors,
   styled,
   useTheme,
 } from "@mui/material";
+import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
+// import HandymanRoundedIcon from '@mui/icons-material/HandymanRounded';
 import { Link } from "react-router-dom";
+import { projects } from "../../data/projectData";
 // import Image from "../../images/p8.jpg";
-import Season from "../../images/season app.png";
-import Movie from "../../images/proj-movie2.png";
-import Nature from "../../images/proj-nature.png";
+// import Season from "../../images/season app.png";
+// import Movie from "../../images/proj-movie2.png";
+// import Nature from "../../images/proj-nature.png";
 import darkbg from "../../data/c-bg.png";
 import Footer from "../Footer";
 import { tokens } from "../../theme";
@@ -124,24 +128,72 @@ export default function Project() {
       {/* PROJECTS */}
       {/* ------------------------------------- */}
 
-      <Box sx={{ margin: "40px 0 " }}>
+      <Stack
+        justifyContent={{ xs: "space-between" }}
+        sx={{
+          minHeight: { xs: "584px", sm: "80vh" },
+          maxHeight: { xs: "585px", sm: "80vh" },
+          margin: { xs: "0px", sm: "40px 0 " },
+        }}
+      >
         {/* <Box sx={{ textAlign: "center", marginBottom: 7 }}>
           <Typography variant="h3">Projects</Typography>
         </Box> */}
 
+        {/* PROJECT MOBILE DISPLAY */}
+        <Box
+          sx={{
+            [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+              {
+                display: "block",
+              },
+            [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
+              {
+                display: "none",
+                // color: colors.baseAccent[500],
+              },
+          }}
+        >
+          <DisplayMobileProject data={projects[cardIndex - 1]} />
+        </Box>
+
+        {/* PROJECT LARGE SCREEN DISPLAY */}
         <Box
           // divider={<Divider orientation="vertical" flexItem />}
           sx={{
-            Height: "40rem",
+            height: { xs: "fit-content", sm: "32rem" },
             display: "flex",
             alignItems: "flex-end",
             overflowX: "auto",
-           
+            overflowY: "hidden",
+            // border: "1px solid blue",
+
+            [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+              {
+                padding: "10px 2px",
+              },
           }}
           pb={3}
           px={7}
         >
-          <ProjectBox
+          {projects.map((project, key) => {
+            const { id, title, img, link, desc } = project;
+
+            return (
+              <ProjectBox
+                key={key}
+                handleClick={() => setCardIndex(id)}
+                active={cardIndex === id ? true : false}
+                index={cardIndex === id && cardIndex}
+                img={img}
+                title={title}
+                link={link}
+                desc={desc}
+              />
+            );
+          })}
+          {/* ------------------- */}
+          {/* <ProjectBox
             handleClick={() => setCardIndex(1)}
             active={cardIndex === 1 ? true : false}
             index={cardIndex === 1 && cardIndex}
@@ -149,111 +201,42 @@ export default function Project() {
             title="Season Gallery"
             link="https://season-gallery.vercel.app/gallery"
             desc="A responsive image gallery that showcases collection of images about the four seasons around the year."
-          />
-          <ProjectBox
-            handleClick={() => setCardIndex(2)}
-            active={cardIndex === 2 ? true : false}
-            index={cardIndex === 2 && cardIndex}
-            img={Movie}
-            title="Movie Discovery App"
-            link="https://movie-discovery-app-hng.vercel.app/"
-            desc="A movie discovery application, where user can discover top rated movies, see details about each one and search for a movie by title."
-          />
-          <ProjectBox
-            handleClick={() => setCardIndex(3)}
-            active={cardIndex === 3 ? true : false}
-            index={cardIndex === 3 && cardIndex}
-            img={Nature}
-            title="Weather App"
-            link="https://natures-forecast.netlify.app/"
-            desc="An application which shows the weather information (temperature, humidity etc) of a location. And predict the conditions of the atmosphere for a given location and time. "
-          />
-          <ProjectBox
-            handleClick={() => setCardIndex(4)}
-            active={cardIndex === 4 ? true : false}
-            index={cardIndex === 4 && cardIndex}
-            img={Nature}
-            title="Weather App"
-            link="https://natures-forecast.netlify.app/"
-            desc="An application which shows the weather information (temperature, humidity etc) of a location. And predict the conditions of the atmosphere for a given location and time. "
-          />
-          <ProjectBox
-            handleClick={() => setCardIndex(5)}
-            active={cardIndex === 5 ? true : false}
-            index={cardIndex === 5 && cardIndex}
-            img={Nature}
-            title="Weather App"
-            link="https://natures-forecast.netlify.app/"
-            desc="An application which shows the weather information (temperature, humidity etc) of a location. And predict the conditions of the atmosphere for a given location and time. "
-          />
-          <ProjectBox
-            handleClick={() => setCardIndex(6)}
-            active={cardIndex === 6 ? true : false}
-            index={cardIndex === 6 && cardIndex}
-            img={Movie}
-            title="Movie Discovery App"
-            link="https://movie-discovery-app-hng.vercel.app/"
-            desc="A movie discovery application, where user can discover top rated movies, see details about each one and search for a movie by title."
-          />
-          <ProjectBox
-            handleClick={() => setCardIndex(7)}
-            active={cardIndex === 7 ? true : false}
-            index={cardIndex === 7 && cardIndex}
-            img={Movie}
-            title="Movie Discovery App"
-            link="https://movie-discovery-app-hng.vercel.app/"
-            desc="A movie discovery application, where user can discover top rated movies, see details about each one and search for a movie by title."
-          />
-          <ProjectBox
-            handleClick={() => setCardIndex(8)}
-            active={cardIndex === 8 ? true : false}
-            index={cardIndex === 8 && cardIndex}
-            img={Movie}
-            title="Movie Discovery App"
-            link="https://movie-discovery-app-hng.vercel.app/"
-            desc="A movie discovery application, where user can discover top rated movies, see details about each one and search for a movie by title."
-          />
-          <ProjectBox
-            handleClick={() => setCardIndex(9)}
-            active={cardIndex === 9 ? true : false}
-            index={cardIndex === 9 && cardIndex}
-            img={Movie}
-            title="Movie Discovery App"
-            link="https://movie-discovery-app-hng.vercel.app/"
-            desc="A movie discovery application, where user can discover top rated movies, see details about each one and search for a movie by title."
-          />
+          /> */}
         </Box>
-      </Box>
+      </Stack>
 
       <Footer />
     </Box>
   );
 }
 
+// --------------------------------------------
 function ProjectBox(props) {
   const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
 
-  const StyledImg = styled("img")((props) => ({
-    height: props.active ? "480px" : "220px",
-    width: props.active ? "350px" : "180px",
-    borderRadius: "4px",
+  // const StyledImg = styled("img")((props) => ({
+  //   height: props.active ? "480px" : "220px",
+  //   width: props.active ? "350px" : "180px",
+  //   borderRadius: "4px",
 
-    [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
-      height: props.active ? "300px" : "180px",
-      width: props.active ? "200px" : "150px",
-    },
-  }));
+  //   [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
+  //     height: props.active ? "300px" : "180px",
+  //     width: props.active ? "200px" : "150px",
+  //   },
+  // }));
 
-  const StyledImgMobile = styled("img")((props) => ({
-    height: props.active ? "160px" : "90px",
-    width: props.active ? "260px" : "180px",
-    borderRadius: "4px",
+  // const StyledImgMobile = styled("img")((props) => ({
+  //   // height: props.active ? "90px" : "90px",
+  //   height: "120px",
+  //   width: props.active ? "100px" : "100px",
+  //   borderRadius: "4px",
 
-    // [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
-    //   height: props.active ? "300px" : "180px",
-    //   width: props.active ? "200px" : "150px",
-    // },
-  }));
+  //   // [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
+  //   //   height: props.active ? "300px" : "180px",
+  //   //   width: props.active ? "200px" : "150px",
+  //   // },
+  // }));
 
   return (
     <>
@@ -263,96 +246,70 @@ function ProjectBox(props) {
         sx={{
           flex: "0 0 auto",
           // border: "1px solid blue",
-          height: props.active && "63vh",
+          // height: props.active && "63vh",
+          // height: "150px",
           width: "fit-content",
-          marginRight: "2rem",
-          position: "relative",
-          borderLeft: props.active && "3px solid white",
-          paddingLeft: props.active && "1rem",
+          marginRight: "9px",
+          backgroundColor: props.active && colors.goldAccent[100],
+          borderLeft: props.active && "1px solid white",
+          padding: props.active && "0.5rem",
 
           [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]: {
             display: "none",
           },
         }}
       >
-        <Stack alignItems="flex-start" sx={{position: props.active && "absolute", top: 0, left: 0, height: '100px'}}>
-          {/* PROJECT IMAGE */}
-          {/* <a href={props.link} target="_parent"> */}
-          <Box
-            sx={{
-              // flex: 5,
-              borderRadius: "4px",
-              boxShadow: "3px 6px 17px rgba(0,0,0,.3)",
-              // backgroundColor: "rgba(0,0,0,.3)",
-              // background: `url(${props.img})`,
-              // backgroundPosition: "center",
-              // backgroundRepeat: "no-repeat",
-              // backgroundSize: "cover",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              // height: 380,
-              // border: "1px solid black",
-            }}
-          >
-            <StyledImgMobile
-              src={props.img}
-              alt="icon"
-              loading="lazy"
-              decoding="async"
-              active={props.active}
-              style={
-                {
-                  // height: props.active ? "480px" :  "220px",
-                  // width: props.active ?  "350px" :  "180px",
-                  // borderRadius: "4px",
-                  // [`@media screen and (max-width: 600px)`]:
-                  // {
-                  //   height: "300px" :  "180px",
-                  //   width: "200px" :  "150px",
-                  // },
-                }
+        {/* PROJECT IMAGE */}
+        <Box
+          sx={{
+            // flex: 5,
+          
+            borderRadius: "4px",
+            boxShadow: "3px 6px 17px rgba(0,0,0,.3)",
+            // backgroundColor: "rgba(0,0,0,.3)",
+            // background: `url(${props.img})`,
+            // backgroundPosition: "center",
+            // backgroundRepeat: "no-repeat",
+            // backgroundSize: "cover",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "120px",
+            width: "100px",
+            background: `url(${props.img})`,
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            // height: 380,
+            // border: "1px solid black",
+          }}
+        >
+          {/* <StyledImgMobile
+            src={props.img}
+            alt="icon"
+            loading="lazy"
+            decoding="async"
+            active={props.active}
+            style={
+              {
+                // height: props.active ? "480px" :  "220px",
+                // width: props.active ?  "350px" :  "180px",
+                // borderRadius: "4px",
+                // [`@media screen and (max-width: 600px)`]:
+                // {
+                //   height: "300px" :  "180px",
+                //   width: "200px" :  "150px",
+                // },
               }
-            />
-          </Box>
-          {/* </a> */}
-
-          {/* PROJECT NUMBER */}
-          {/* <Box
-        sx={{
-          display: props.active ? "block" : "none",
-          position: "absolute",
-          top: "-0",
-          left: "-5rem",
-        }}
-      >
-        <Typography variant="smDisplay" fontWeight={300}>
-          {props.index ? `0${props.index}`: ''}
-        </Typography>
-      </Box> */}
-
-          {/* DESCRIPTION & INFO */}
-          <Stack
-            justifyContent=""
-            sx={{
-              minHeight: { xs: 100, md: 200 },
-              width: props.active ? "380px" : "",
-              // border: "1px solid blue"
-              display: props.active ? "flex" : "none",
-              
-            }}
-          >
-            <Typography variant="h4">
-              {props.title ? <>{props.title}</> : "Admin Dashboard"}
-            </Typography>
-            <Typography variant="h7">{props.desc}</Typography>
-          </Stack>
-        </Stack>
+            }
+          /> */}
+        </Box>
       </Box>
 
       {/* ----------big screens */}
       <Box
         onClick={props.handleClick}
+        key={props.key}
         sx={{
           flex: "0 0 auto",
           // border: "1px solid blue",
@@ -413,11 +370,17 @@ function ProjectBox(props) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            height: props.active ? '480px' : "120px",
+            width: props.active ? '350px' : "100px",
+            background: `url(${props.img})`,
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
             // height: 380,
             // border: "1px solid black",
           }}
         >
-          <StyledImg
+          {/* <StyledImg
             src={props.img}
             alt="icon"
             loading="lazy"
@@ -435,10 +398,39 @@ function ProjectBox(props) {
                 // },
               }
             }
-          />
+          /> */}
         </Box>
         {/* </a> */}
       </Box>
     </>
   );
 }
+
+// --------------------------------------------
+const DisplayMobileProject = (props) => {
+  const { title, img, desc, link } = props.data;
+
+  return (
+    <Stack spacing={2} sx={{ width: "100%", height: "100%" }} p={1}>
+      <Box
+        sx={{
+          height: "185px",
+          border: `1px solid ${colors.grey[800]}`,
+          background: `url(${img})`,
+          backgroundPosition: "top center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        {/* <img src={img} alt={title} style={{height: "150px", width: '100%'}} /> */}
+      </Box>
+     <Stack direction='row' justifyContent='space-between' alignItems='center'>
+     <Typography variant="mdText">{title}</Typography>
+     <a href={link} target="_blank" rel="noreferrer"><OpenInNewRoundedIcon/></a>
+     </Stack>
+      <Typography variant="xsText">{desc}</Typography>
+      <Typography></Typography>
+      <Typography></Typography>
+    </Stack>
+  );
+};
