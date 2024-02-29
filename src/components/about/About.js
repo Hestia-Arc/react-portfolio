@@ -66,16 +66,16 @@ const TextBox = styled(Typography)({
   // lineHeight: "1.8rem",
 });
 
-const SkillBox = (props) => {
-  return (
-    <Box sx={{ display: "flex", alignItems: "center", color: "#fff" }}>
-      <TaskAltRoundedIcon color="blue" />
-      <Typography variant="h5" sx={{ marginLeft: "5px" }}>
-        {props.name}
-      </Typography>
-    </Box>
-  );
-};
+// const SkillBox = (props) => {
+//   return (
+//     <Box sx={{ display: "flex", alignItems: "center", color: "#fff" }}>
+//       <TaskAltRoundedIcon color="blue" />
+//       <Typography variant="h5" sx={{ marginLeft: "5px" }}>
+//         {props.name}
+//       </Typography>
+//     </Box>
+//   );
+// };
 
 export default function About() {
   const theme = useTheme();

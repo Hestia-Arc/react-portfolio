@@ -30,3 +30,8 @@ export const Overlay = styled(Box)({
   bottom: 0,
   backgroundColor: "rgba(0,0,0,0.7)",
 })
+
+
+
+// MERGED PORTFOLIO V2 28 FEB 2024 LINK
+// https://github.com/Hestia-Arc/react-portfolio/pull/9#issue-2159987189
