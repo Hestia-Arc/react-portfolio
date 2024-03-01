@@ -8,6 +8,11 @@ export const PaddedBox = styled(Box)(props => ({
     padding: '0 1rem',
 
   },
+  [props.theme.breakpoints.only("sm") ]:
+  {
+    padding: '0 1.8rem',
+
+  },
   
 
     // [`@media screen and (max-width: ${props.theme.breakpoints.values.sm}px)`]:
