@@ -7,21 +7,16 @@ import {
   styled,
   useTheme,
 } from "@mui/material";
-import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
-// import HandymanRoundedIcon from '@mui/icons-material/HandymanRounded';
+import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
+import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
 import { Link } from "react-router-dom";
 import { projects } from "../../data/projectData";
-// import Image from "../../images/p8.jpg";
-// import Season from "../../images/season app.png";
-// import Movie from "../../images/proj-movie2.png";
-// import Nature from "../../images/proj-nature.png";
 import darkbg from "../../data/c-bg.png";
 import Footer from "../Footer";
 import { tokens } from "../../theme";
 
 const NavBox = styled(Box)({
   padding: "10px 0",
-  // height: '280px',
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -45,22 +40,11 @@ const NavBox = styled(Box)({
   },
 });
 
-// const ContentBox = styled(Stack)(({ theme }) => ({
-//   // flex: 1,
-//   // border: "1px solid black",
-//   // marginBottom: 50,
-//   // [theme.breakpoints.down("sm")]: {
-//   //   // width: 200,
-//   // },
-//   // [theme.breakpoints.between("sm", "md")]: {
-//   //   padding: "0px 50px",
-//   //   height: "568px",
-//   // },
 //   // [theme.breakpoints.up("xl")]: {
 //   //   padding: "0px 400px",
 //   //   height: "778px",
 //   // },
-// }));
+
 // -----------------------------------
 
 export default function Project() {
@@ -88,6 +72,14 @@ export default function Project() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         color: colors.grey[200],
+
+        a: {
+          textDecoration: "none",
+          color: "inherit",
+          "&:hover": {
+            color: colors.grey[600],
+          },
+        },
       }}
     >
       {/* ------------------------------------ */}
@@ -131,8 +123,8 @@ export default function Project() {
       <Stack
         justifyContent={{ xs: "space-between" }}
         sx={{
-          minHeight: { xs: "584px", sm: "80vh" },
-          maxHeight: { xs: "585px", sm: "80vh" },
+          minHeight: { xs: "584px", sm: "535px" },
+          maxHeight: { xs: "585px", sm: "540px" },
           margin: { xs: "0px", sm: "40px 0 " },
         }}
       >
@@ -150,7 +142,6 @@ export default function Project() {
             [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
               {
                 display: "none",
-                // color: colors.baseAccent[500],
               },
           }}
         >
@@ -161,23 +152,24 @@ export default function Project() {
         <Box
           // divider={<Divider orientation="vertical" flexItem />}
           sx={{
-            height: { xs: "fit-content", sm: "32rem" },
+            height: "fit-content",
             display: "flex",
             alignItems: "flex-end",
             overflowX: "auto",
             overflowY: "hidden",
-            // border: "1px solid blue",
+            borderBottom: `1px solid ${colors.grey[800]}`,
 
             [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
               {
                 padding: "10px 2px",
               },
           }}
-          pb={3}
+          pt={1}
+          pb={{md:1, lg:2}}
           px={7}
         >
           {projects.map((project, key) => {
-            const { id, title, img, link, desc } = project;
+            const { id, title, img, link, desc, stack } = project;
 
             return (
               <ProjectBox
@@ -189,6 +181,7 @@ export default function Project() {
                 title={title}
                 link={link}
                 desc={desc}
+                stack={stack}
               />
             );
           })}
@@ -215,29 +208,6 @@ function ProjectBox(props) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  // const StyledImg = styled("img")((props) => ({
-  //   height: props.active ? "480px" : "220px",
-  //   width: props.active ? "350px" : "180px",
-  //   borderRadius: "4px",
-
-  //   [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
-  //     height: props.active ? "300px" : "180px",
-  //     width: props.active ? "200px" : "150px",
-  //   },
-  // }));
-
-  // const StyledImgMobile = styled("img")((props) => ({
-  //   // height: props.active ? "90px" : "90px",
-  //   height: "120px",
-  //   width: props.active ? "100px" : "100px",
-  //   borderRadius: "4px",
-
-  //   // [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
-  //   //   height: props.active ? "300px" : "180px",
-  //   //   width: props.active ? "200px" : "150px",
-  //   // },
-  // }));
-
   return (
     <>
       {/* -----------mobile */}
@@ -246,13 +216,11 @@ function ProjectBox(props) {
         sx={{
           flex: "0 0 auto",
           // border: "1px solid blue",
-          // height: props.active && "63vh",
-          // height: "150px",
           width: "fit-content",
           marginRight: "9px",
-          backgroundColor: props.active && colors.goldAccent[100],
+          backgroundColor: props.active && colors.grey[800],
           borderLeft: props.active && "1px solid white",
-          padding: props.active && "0.5rem",
+          padding: props.active && "0.8rem 0 0 0.8rem",
 
           [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]: {
             display: "none",
@@ -262,48 +230,18 @@ function ProjectBox(props) {
         {/* PROJECT IMAGE */}
         <Box
           sx={{
-            // flex: 5,
-          
             borderRadius: "4px",
             boxShadow: "3px 6px 17px rgba(0,0,0,.3)",
-            // backgroundColor: "rgba(0,0,0,.3)",
-            // background: `url(${props.img})`,
-            // backgroundPosition: "center",
-            // backgroundRepeat: "no-repeat",
-            // backgroundSize: "cover",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            backgroundColor: "rgba(0,0,0,.3)",
             height: "120px",
             width: "100px",
             background: `url(${props.img})`,
             backgroundPosition: "top center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            // height: 380,
             // border: "1px solid black",
           }}
-        >
-          {/* <StyledImgMobile
-            src={props.img}
-            alt="icon"
-            loading="lazy"
-            decoding="async"
-            active={props.active}
-            style={
-              {
-                // height: props.active ? "480px" :  "220px",
-                // width: props.active ?  "350px" :  "180px",
-                // borderRadius: "4px",
-                // [`@media screen and (max-width: 600px)`]:
-                // {
-                //   height: "300px" :  "180px",
-                //   width: "200px" :  "150px",
-                // },
-              }
-            }
-          /> */}
-        </Box>
+        ></Box>
       </Box>
 
       {/* ----------big screens */}
@@ -314,7 +252,7 @@ function ProjectBox(props) {
           flex: "0 0 auto",
           // border: "1px solid blue",
           width: "fit-content",
-          marginRight: "2rem",
+          marginRight: "11px",
           position: "relative",
 
           [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
@@ -327,60 +265,169 @@ function ProjectBox(props) {
           sx={{
             display: props.active ? "block" : "none",
             position: "absolute",
-            top: "-0",
-            left: "-5rem",
+            top:  {sm:"0.6rem", lg: "0.6rem"},
+            left: {sm:"-3.2rem", lg: "-4.5rem"},
           }}
         >
-          <Typography variant="smDisplay" fontWeight={300}>
+          <Typography variant="xsDisplay" fontWeight={300} sx={{fontSize: {lg: "3.5rem"}}}>
             {props.index ? `0${props.index}` : ""}
           </Typography>
         </Box>
 
         {/* DESCRIPTION & INFO */}
         <Stack
+          spacing={1}
           justifyContent=""
           sx={{
             minHeight: { xs: 100, md: 200 },
-            width: props.active ? "380px" : "",
+            width: props.active ? "287px" : "",
             // border: "1px solid blue"
             display: props.active ? "flex" : "none",
             position: "absolute",
             top: 0,
-            right: "-24rem",
+            right: "-17.7rem",
           }}
         >
-          <Typography variant="h4">
-            {props.title ? <>{props.title}</> : "Admin Dashboard"}
+          <Stack
+            direction="row"
+            spacing={1}
+            alignItems="end"
+          >
+            <Typography variant="xlText">
+              {props.title ? <>{props.title}</> : "..."}
+            </Typography>
+            <a href={props.link} target="_blank" rel="noreferrer">
+              <OpenInNewRoundedIcon fontSize="small" />
+            </a>
+          </Stack>
+
+          <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
+            {props.desc}
           </Typography>
-          <Typography variant="h7">{props.desc}</Typography>
+
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <Stack
+              justifyContent="center"
+              alignItems="center"
+              flexWrap='wrap'
+              sx={{
+                padding: "4px",
+                backgroundColor: colors.grey[900],
+                border: `1px solid ${colors.grey[800]}`,
+                borderRadius: "4px",
+              }}
+            >
+              <HandymanRoundedIcon fontSize="small" color="primary" />
+            </Stack>
+            {props.stack.map((item) => {
+              return (
+                <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
+                  {item} |{" "}
+                </Typography>
+              );
+            })}
+          </Stack>
         </Stack>
 
         {/* PROJECT IMAGE */}
-        {/* <a href={props.link} target="_parent"> */}
         <Box
           sx={{
-            // flex: 5,
-            borderRadius: "4px",
+            borderRadius: "3px",
             boxShadow: "3px 6px 17px rgba(0,0,0,.3)",
             // backgroundColor: "rgba(0,0,0,.3)",
-            // background: `url(${props.img})`,
-            // backgroundPosition: "center",
-            // backgroundRepeat: "no-repeat",
-            // backgroundSize: "cover",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: props.active ? '480px' : "120px",
-            width: props.active ? '350px' : "100px",
+            height: props.active ? { sm: "354px",md: '354px', lg: "450px" } : {xs:"120px", lg: "180px"},
+            width: props.active ? { sm: "228px",md:'230px', lg: "310px" } : {xs:"100px",lg: "140px"},
             background: `url(${props.img})`,
             backgroundPosition: "top center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            // height: 380,
             // border: "1px solid black",
           }}
+        ></Box>
+      </Box>
+    </>
+  );
+}
+
+// --------------------------------------------
+const DisplayMobileProject = (props) => {
+  const { title, img, desc, link, stack } = props.data;
+
+  return (
+    <Stack spacing={2} sx={{ width: "100%", height: "100%" }} p={1}>
+      <Box
+        sx={{
+          height: "185px",
+          border: `1px solid ${colors.grey[800]}`,
+          background: `url(${img})`,
+          backgroundPosition: "top center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      ></Box>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Typography variant="mdText">{title}</Typography>
+        <a href={link} target="_blank" rel="noreferrer">
+          <OpenInNewRoundedIcon />
+        </a>
+      </Stack>
+      <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
+        {desc}
+      </Typography>
+
+      <Stack direction="row" alignItems="center" spacing={1}>
+        <Stack
+          justifyContent="center"
+          alignItems="center"
+          sx={{
+            padding: "4px",
+            backgroundColor: colors.grey[900],
+            border: `1px solid ${colors.grey[800]}`,
+            borderRadius: "4px",
+          }}
         >
-          {/* <StyledImg
+          <HandymanRoundedIcon fontSize="small" color="primary" />
+        </Stack>
+        {stack.map((item) => {
+          return (
+            <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
+              {item} |{" "}
+            </Typography>
+          );
+        })}
+      </Stack>
+    </Stack>
+  );
+};
+
+// ================================================================
+// const StyledImg = styled("img")((props) => ({
+//   height: props.active ? "480px" : "220px",
+//   width: props.active ? "350px" : "180px",
+//   borderRadius: "4px",
+
+//   [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
+//     height: props.active ? "300px" : "180px",
+//     width: props.active ? "200px" : "150px",
+//   },
+// }));
+
+// const StyledImgMobile = styled("img")((props) => ({
+//   // height: props.active ? "90px" : "90px",
+//   height: "120px",
+//   width: props.active ? "100px" : "100px",
+//   borderRadius: "4px",
+
+//   // [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
+//   //   height: props.active ? "300px" : "180px",
+//   //   width: props.active ? "200px" : "150px",
+//   // },
+// }));
+
+/* <StyledImgMobile
             src={props.img}
             alt="icon"
             loading="lazy"
@@ -398,39 +445,24 @@ function ProjectBox(props) {
                 // },
               }
             }
-          /> */}
-        </Box>
-        {/* </a> */}
-      </Box>
-    </>
-  );
-}
+          /> */
 
-// --------------------------------------------
-const DisplayMobileProject = (props) => {
-  const { title, img, desc, link } = props.data;
-
-  return (
-    <Stack spacing={2} sx={{ width: "100%", height: "100%" }} p={1}>
-      <Box
-        sx={{
-          height: "185px",
-          border: `1px solid ${colors.grey[800]}`,
-          background: `url(${img})`,
-          backgroundPosition: "top center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        {/* <img src={img} alt={title} style={{height: "150px", width: '100%'}} /> */}
-      </Box>
-     <Stack direction='row' justifyContent='space-between' alignItems='center'>
-     <Typography variant="mdText">{title}</Typography>
-     <a href={link} target="_blank" rel="noreferrer"><OpenInNewRoundedIcon/></a>
-     </Stack>
-      <Typography variant="xsText">{desc}</Typography>
-      <Typography></Typography>
-      <Typography></Typography>
-    </Stack>
-  );
-};
+/* <StyledImg
+            src={props.img}
+            alt="icon"
+            loading="lazy"
+            decoding="async"
+            active={props.active}
+            style={
+              {
+                // height: props.active ? "480px" :  "220px",
+                // width: props.active ?  "350px" :  "180px",
+                // borderRadius: "4px",
+                // [`@media screen and (max-width: 600px)`]:
+                // {
+                //   height: "300px" :  "180px",
+                //   width: "200px" :  "150px",
+                // },
+              }
+            }
+          /> */

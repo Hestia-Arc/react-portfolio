@@ -31,7 +31,9 @@ function App() {
             },
           }}
         />
-        <Box>
+        <Box sx={{minWidth: {xs: "320px", sm: "600px", md: "1024px",lg: "1350px"},maxWidth: {xs: "599px", sm: "1023px", md: "1439px",lg:"1440px"}, margin: '0 auto',
+      
+      }}>
           <CssBaseline />
           {/* ------------------------------ */}
           {/* ROUTES*/}

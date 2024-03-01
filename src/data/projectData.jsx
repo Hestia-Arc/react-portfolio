@@ -4,6 +4,7 @@ import Nature from "../images/Weather-Application.resized.png";
 import Recipe from "../images/Recipe-app.resized.png";
 import Restaurant from "../images/Mia-s-Kitn.resized.png";
 import Clearlink from "../images/ClearLink.resized.png";
+import Portfolio from "../images/Portfolio.resized.png"
 
 
 
@@ -15,16 +16,16 @@ export const projects = [
     img: Restaurant,
     link: "https://mias-restuarant.vercel.app/",
     desc: "Restaurant Landing page",
-    stack: [],
+    stack: ['React', 'Material UI', 'Vite'],
     src: "",
   },
   {
     id: 2,
     title: "Recipe App",
     img: Recipe,
-    link: "https://movie-discovery-app-hng.vercel.app/",
+    link: "https://recipe-app-three-kohl.vercel.app/",
     desc: "Recipe App",
-    stack: [],
+    stack: ['HTML','TailwindCSS', 'Typescript', 'theMealDB'],
     src: "",
   },
   {
@@ -33,7 +34,7 @@ export const projects = [
     img: Nature,
     link: "https://natures-forecast.netlify.app/",
     desc: "An application which shows the weather information (temperature, humidity etc) of a location. And predict the conditions of the atmosphere for a given location and time.",
-    stack: [],
+    stack: ['React','Bootstrap', 'Axios', 'Open Weather API'],
     src: "",
   },
   {
@@ -42,16 +43,16 @@ export const projects = [
     img: Movie,
     link: "https://movie-discovery-app-hng.vercel.app/",
     desc: "A movie discovery application, where user can discover top rated movies, see details about each one and search for a movie by title.",
-    stack: [],
+    stack: ['React','MUI', 'Fetch API','The Movie DB API'],
     src: "",
   },
   {
     id: 5,
     title: "ClearLink Landing page",
     img: Clearlink,
-    link: "https://movie-discovery-app-hng.vercel.app/",
+    link: "https://clearlink-alpha.vercel.app/",
     desc: "ClearLink Landing page",
-    stack: [],
+    stack: ['React', 'Material UI', 'Vite'],
     src: "",
   },
   {
@@ -60,18 +61,18 @@ export const projects = [
     img: Season,
     link: "https://season-gallery.vercel.app/gallery",
     desc: "A responsive image gallery that showcases collection of images about the four seasons around the year.",
-    stack: [],
+    stack: ['React', 'Material UI', 'SortableJS'],
     src: "",
   },
-  // {
-  //   id: 7,
-  //   title: "Season Gallery",
-  //   img: Season,
-  //   link: "https://season-gallery.vercel.app/gallery",
-  //   desc: "A responsive image gallery that showcases collection of images about the four seasons around the year.",
-  //   stack: [],
-  //   src: "",
-  // },
+  {
+    id: 7,
+    title: "Portfolio",
+    img: Portfolio,
+    link: "https://season-gallery.vercel.app/gallery",
+    desc: "A responsive portfolio",
+    stack: ["React", "MUI"],
+    src: "",
+  },
   // {
   //   id: 8,
   //   title: "Weather App",
