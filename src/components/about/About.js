@@ -19,6 +19,7 @@ import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRound
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
 import CV from "../../data/Resume-Afolabi Esther.pdf";
 import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
+import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
 import Footer from "../Footer";
 import darkbg from "../../data/c-bg.png";
 import { tokens } from "../../theme";
@@ -151,9 +152,9 @@ export default function About() {
 
           {/* ------------ */}
           <Stack
-            direction="row"
+            direction={{ xs: "column-reverse", sm: "row" }}
             sx={{
-              border: "1px solid white",
+              // border: "1px solid white",
             }}
           >
             {/* ==================== */}
@@ -251,6 +252,9 @@ export default function About() {
             <Box
               sx={{
                 flex: 1,
+                display: {xs: 'flex', sm: "block"},
+                flexDirection: "column",
+                alignItems: 'center'
                 // border: "1px solid black",
               }}
             >
@@ -261,9 +265,9 @@ export default function About() {
                 loading="lazy"
               />
 
-              <Stack spacing={1} alignItems="center" sx={{ width: "100%" }}>
+              <Stack spacing={1} alignItems="center" sx={{ width: {xs: "80%", sm: "100%"} }}>
                 <Stack
-                  spacing={2}
+                  spacing={{xs: 1, sm:2}}
                   direction="row"
                   justifyContent="space-evenly"
                   alignItems="center"
@@ -320,13 +324,13 @@ export default function About() {
         {/* --------------------------------------- */}
         {/* SKILLS */}
         <PaddedBox mb={5}>
-          <Stack direction="row">
+          <Stack direction={{ xs: "column", sm: "row" }}>
             {/* BOX-1 */}
             <Stack
               spacing={4}
               sx={{
                 flex: 1,
-                minHeight: 400,
+                minHeight: { xs: "fit-content", sm: 400 },
                 // border: "1px solid #ebebeb",
                 borderRadius: "10px",
                 marginTop: "20px ",
@@ -339,7 +343,7 @@ export default function About() {
                 Skills
               </Typography>
 
-              <Box sx={{ width: "400px" }}>
+              <Box sx={{ width: { xs: "100%", sm: "400px" } }}>
                 <Typography
                   variant="xsText"
                   // sx={{ borderBottom: "1px solid #ebebeb" }}
@@ -357,6 +361,9 @@ export default function About() {
             <Box
               sx={{
                 flex: 1,
+                display: {xs: 'flex', sm: 'block'},
+                overflowX: "auto",
+                borderBottom: {xs:`1px solid ${colors.grey[800]}`, sm: "none"},
                 // position: "absolute",
                 // top: 0,
                 // right: 0,
@@ -365,6 +372,7 @@ export default function About() {
                 // border: "1px solid white",
               }}
               p={1}
+              pt={{ xs: 8, sm: 0 }}
             >
               <Grid
                 container
@@ -373,11 +381,11 @@ export default function About() {
                 columns={12}
                 alignItems="flex-start"
                 // justifyContent="center"
-                sx={{ height: "100%" }}
+                sx={{ height: {xs: "324px",sm:"100%"}, width: {xs: '800px',sm: "00%"} }}
               >
                 {/* row-1 */}
                 <Grid item xs={12}>
-                  <BrickDesignTwo tag1="Jest" tag2="CSS" tag3="Javascript" />
+                  <BrickDesignTwo tag1="Jest" tag2="Firebase" tag3="Vite" />
                 </Grid>
 
                 {/* row-2 */}
@@ -420,15 +428,14 @@ export default function About() {
         {/* --------------------------------------- */}
         {/*EXPERIENCE  */}
         {/* ------------------------------------- */}
-
         <PaddedBox mb={5}>
-          <Stack direction="row">
+          <Stack direction={{ xs: "column", sm: "row" }}>
             {/* BOX-1 */}
             <Stack
               spacing={4}
               sx={{
                 flex: 1,
-                minHeight: 400,
+                minHeight: { xs: "fit-content", sm: 400 },
                 // border: "1px solid #ebebeb",
                 borderRadius: "10px",
                 marginTop: "20px ",
@@ -441,7 +448,7 @@ export default function About() {
                 Experiences
               </Typography>
 
-              <Box sx={{ width: "400px" }}>
+              <Box sx={{ width: { xs: "100%", sm: "400px" } }}>
                 <Typography
                   variant="xsText"
                   // sx={{ borderBottom: "1px solid #ebebeb" }}
@@ -485,7 +492,7 @@ export default function About() {
                   <Typography
                     sx={{ backgroundColor: colors.grey[900], padding: 1 }}
                   >
-                    Tools:{" "}
+                    <HandymanRoundedIcon fontSize="small" color="primary" />
                   </Typography>
                 </Stack>
 
@@ -523,7 +530,7 @@ export default function About() {
                   <Typography
                     sx={{ backgroundColor: colors.grey[900], padding: 1 }}
                   >
-                    Tools:{" "}
+                    <HandymanRoundedIcon fontSize="small" color="primary" />
                   </Typography>
                 </Stack>
 

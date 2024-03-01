@@ -305,7 +305,7 @@ function ProjectBox(props) {
             {props.desc}
           </Typography>
 
-          <Stack direction="row" alignItems="center" spacing={1}>
+          <Stack direction="row" alignItems="center" flexWrap='wrap' spacing={1}>
             <Stack
               justifyContent="center"
               alignItems="center"
@@ -322,7 +322,7 @@ function ProjectBox(props) {
             {props.stack.map((item) => {
               return (
                 <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
-                  {item} |{" "}
+                  {item} |
                 </Typography>
               );
             })}
