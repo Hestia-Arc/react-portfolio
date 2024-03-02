@@ -18,7 +18,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
 import CV from "../../data/Resume-Afolabi Esther.pdf";
-import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
+// import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
 import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
 import Footer from "../Footer";
 import darkbg from "../../data/c-bg.png";
@@ -61,6 +61,7 @@ const NavBox = styled(Box)({
 });
 
 const TextBox = styled(Typography)({
+  width: "100%",
   // fontSize: 20,
   // fontFamily: "Fredoka",
   // fontWeight: 300,
@@ -134,28 +135,13 @@ export default function About() {
         {/* ABOUT */}
         {/* --------------------------------------- */}
         <PaddedBox mb={5}>
-          {/* ==================== */}
-          {/* TITLE */}
-          <Stack
-            alignItems="flex-end"
-            spacing={0.5}
-            mt={6}
-            pb={2}
-            sx={{ borderBottom: `0.5px solid ${colors.grey[800]}` }}
-          >
-            <Typography variant="xsDisplay">Meet me</Typography>
-            {/* <Divider orientation="vertical" variant="middle" flexItem /> */}
-            <Typography variant="smText" sx={{ color: colors.grey[500] }}>
-              Creativity. Reliability. Competent.
-            </Typography>
-          </Stack>
-
-          {/* ------------ */}
           <Stack
             direction={{ xs: "column-reverse", sm: "row" }}
-            sx={{
-              // border: "1px solid white",
-            }}
+            sx={
+              {
+                // border: "1px solid white",
+              }
+            }
           >
             {/* ==================== */}
             {/* ABOUT CONTENT */}
@@ -165,14 +151,19 @@ export default function About() {
                 // border: "1px solid black",
               }}
             >
+              {/* --------1 */}
               <Stack
-                spacing={3}
+                direction={{xs: "column",sm:"row"}}
+                spacing={4}
                 sx={{
-                  border: `solid 1px ${colors.grey[900]}`,
+                  // border: `solid 1px ${colors.grey[900]}`,
                   boxShadow: "2px 6px 12px rgba(0,0,0,.1)",
+                  color: colors.grey[400],
+
                   // padding: 4,
                   // width: { xs: "100%", sm: "60%" },
                 }}
+                mt={{xs: 3,sm: 13.5}}
               >
                 <TextBox variant="baseText">
                   {" "}
@@ -183,12 +174,65 @@ export default function About() {
 
                 <TextBox variant="baseText">
                   Adept in building modern, responsive and functional UIs using
-                  React, MUI/Chakra UI, tailored to specific user needs,
+                  React, MUI, tailored to specific user needs,
                   ensuring an accessible and seamless experience across all
                   devices.
                 </TextBox>
+              </Stack>
 
-                <TextBox variant="baseText">
+              {/* ---------2 */}
+              <Stack
+                direction={{xs: "column",sm:"row"}}
+                spacing={4}
+                sx={{
+                  // border: `solid 1px ${colors.grey[900]}`,
+                  boxShadow: "2px 6px 12px rgba(0,0,0,.1)",
+                  color: colors.grey[400],
+
+                  // padding: 4,
+                  // width: { xs: "100%", sm: "60%" },
+                }}
+                mt={3}
+              >
+                <Stack
+                  sx={{
+                    height: "280px",
+                    width: "100%",
+                    backgroundColor: colors.grey[900],
+                    // color: colors.grey[900],
+                    // opacity: 0.5
+                  }}
+                  p={2}
+                >
+                  <TextBox variant="baseText">Writes clean code</TextBox>
+                  <TextBox variant="baseText">Adopt best practices</TextBox>
+                  <TextBox variant="baseText"></TextBox>
+                  <TextBox variant="baseText"></TextBox>
+                </Stack>
+
+                <Stack
+                  sx={{
+                    height: "280px",
+                    width: "100%",
+                    backgroundColor: colors.grey[500],
+                    color: colors.grey[900],
+
+                    // opacity: 0.5
+                  }}
+                  p={2}
+                >
+                  <TextBox variant="baseText">
+                    - Great communication skill
+                  </TextBox>
+                  <TextBox variant="baseText">
+                    - Effective time management
+                  </TextBox>
+                  <TextBox variant="baseText">- Great analytical skill</TextBox>
+                  <TextBox variant="baseText"></TextBox>
+                  <TextBox variant="baseText"></TextBox>
+                </Stack>
+
+                {/* <TextBox variant="baseText">
                   {" "}
                   <TaskAltRoundedIcon color="blue" /> Effective time management{" "}
                 </TextBox>
@@ -243,31 +287,66 @@ export default function About() {
                   Keen to evaluate and learn new technologies, collaborative
                   with great communication skills. Focused on developing high
                   quality products and services.{" "}
-                </TextBox>
+                </TextBox> */}
               </Stack>
             </Box>
 
             {/* ==================== */}
             {/* AVATAR */}
-            <Box
+            <Stack
+              alignItems={{xs: "center",sm:"flex-end"}}
               sx={{
                 flex: 1,
-                display: {xs: 'flex', sm: "block"},
-                flexDirection: "column",
-                alignItems: 'center'
-                // border: "1px solid black",
+                // border: "1px solid white",
               }}
             >
+              {/* ==================== */}
+              {/* TITLE */}
+              <Stack
+                alignItems="flex-end"
+                spacing={0.99}
+                mt={6}
+                pb={1}
+                mb={1}
+                sx={{width: "100%", borderBottom: `0.5px solid ${colors.grey[800]}` }}
+              >
+                <Typography variant="xsDisplay">Meet me</Typography>
+                {/* <Divider orientation="vertical" variant="middle" flexItem /> */}
+                <Typography variant="smText" sx={{ color: colors.grey[500] }}>
+                  Creativity. Reliability. Competent.
+                </Typography>
+              </Stack>
+
+              {/* ------------------- */}
               <Avatar
                 src={picture}
+                variant="square"
                 alt="Developer's"
-                sx={{ width: 220, height: 250 }}
+                sx={{ width: {xs: 310, sm: 300}, height: 320 }}
                 loading="lazy"
               />
 
-              <Stack spacing={1} alignItems="center" sx={{ width: {xs: "80%", sm: "100%"} }}>
+              <Stack
+                spacing={1}
+                alignItems="center"
+                sx={{ width: { xs: "100%", sm: "76%" } }}
+                mt={2}
+              >
+                <a href={CV} download="Esther's Cv" style={{ width: "100%" }}>
+                  <Button
+                    variant="contained"
+                    startIcon={<ArticleRoundedIcon />}
+                    sx={{
+                      width: "100%",
+                      background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
+                      border: `0.5px solid ${colors.grey[800]}`,
+                    }}
+                  >
+                    Download cv
+                  </Button>
+                </a>
                 <Stack
-                  spacing={{xs: 1, sm:2}}
+                  spacing={{ xs: 1, sm: 2 }}
                   direction="row"
                   justifyContent="space-evenly"
                   alignItems="center"
@@ -303,21 +382,8 @@ export default function About() {
                     </a>
                   </span>
                 </Stack>
-                <a href={CV} download="Esther's Cv" style={{ width: "100%" }}>
-                  <Button
-                    variant="contained"
-                    startIcon={<ArticleRoundedIcon />}
-                    sx={{
-                      width: "100%",
-                      background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
-                      border: `0.5px solid ${colors.grey[800]}`,
-                    }}
-                  >
-                    Resume
-                  </Button>
-                </a>
               </Stack>
-            </Box>
+            </Stack>
           </Stack>
         </PaddedBox>
 
@@ -361,9 +427,12 @@ export default function About() {
             <Box
               sx={{
                 flex: 1,
-                display: {xs: 'flex', sm: 'block'},
+                display: { xs: "flex", sm: "block" },
                 overflowX: "auto",
-                borderBottom: {xs:`1px solid ${colors.grey[800]}`, sm: "none"},
+                borderBottom: {
+                  xs: `1px solid ${colors.grey[800]}`,
+                  sm: "none",
+                },
                 // position: "absolute",
                 // top: 0,
                 // right: 0,
@@ -372,7 +441,7 @@ export default function About() {
                 // border: "1px solid white",
               }}
               p={1}
-              pt={{ xs: 8, sm: 0 }}
+              pt={8}
             >
               <Grid
                 container
@@ -381,7 +450,10 @@ export default function About() {
                 columns={12}
                 alignItems="flex-start"
                 // justifyContent="center"
-                sx={{ height: {xs: "324px",sm:"100%"}, width: {xs: '800px',sm: "00%"} }}
+                sx={{
+                  height: { xs: "324px", sm: "100%" },
+                  width: { xs: "800px", sm: "100%" },
+                }}
               >
                 {/* row-1 */}
                 <Grid item xs={12}>
