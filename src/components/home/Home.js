@@ -29,7 +29,19 @@ const HomeContainer = styled(Box)((props) => ({
   minWidth: "1350px",
   maxWidth: "1400px",
   margin: "0 auto",
+  overflowX: "hidden",
   // backgroundColor: "rgba(0,0,0,0.2)",
+
+  a: {
+    textDecoration: "none",
+    color: props.colors.grey[200],
+    transition: "transform 0.5s",
+
+    "&:hover": {
+      color: props.colors.goldAccent[300],
+      transform: "translateY(-3px)",
+    },
+  },
 
   [props.theme.breakpoints.down("sm")]: {
     minWidth: "325px",
@@ -168,13 +180,7 @@ export default function Home() {
                 >
                   Front-end Developer
                 </Typography>
-                {/* <Typography
-                  variant="xxlText"
-                  fontWeight={500}
-                  sx={{ textTransform: "uppercase" }}
-                >
-                  Front-end Developer
-                </Typography> */}
+               
               </Stack>
 
               {/* TAGLINE */}

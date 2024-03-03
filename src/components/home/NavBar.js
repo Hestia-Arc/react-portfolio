@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Stack from "@mui/material/Stack";
 // import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { Box, Typography, styled, useTheme } from "@mui/material";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
-// import GitHubIcon from "@mui/icons-material/GitHub";
-// import TwitterIcon from "@mui/icons-material/Twitter";
-// import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import { Link } from "react-router-dom";
 import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
 import { tokens } from "../../theme";
@@ -17,6 +17,7 @@ const NavContainer = styled("nav")((props) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  position: "relative",
 
   a: {
     textDecoration: "none",
@@ -60,8 +61,7 @@ const NavContainer = styled("nav")((props) => ({
 function NavBar() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  // const [active, setActive] = useState(false);
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <NavContainer colors={colors}>
@@ -96,8 +96,128 @@ function NavBar() {
   <Typography variant="h6">Contact</Typography>
   </Link> */}
         </Stack>
+
+        {/* hamburger */}
+        <Stack
+          alignItems="flex-end"
+          sx={{ width: 299, backgroundColor: isOpen && colors.grey[900], transition: "all 500ms",  [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
+          {
+            display: "none",
+          }, }}
+          py={1.5}
+          pr={isOpen && 1}
+          mr={isOpen && -2}
+        >
+          <Stack
+            spacing={0.7}
+            onClick={() => setIsOpen(!isOpen)}
+            sx={{
+              // [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
+              //   {
+              //     display: "none",
+              //   },
+            }}
+          >
+            <Box
+              sx={{
+                height: "3px",
+                width: "36px",
+                borderRadius: "30px",
+                backgroundColor: colors.grey[100],
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "3px",
+                width: isOpen ? "30px" : "36px",
+                borderRadius: "30px",
+                backgroundColor: colors.grey[100],
+              }}
+            ></Box>
+            <Box
+              sx={{
+                height: "3px",
+                width: isOpen ? "22px" : "36px",
+                borderRadius: "30px",
+                backgroundColor: colors.grey[100],
+              }}
+            ></Box>
+          </Stack>
+        </Stack>
       </Box>
 
+      {/* SLIDE BOX */}
+      <Stack
+        alignItems="flex-end"
+        justifyContent="space-between"
+        sx={{
+          // display: isOpen ? "flex" : "none",
+          position: "absolute",
+          top: 61,
+          right: isOpen ? -18 : -999,
+          bottom: 0,
+          width: "300px",
+          height: "87vh",
+          backgroundColor: colors.grey[900],
+          zIndex: 999,
+          transition: "all 700ms",
+
+          [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
+          {
+            display: "none",
+          },
+        }}
+        pr={2}
+        pt={10}
+        pb={3}
+      >
+        <Stack alignItems="flex-end" spacing={2} pr={2}>
+          <Link to="about">
+            <Typography variant="lgText">About</Typography>
+          </Link>
+
+          <Link to="project">
+            <Typography variant="lgText">Portfolio</Typography>
+          </Link>
+        </Stack>
+
+        <Stack
+          spacing={1}
+          direction="row"
+          justifyContent="space-evenly"
+          alignItems="center"
+          sx={{
+            height: "50px",
+            width: "100%",
+            // border: `1px solid ${colors.grey[900]}`,
+            // borderRadius: "6px",
+            // p: "0px 15px",
+          }}
+        >
+          <span>
+            <a href="https://github.com/Hestia-Arc" target="blank">
+              <GitHubIcon />
+            </a>
+          </span>
+          <span>
+            <a href="https://www.linkedin.com/in/hestiaarc00" target="blank">
+              <LinkedInIcon />
+            </a>
+          </span>
+          <span>
+            <a href="https://twitter.com/arc_hestia00" target="blank">
+              <TwitterIcon />
+            </a>
+          </span>
+          <span>
+            <a href="mailto:hestia.dev005@gmail.com">
+              <MarkEmailUnreadRoundedIcon />
+            </a>
+          </span>
+        </Stack>
+      </Stack>
+
+      {/* --------------------------------- */}
       {/* <Divider sx={{ margin: "20px 0" }} /> */}
       {/* 
       <Box
