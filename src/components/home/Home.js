@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Box,
   Button,
@@ -29,7 +29,9 @@ const HomeContainer = styled(Box)((props) => ({
   minWidth: "1350px",
   maxWidth: "1400px",
   margin: "0 auto",
+  // position: "relative",
   overflowX: "hidden",
+  overflowY: props.isOpen && "hidden",
   // backgroundColor: "rgba(0,0,0,0.2)",
 
   a: {
@@ -82,10 +84,12 @@ export default function Home() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
+  const [isOpen, setIsOpen] = useState(false);
+
   // const bkPt = useMode()
 
   return (
-    <HomeContainer theme={theme} colors={colors}>
+    <HomeContainer theme={theme} colors={colors} isOpen={isOpen}>
       <HeaderBox>
         <Box
           sx={{
@@ -108,7 +112,7 @@ export default function Home() {
           }}
         >
           <PaddedBox theme={theme}>
-            <NavBar />
+            <NavBar isOpen={isOpen} handleIsOpen={() => setIsOpen(!isOpen)} />
             <Box
               sx={{
                 // border: "1px solid black",

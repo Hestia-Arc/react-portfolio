@@ -58,10 +58,10 @@ const NavContainer = styled("nav")((props) => ({
 // });
 
 // ------------------------------
-function NavBar() {
+function NavBar({isOpen, handleIsOpen}) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   return (
     <NavContainer colors={colors}>
@@ -100,7 +100,7 @@ function NavBar() {
         {/* hamburger */}
         <Stack
           alignItems="flex-end"
-          sx={{ width: 299, backgroundColor: isOpen && colors.grey[900], transition: "all 500ms",  [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
+          sx={{ width: 299, backgroundColor: isOpen && colors.grey[900], transition: "all 300ms",  [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
           {
             display: "none",
           }, }}
@@ -109,8 +109,9 @@ function NavBar() {
           mr={isOpen && -2}
         >
           <Stack
+          alignItems="center"
             spacing={0.7}
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={handleIsOpen}
             sx={{
               // [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
               //   {
@@ -121,7 +122,7 @@ function NavBar() {
             <Box
               sx={{
                 height: "3px",
-                width: "36px",
+                width: "34px",
                 borderRadius: "30px",
                 backgroundColor: colors.grey[100],
               }}
@@ -129,7 +130,7 @@ function NavBar() {
             <Box
               sx={{
                 height: "3px",
-                width: isOpen ? "30px" : "36px",
+                width: isOpen ? "29px" : "25px",
                 borderRadius: "30px",
                 backgroundColor: colors.grey[100],
               }}
@@ -137,7 +138,7 @@ function NavBar() {
             <Box
               sx={{
                 height: "3px",
-                width: isOpen ? "22px" : "36px",
+                width: isOpen ? "22px" : "34px",
                 borderRadius: "30px",
                 backgroundColor: colors.grey[100],
               }}
@@ -160,7 +161,7 @@ function NavBar() {
           height: "87vh",
           backgroundColor: colors.grey[900],
           zIndex: 999,
-          transition: "all 700ms",
+          transition: "all 500ms",
 
           [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
           {
