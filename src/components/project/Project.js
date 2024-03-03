@@ -14,6 +14,7 @@ import { projects } from "../../data/projectData";
 import darkbg from "../../data/c-bg.png";
 import Footer from "../Footer";
 import { tokens } from "../../theme";
+import { PaddedBox } from "../../UI/pages";
 
 const NavBox = styled(Box)({
   padding: "10px 0",
@@ -75,9 +76,10 @@ export default function Project() {
 
         a: {
           textDecoration: "none",
-          color: "inherit",
+          color: colors.grey[200],
           "&:hover": {
-            color: colors.grey[600],
+            color: colors.goldAccent[300],
+            transform: "translateY(-3px)",
           },
         },
       }}
@@ -123,14 +125,31 @@ export default function Project() {
       <Stack
         justifyContent={{ xs: "space-between" }}
         sx={{
-          minHeight: { xs: "584px", sm: "535px" },
-          maxHeight: { xs: "585px", sm: "540px" },
+          minHeight: { xs: "584px", sm: "383px" },
+          maxHeight: { xs: "585px", sm: "585px" },
           margin: { xs: "0px", sm: "40px 0 " },
         }}
       >
-        {/* <Box sx={{ textAlign: "center", marginBottom: 7 }}>
-          <Typography variant="h3">Projects</Typography>
-        </Box> */}
+        <PaddedBox sx={{
+           [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+           {
+             display: "none",
+           },
+         [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
+           {
+             display: "block",
+           },
+        }}>
+          <Stack spacing={2} sx={{ marginBottom: 7 }}>
+            <Typography variant="xsDisplay">Projects</Typography>
+
+            <Typography variant="smText" sx={{color: colors.grey[400]}}>
+              {" "}
+              My skills in action: a showcase of impactful projects I've been a
+              part of.
+            </Typography>
+          </Stack>
+        </PaddedBox>
 
         {/* PROJECT MOBILE DISPLAY */}
         <Box
@@ -165,7 +184,7 @@ export default function Project() {
               },
           }}
           pt={1}
-          pb={{md:1, lg:2}}
+          pb={{ md: 1, lg: 2 }}
           px={7}
         >
           {projects.map((project, key) => {
@@ -265,11 +284,15 @@ function ProjectBox(props) {
           sx={{
             display: props.active ? "block" : "none",
             position: "absolute",
-            top:  {sm:"0.6rem", lg: "0.6rem"},
-            left: {sm:"-3.2rem", lg: "-4.5rem"},
+            top: { sm: "0.6rem", lg: "0.6rem" },
+            left: { sm: "-3.2rem", lg: "-4.5rem" },
           }}
         >
-          <Typography variant="xsDisplay" fontWeight={300} sx={{fontSize: {lg: "3.5rem"}}}>
+          <Typography
+            variant="xsDisplay"
+            fontWeight={300}
+            sx={{ fontSize: { lg: "3.5rem" } }}
+          >
             {props.index ? `0${props.index}` : ""}
           </Typography>
         </Box>
@@ -288,16 +311,12 @@ function ProjectBox(props) {
             right: "-17.7rem",
           }}
         >
-          <Stack
-            direction="row"
-            spacing={1}
-            alignItems="end"
-          >
+          <Stack direction="row" spacing={1} alignItems="end">
             <Typography variant="xlText">
               {props.title ? <>{props.title}</> : "..."}
             </Typography>
             <a href={props.link} target="_blank" rel="noreferrer">
-              <OpenInNewRoundedIcon fontSize="small" />
+              <OpenInNewRoundedIcon fontSize="small" color="inputs" />
             </a>
           </Stack>
 
@@ -305,11 +324,16 @@ function ProjectBox(props) {
             {props.desc}
           </Typography>
 
-          <Stack direction="row" alignItems="center" flexWrap='wrap' spacing={1}>
+          <Stack
+            direction="row"
+            alignItems="center"
+            flexWrap="wrap"
+            spacing={1}
+          >
             <Stack
               justifyContent="center"
               alignItems="center"
-              flexWrap='wrap'
+              flexWrap="wrap"
               sx={{
                 padding: "4px",
                 backgroundColor: colors.grey[900],
@@ -338,8 +362,12 @@ function ProjectBox(props) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: props.active ? { sm: "354px",md: '354px', lg: "450px" } : {xs:"120px", lg: "180px"},
-            width: props.active ? { sm: "228px",md:'230px', lg: "310px" } : {xs:"100px",lg: "140px"},
+            height: props.active
+              ? { sm: "354px", md: "354px", lg: "450px" }
+              : { xs: "120px", lg: "180px" },
+            width: props.active
+              ? { sm: "228px", md: "230px", lg: "310px" }
+              : { xs: "100px", lg: "140px" },
             background: `url(${props.img})`,
             backgroundPosition: "top center",
             backgroundRepeat: "no-repeat",
@@ -368,10 +396,15 @@ const DisplayMobileProject = (props) => {
           backgroundSize: "cover",
         }}
       ></Box>
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        px={0.5}
+      >
         <Typography variant="mdText">{title}</Typography>
         <a href={link} target="_blank" rel="noreferrer">
-          <OpenInNewRoundedIcon />
+          <OpenInNewRoundedIcon color="inputs" />
         </a>
       </Stack>
       <Typography variant="xsText" sx={{ color: colors.grey[500] }}>

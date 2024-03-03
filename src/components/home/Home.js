@@ -137,7 +137,7 @@ export default function Home() {
 
                   <Box
                     sx={{
-                      borderBottom: "0.5px solid yellow",
+                      borderBottom: `0.5px solid ${colors.goldAccent[100]}`,
                       width: "62%",
                       opacity: "0.6",
                       marginLeft: "0.5rem",
@@ -180,18 +180,18 @@ export default function Home() {
               {/* TAGLINE */}
               <Stack
                 sx={{
-                  borderLeft: "0.5px solid yellow",
+                  borderLeft: `0.5px solid ${colors.goldAccent[100]}`,
                   padding: "0.5rem 0.8rem",
                 }}
               >
                 <Typography
                   variant="lgText"
                   fontWeight={400}
-                  sx={{ color: colors.grey[600] }}
+                  sx={{ color: colors.grey[400] }}
                 >
                   Building intuitive web experience & innovative solutions.
                 </Typography>
-                <Typography sx={{ color: colors.grey[600] }}>
+                <Typography sx={{ color: colors.grey[400] }}>
                   "Don't watch the clock. Do what it does. Keep going." -Sam
                   Levenson
                 </Typography>

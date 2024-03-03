@@ -8,9 +8,9 @@ import { Box, Typography, styled, useTheme } from "@mui/material";
 // import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import { Link } from "react-router-dom";
 import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
-// import { tokens } from "../../theme";
+import { tokens } from "../../theme";
 
-const NavContainer = styled("nav")(({ theme }) => ({
+const NavContainer = styled("nav")((props) => ({
   height: "70px",
   padding: "10px 0px",
   // border: "1px solid black",
@@ -20,12 +20,12 @@ const NavContainer = styled("nav")(({ theme }) => ({
 
   a: {
     textDecoration: "none",
-    color: "#fff",
+    color: props.colors.grey[400],
     transition: "transform 0.5s",
 
     "&:hover": {
-      color: "#d32f2f",
-      transform: "translateY(-5px)",
+      color: props.colors.goldAccent[300],
+      transform: "translateY(-3px)",
     },
   },
 
@@ -59,12 +59,12 @@ const NavContainer = styled("nav")(({ theme }) => ({
 // ------------------------------
 function NavBar() {
   const theme = useTheme();
-  // const colors = tokens(theme.palette.mode);
+  const colors = tokens(theme.palette.mode);
   // const [active, setActive] = useState(false);
   // const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <NavContainer>
+    <NavContainer colors={colors}>
       <Box
         sx={{
           display: "flex",
@@ -74,18 +74,22 @@ function NavBar() {
         }}
       >
         <FlareRoundedIcon sx={{ fontSize: "37px" }} />
-        <Stack direction="row" spacing={4} sx={{
-              [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
-display: 'none'
-              }
-
-        }}>
+        <Stack
+          direction="row"
+          spacing={4}
+          sx={{
+            [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+              {
+                display: "none",
+              },
+          }}
+        >
           <Link to="about">
-            <Typography variant="h6">About</Typography>
+            <Typography variant="smText">About</Typography>
           </Link>
 
           <Link to="project">
-            <Typography variant="h6">Portfolio</Typography>
+            <Typography variant="smText">Portfolio</Typography>
           </Link>
 
           {/* <Link to='contact'>

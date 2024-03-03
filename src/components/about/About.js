@@ -26,7 +26,7 @@ import { tokens } from "../../theme";
 import { PaddedBox } from "../../UI/pages";
 // import { PaddedBox } from "../../UI/pages";
 
-const AboutBox = styled(Box)((theme) => ({
+const AboutBox = styled(Box)((props) => ({
   position: "relative",
   minHeight: "50rem",
   background: "#ccc",
@@ -37,12 +37,12 @@ const AboutBox = styled(Box)((theme) => ({
 
   a: {
     textDecoration: "none",
-    color: "grey",
+    color: props.colors.grey[200],
     transition: "transform 0.5s",
 
     "&:hover": {
-      color: "#d32f2f",
-      transform: "translateY(-5px)",
+      color: props.colors.goldAccent[300],
+      transform: "translateY(-3px)",
     },
   },
 }));
@@ -68,16 +68,6 @@ const TextBox = styled(Typography)({
   // lineHeight: "1.8rem",
 });
 
-// const SkillBox = (props) => {
-//   return (
-//     <Box sx={{ display: "flex", alignItems: "center", color: "#fff" }}>
-//       <TaskAltRoundedIcon color="blue" />
-//       <Typography variant="h5" sx={{ marginLeft: "5px" }}>
-//         {props.name}
-//       </Typography>
-//     </Box>
-//   );
-// };
 
 export default function About() {
   const theme = useTheme();
@@ -96,7 +86,7 @@ export default function About() {
 
   return (
     <>
-      <AboutBox sx={{ color: colors.grey[200] }}>
+      <AboutBox colors={colors} sx={{ color: colors.grey[200] }}>
         {/* --------------------------------------- */}
         {/* NAVIGATION */}
         {/* --------------------------------------- */}
@@ -113,6 +103,11 @@ export default function About() {
             a: {
               textDecoration: "none",
               color: colors.grey[200],
+
+              "&:hover": {
+                color: colors.goldAccent[100],
+                transform: "translateY(-5px)",
+              },
             },
           }}
         >
@@ -154,7 +149,7 @@ export default function About() {
               {/* --------1 */}
               <Stack
                 direction={{xs: "column",sm:"row"}}
-                spacing={4}
+                spacing={{xs:4, sm: 2, md:2}}
                 sx={{
                   // border: `solid 1px ${colors.grey[900]}`,
                   boxShadow: "2px 6px 12px rgba(0,0,0,.1)",
@@ -183,7 +178,7 @@ export default function About() {
               {/* ---------2 */}
               <Stack
                 direction={{xs: "column",sm:"row"}}
-                spacing={4}
+                spacing={{xs:4, sm: 2, md:2}}
                 sx={{
                   // border: `solid 1px ${colors.grey[900]}`,
                   boxShadow: "2px 6px 12px rgba(0,0,0,.1)",
@@ -204,9 +199,9 @@ export default function About() {
                   }}
                   p={2}
                 >
-                  <TextBox variant="baseText">Writes clean code</TextBox>
-                  <TextBox variant="baseText">Adopt best practices</TextBox>
-                  <TextBox variant="baseText"></TextBox>
+                  <TextBox variant="baseText">- Writes clean code.</TextBox>
+                  <TextBox variant="baseText">- Adopt best practices and design principles.</TextBox>
+                  <TextBox variant="baseText">- User-centric design principles.</TextBox>
                   <TextBox variant="baseText"></TextBox>
                 </Stack>
 
@@ -214,7 +209,7 @@ export default function About() {
                   sx={{
                     height: "280px",
                     width: "100%",
-                    backgroundColor: colors.grey[500],
+                    backgroundColor: colors.grey[400],
                     color: colors.grey[900],
 
                     // opacity: 0.5
@@ -228,7 +223,8 @@ export default function About() {
                     - Effective time management
                   </TextBox>
                   <TextBox variant="baseText">- Great analytical skill</TextBox>
-                  <TextBox variant="baseText"></TextBox>
+                  <TextBox variant="baseText">- collaborative
+                  with great communication skills</TextBox>
                   <TextBox variant="baseText"></TextBox>
                 </Stack>
 
@@ -322,14 +318,14 @@ export default function About() {
                 src={picture}
                 variant="square"
                 alt="Developer's"
-                sx={{ width: {xs: 310, sm: 300}, height: 320 }}
+                sx={{ width: {xs: 310, sm: 195,md: 231,lg:300}, height: {xs: 320, sm: 233, md: 269,lg: 320 }}}
                 loading="lazy"
               />
 
               <Stack
                 spacing={1}
                 alignItems="center"
-                sx={{ width: { xs: "100%", sm: "76%" } }}
+                sx={{ width: { xs: "100%", sm: 195,md: 231,lg:300} }}
                 mt={2}
               >
                 <a href={CV} download="Esther's Cv" style={{ width: "100%" }}>
@@ -409,16 +405,16 @@ export default function About() {
                 Skills
               </Typography>
 
-              <Box sx={{ width: { xs: "100%", sm: "400px" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "200px",md: "325px",lg:"400px" }, color: colors.grey[400] }}>
                 <Typography
-                  variant="xsText"
+                  variant="smText"
                   // sx={{ borderBottom: "1px solid #ebebeb" }}
                 >
-                  I am an avid learner who is genuinely interested in technology
-                  and passionate about bringing digital experiences to life.
-                  Keen to evaluate and learn new technologies, collaborative
-                  with great communication skills. Focused on developing high
-                  quality products and services.
+                  Check out skills in my toolkit for developing intuitive user interfaces and
+                  bringing digital experiences to life.
+                  I am an avid learner who is genuinely interested in technology,
+                  keen to evaluate and learn new technologies. 
+                  
                 </Typography>
               </Box>
             </Stack>
@@ -426,13 +422,14 @@ export default function About() {
             {/* BOX-2 */}
             <Box
               sx={{
-                flex: 1,
+                flex: {xs:1, sm: 2, md: 1},
                 display: { xs: "flex", sm: "block" },
                 overflowX: "auto",
                 borderBottom: {
                   xs: `1px solid ${colors.grey[800]}`,
                   sm: "none",
                 },
+                
                 // position: "absolute",
                 // top: 0,
                 // right: 0,
@@ -442,6 +439,7 @@ export default function About() {
               }}
               p={1}
               pt={8}
+              ml={{sm:3, md:0}}
             >
               <Grid
                 container
@@ -520,16 +518,14 @@ export default function About() {
                 Experiences
               </Typography>
 
-              <Box sx={{ width: { xs: "100%", sm: "400px" } }}>
+              <Box sx={{ width: { xs: "100%", sm: "200px",md: "325px",lg:"400px" }, color: colors.grey[400] }}>
                 <Typography
-                  variant="xsText"
+                  variant="smText"
                   // sx={{ borderBottom: "1px solid #ebebeb" }}
                 >
-                  I am an avid learner who is genuinely interested in technology
-                  and passionate about bringing digital experiences to life.
-                  Keen to evaluate and learn new technologies, collaborative
-                  with great communication skills. Focused on developing high
-                  quality products and services.
+                 Where my skills meet purpose: a journey through places I've leveraged my skills.
+                  {/* and contributing to
+                  impactful projects. */}
                 </Typography>
               </Box>
             </Stack>
@@ -537,7 +533,7 @@ export default function About() {
             {/* BOX-2 */}
             <Box
               sx={{
-                flex: 1,
+                flex: {xs:1, sm: 2, md: 1},
                 // position: "absolute",
                 // top: 0,
                 // right: 0,
@@ -547,6 +543,7 @@ export default function About() {
               }}
               p={1}
               pt={8}
+              ml={{sm:5, md:0}}
             >
               {/* exp 1 */}
               <Stack
@@ -561,15 +558,16 @@ export default function About() {
                   <Typography>
                     Front-end Developer | Lagos, Nigeria | 2022 - present
                   </Typography>
-                  <Typography
+                  <Stack direction='row' spacing={1}
                     sx={{ backgroundColor: colors.grey[900], padding: 1 }}
                   >
                     <HandymanRoundedIcon fontSize="small" color="primary" />
-                  </Typography>
+                    <Typography variant="smText" sx={{color: colors.grey[400]}}>HTML | CSS | SASS | ReactJS | React-Query | Firebase </Typography>
+                  </Stack>
                 </Stack>
 
                 {/* -..... */}
-                <Stack>
+                <Stack sx={{color: colors.grey[400]}}>
                   <Typography variant="smText">
                     - Contributed to the development of client-side web
                     applications <br />
@@ -594,10 +592,10 @@ export default function About() {
 
               {/* exp 2 */}
               <Stack spacing={2} mt={5}>
-                <Typography variant="xxlText">Huygensoft Limited</Typography>
+                <Typography variant="xxlText">Zuri Internship HNGx</Typography>
                 <Stack>
                   <Typography>
-                    Front-end Developer | Lagos, Nigeria | 2022 - present
+                    Front-end Development | Remote | Oct 2022
                   </Typography>
                   <Typography
                     sx={{ backgroundColor: colors.grey[900], padding: 1 }}
@@ -607,7 +605,7 @@ export default function About() {
                 </Stack>
 
                 {/* -..... */}
-                <Stack>
+                <Stack sx={{color: colors.grey[400]}}>
                   <Typography variant="smText">
                     - Contributed to the development of client-side web
                     applications <br />
@@ -654,20 +652,20 @@ function BrickDesignOne({ tag1, tag2, tag3, tag4 }) {
   return (
     <Stack
       direction="row"
-      spacing={2}
+      spacing={{xs:2, sm: 1, md:2}}
       sx={{
         height: "3rem",
         // border: "1px solid white"
       }}
     >
       <StyledBox>
-        <Typography>{tag1}</Typography>
+        <Typography variant='smText'>{tag1}</Typography>
       </StyledBox>
       <StyledBox>
-        <Typography>{tag2}</Typography>
+        <Typography variant='smText'>{tag2}</Typography>
       </StyledBox>
       <StyledBox>
-        <Typography>{tag3}</Typography>
+        <Typography variant='smText'>{tag3}</Typography>
       </StyledBox>
       <Box
         sx={{
@@ -678,7 +676,7 @@ function BrickDesignOne({ tag1, tag2, tag3, tag4 }) {
           justifyContent: "center",
         }}
       >
-        <Typography>{tag4}</Typography>
+        <Typography variant='smText'>{tag4}</Typography>
       </Box>
     </Stack>
   );
@@ -694,12 +692,13 @@ function BrickDesignTwo({ tag1, tag2, tag3 }) {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    
   });
 
   return (
     <Stack
       direction="row"
-      spacing={2}
+      spacing={{xs:2, sm: 1, md:2}}
       sx={{
         height: "3rem",
         // border: "1px solid white"
@@ -713,19 +712,19 @@ function BrickDesignTwo({ tag1, tag2, tag3 }) {
         }}
       ></Box>
       <StyledBox>
-        <Typography>{tag1}</Typography>
+        <Typography variant='smText'>{tag1}</Typography>
       </StyledBox>
       <StyledBox>
-        <Typography>{tag2}</Typography>
+        <Typography variant='smText'>{tag2}</Typography>
       </StyledBox>
       <StyledBox>
-        <Typography>{tag3}</Typography>
+        <Typography variant='smText'>{tag3}</Typography>
       </StyledBox>
       <Box
         sx={{
           border: `1px solid ${colors.grey[800]}`,
           borderRight: "none",
-          width: "40px",
+          width: "30px",
         }}
       ></Box>
     </Stack>

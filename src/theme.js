@@ -237,7 +237,7 @@ export const themeSettings = (mode) => {
               contrastText: "#fff",
             },
             inputs: {
-              main: "rgba(103, 160, 158, 0.16)",
+              main: colors.grey[600],
               light: "#E7EFEF",
               dark: "e",
               contrastText: "#fff",

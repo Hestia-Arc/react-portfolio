@@ -5,10 +5,12 @@ import {
   styled,
   Typography,
   useTheme,
+  Button,
 } from "@mui/material";
 import React from "react";
 import darkbg from "../data/c-bg.png";
-import PhoneBg from "../images/phone3.jpg";
+import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
+// import PhoneBg from "../images/phone3.jpg";
 
 import { PaddedBox } from "../UI/pages";
 import { tokens } from "../theme";
@@ -58,9 +60,9 @@ function Footer(props) {
 
             <Stack
               direction="row"
-              spacing={{xs:7, sm:2.5, md: 8, lg:10 }}
+              spacing={{ xs: 7, sm: 2.5, md: 8, lg: 10 }}
               // alignItems="center"
-              sx={{ width: {xs: "100%", sm:"40%", md: "50%"} }}
+              sx={{ width: { xs: "100%", sm: "40%", md: "50%" } }}
             >
               {/* --------1 */}
               <Stack spacing={1.5}>
@@ -97,13 +99,17 @@ function Footer(props) {
             </Stack>
 
             {/* --------4   second box*/}
-            <Stack direction={{xs: "column", sm:"row"}} spacing={{xs:4, sm: 1}} sx={{ width: {xs: "100%", sm: "58%",md:"50%"} }}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              spacing={{ xs: 4, sm: 1 }}
+              sx={{ width: { xs: "100%", sm: "58%", md: "50%" } }}
+            >
               {/* ------------FORM */}
               <Stack
                 spacing={1.5}
                 sx={{
                   width: "330px",
-                  padding: {xs: 0,sm:"0 1rem"},
+                  padding: { xs: 0, sm: "0 1rem" },
                   borderLeft: `0.5px solid ${colors.grey[900]}`,
                 }}
               >
@@ -116,7 +122,7 @@ function Footer(props) {
                   sx={{
                     backgroundColor: "rgb(17,22,27)",
                     color: colors.grey[200],
-                    padding: {xs: 2, sm:1.5},
+                    padding: { xs: 2, sm: 1.5 },
                     borderRadius: 1.4,
                   }}
                 >
@@ -124,7 +130,7 @@ function Footer(props) {
                     required
                     label="Name"
                     variant="outlined"
-                    color="secondary"
+                    color="inputs"
                     focused
                     size="small"
                     inputProps={{
@@ -136,33 +142,53 @@ function Footer(props) {
                     }}
                   />
                   <TextField
+                    required
                     label="Email"
                     variant="outlined"
-                    color="secondary"
+                    color="inputs"
                     focused
                     size="small"
                     inputProps={{
-                      style: { color: colors.grey[300], fontWeight: 300,                        fontSize: "0.85rem",
-                    },
+                      style: {
+                        color: colors.grey[300],
+                        fontWeight: 300,
+                        fontSize: "0.85rem",
+                      },
                     }}
                   />
                   <TextField
                     id="outlined-multiline-static"
                     label="Message"
                     multiline
-                    rows={4}
+                    rows={2}
                     placeholder="Your message"
-                    color="secondary"
+                    color="inputs"
                     focused
                     size="small"
                     inputProps={{
-                      style: { color: colors.grey[300], fontWeight: 300,                        fontSize: "0.85rem",
-                    },
+                      style: {
+                        color: colors.grey[300],
+                        fontWeight: 300,
+                        fontSize: "0.85rem",
+                      },
                       label: {
-                        color: '#ffffff',
+                        color: "#ffffff",
                       },
                     }}
                   />
+                  <Button
+                    variant="contained"
+                    size="small"
+                    // startIcon={<ArticleRoundedIcon />}
+                    sx={{
+                      width: "100%",
+                      background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
+                      border: `0.5px solid ${colors.grey[800]}`,
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    Submit
+                  </Button>
                 </Stack>
               </Stack>
 
@@ -170,15 +196,15 @@ function Footer(props) {
               <Stack
                 spacing={1.5}
                 sx={{
-                  width: {sm: "180px",md:"200px"},
+                  width: { sm: "180px", md: "200px" },
                   // borderRight: `0.5px solid ${colors.grey[900]}`,
                   height: "100%",
-                  background: `url(${PhoneBg})`,
-                  backgroundPosition: "right",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "contain",
-                  "-webkit-filter": "grayscale(100%)",
-                  filter: "grayscale(100%)",
+                  // background: `url(${PhoneBg})`,
+                  // backgroundPosition: "right",
+                  // backgroundRepeat: "no-repeat",
+                  // backgroundSize: "contain",
+                  // "-webkit-filter": "grayscale(100%)",
+                  // filter: "grayscale(100%)",
                 }}
               >
                 <StyledTitle variant="smText" colors={colors}>
@@ -189,7 +215,7 @@ function Footer(props) {
                   <a href="mailto:starafolab@gmail.com">
                     <Typography
                       variant="xsText"
-                      sx={{ color: colors.grey[700] }}
+                      sx={{ color: colors.grey[400] }}
                     >
                       Starafolab@gmail.com
                     </Typography>
@@ -198,7 +224,7 @@ function Footer(props) {
                   <a href="tel:2347046564023">
                     <Typography
                       variant="xsText"
-                      sx={{ color: colors.grey[700] }}
+                      sx={{ color: colors.grey[400] }}
                     >
                       +234 704 656 4023
                     </Typography>
