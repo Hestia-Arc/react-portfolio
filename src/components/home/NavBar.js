@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Stack from "@mui/material/Stack";
 // import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { Box, Typography, styled, useTheme } from "@mui/material";
@@ -58,7 +58,7 @@ const NavContainer = styled("nav")((props) => ({
 // });
 
 // ------------------------------
-function NavBar({isOpen, handleIsOpen}) {
+function NavBar({ isOpen, handleIsOpen }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   // const [isOpen, setIsOpen] = useState(false);
@@ -100,24 +100,31 @@ function NavBar({isOpen, handleIsOpen}) {
         {/* hamburger */}
         <Stack
           alignItems="flex-end"
-          sx={{ width: 299, backgroundColor: isOpen && colors.grey[900], transition: "all 300ms",  [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
-          {
-            display: "none",
-          }, }}
+          sx={{
+            width: 299,
+            backgroundColor: isOpen && colors.grey[900],
+            transition: "all 300ms",
+            [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
+              {
+                display: "none",
+              },
+          }}
           py={1.5}
           pr={isOpen && 1}
           mr={isOpen && -2}
         >
           <Stack
-          alignItems="center"
+            alignItems="center"
             spacing={0.7}
             onClick={handleIsOpen}
-            sx={{
-              // [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
-              //   {
-              //     display: "none",
-              //   },
-            }}
+            sx={
+              {
+                // [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
+                //   {
+                //     display: "none",
+                //   },
+              }
+            }
           >
             <Box
               sx={{
@@ -163,8 +170,23 @@ function NavBar({isOpen, handleIsOpen}) {
           zIndex: 999,
           transition: "all 500ms",
 
-          [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
-          {
+          a: {
+            textDecoration: "none",
+            color: colors.grey[400],
+            transition: "transform 0.5s",
+
+            "&:hover": {
+              color: colors.goldAccent[300],
+              transform: "translateY(-3px)",
+            },
+
+            "&:active": {
+              color: colors.goldAccent[300],
+              transform: "translateY(-3px)",
+            },
+          },
+
+          [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]: {
             display: "none",
           },
         }}

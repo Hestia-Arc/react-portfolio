@@ -308,7 +308,7 @@ export default function About() {
               >
                 <Typography variant="xsDisplay">Meet me</Typography>
                 {/* <Divider orientation="vertical" variant="middle" flexItem /> */}
-                <Typography variant="smText" sx={{ color: colors.grey[500] }}>
+                <Typography variant="smText" sx={{ color: colors.goldAccent[400] }}>
                   Creativity. Reliability. Competent.
                 </Typography>
               </Stack>

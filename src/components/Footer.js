@@ -117,7 +117,7 @@ function Footer(props) {
                   Get in Touch
                 </StyledTitle>
 
-                <Stack
+                <Stack id="contact"
                   spacing={2}
                   sx={{
                     backgroundColor: "rgb(17,22,27)",

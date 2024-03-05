@@ -194,6 +194,12 @@ export const themeSettings = (mode) => {
               main: colors.goldAccent[500],
               contrastText: colors.white[100],
             },
+            inputs: {
+              main: colors.grey[600],
+              light: "#E7EFEF",
+              dark: "e",
+              contrastText: "#fff",
+            },
           }
         : {
             // palette values for light mode
