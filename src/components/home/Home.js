@@ -223,23 +223,22 @@ export default function Home() {
                     flexDirection: { sm: "column" },
                   }}
                 >
-                  
-                    <Typography
-                      variant="lgText"
-                      fontWeight={400}
-                      sx={{
-                        color: colors.goldAccent[400],
-                        [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
-                          {
-                            fontSize: "1rem",
-                            lineHeight: "1.3rem",
-                          },
-                      }}
-                    >
-                      Your vision. Amplified. Seamless interfaces, intuitive
-                      journeys.
-                    </Typography>
-                 
+                  <Typography
+                    variant="lgText"
+                    fontWeight={400}
+                    sx={{
+                      color: colors.goldAccent[400],
+                      [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+                        {
+                          fontSize: "1rem",
+                          lineHeight: "1.3rem",
+                        },
+                    }}
+                  >
+                    Your vision. Amplified. Seamless interfaces, intuitive
+                    journeys.
+                  </Typography>
+
                   <Typography
                     variant="lgText"
                     fontWeight={400}
@@ -329,7 +328,7 @@ export default function Home() {
       {/* recents */}
       <Box
         sx={{
-          height: "43rem",
+          height: "fit-content",
           background: `url(${bimg2})`,
           backgroundPosition: "70% -60px",
           backgroundRepeat: "no-repeat",
@@ -345,7 +344,7 @@ export default function Home() {
           },
         }}
         pt={14}
-        pb={10}
+        pb={{xs:25, sm:14}}
       >
         {/* <Overlay sx={{padding: { xs: 1, lg: 4 }}}> */}
         <PaddedBox>
@@ -354,14 +353,24 @@ export default function Home() {
               Recent Projects
             </Typography>
             <Typography
-                  variant="smText"
-                  // sx={{ borderBottom: "1px solid #ebebeb" }}
-                >
-                  See what projects I've been working
-                </Typography>
+              variant="smText"
+              // sx={{ borderBottom: "1px solid #ebebeb" }}
+            >
+              See what projects I've been working
+            </Typography>
           </Stack>
 
-          <Recents/>
+          <Box
+            sx={{
+              display: "flex",
+              overflowX: "auto",
+              // overflowY: "hidden",
+              borderBottom: { xs: `1px solid ${colors.grey[800]}`, sm: "none" },
+            }}
+            pb={1}
+          >
+            <Recents />
+          </Box>
         </PaddedBox>
         {/* </Overlay> */}
       </Box>

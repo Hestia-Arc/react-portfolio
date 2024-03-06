@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   Box,
   Stack,
+  Tooltip,
   Typography,
   colors,
   styled,
@@ -9,6 +10,7 @@ import {
 } from "@mui/material";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
 import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
+import SourceIcon from '@mui/icons-material/Source';
 import { Link } from "react-router-dom";
 import { projects } from "../../data/projectData";
 import darkbg from "../../data/c-bg.png";
@@ -315,9 +317,18 @@ function ProjectBox(props) {
             <Typography variant="xlText">
               {props.title ? <>{props.title}</> : "..."}
             </Typography>
-            <a href={props.link} target="_blank" rel="noreferrer">
-              <OpenInNewRoundedIcon fontSize="small" color="inputs" />
+
+            <span>
+       <a href={props.link} target="_blank" rel="noreferrer">
+           <Tooltip title="Source code"> <SourceIcon color="inputs" fontSize="small" /></Tooltip>
             </a>
+            <a href={props.link} target="_blank" rel="noreferrer">
+             <Tooltip title="Live page"> <OpenInNewRoundedIcon fontSize="small" color="inputs" /></Tooltip>
+            </a>
+        </span>
+
+
+           
           </Stack>
 
           <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
@@ -402,10 +413,16 @@ const DisplayMobileProject = (props) => {
         alignItems="center"
         px={0.5}
       >
-        <Typography variant="mdText">{title}</Typography>
-        <a href={link} target="_blank" rel="noreferrer">
-          <OpenInNewRoundedIcon color="inputs" />
-        </a>
+        <Typography variant="mdText" fontWeight={600}>{title}</Typography>
+       
+       <span>
+       <a href={link} target="_blank" rel="noreferrer">
+           <Tooltip title="Source code"> <SourceIcon color="inputs" fontSize="small" /></Tooltip>
+            </a>
+            <a href={link} target="_blank" rel="noreferrer">
+             <Tooltip title="Live page"> <OpenInNewRoundedIcon color="inputs" fontSize="small" /></Tooltip>
+            </a>
+        </span>
       </Stack>
       <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
         {desc}
