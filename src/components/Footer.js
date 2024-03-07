@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import React from "react";
 import darkbg from "../data/c-bg.png";
+import CV from "../data/Resume-Afolabi Esther.pdf";
+
 // import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
 // import PhoneBg from "../images/phone3.jpg";
 
@@ -20,22 +22,67 @@ const StyledTitle = styled(Typography)((props) => ({
 }));
 
 const LinkBox = ({ link, text }) => {
-  return <Typography variant="xsText">{text}</Typography>;
+  return (
+    <a href={link}>
+      <Typography variant="xsText">{text}</Typography>
+    </a>
+  );
 };
 // ----------------------------------------
 function Footer(props) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  // const contactForm = useRef(null)
+  // contactForm.target = "_blank"
+  // document.getElementById('contact-form').setAttribute('target', "googleForm");
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [message, setMessage] = useState("");
+
+  // const handleFormSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append("entry.1849029163", name);
+  //   formData.append("entry.1384134702", email);
+  //   formData.append("entry.1528635215", message);
+
+  //   console.log(`message sent ${name}, ${email}, ${message}`);
+
+  //   try {
+  //     const response = await fetch(
+  //       "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQypqz8TD8RBGnLfzJfb1ZkKpcOTGIeH9ABIrN02CuIqzkfQ/formResponse",
+  //       {
+  //         method: "POST",
+  //         mode: "cors",
+  //         body: formData,
+  //       }
+  //     );
+
+  //     console.log(response);
+  //     return response;
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // };
+
   return (
     <Box
       sx={{
         minHeight: "20rem",
         background:
           props.bg &&
-          `linear-gradient(to right, rgba(1,1,2, 0.3), rgba(1,1,3, 0.66), rgba(1,1,3, 0.66)), url(${darkbg})`,
+          `linear-gradient(to right, rgba(1,1,2, 0.1), rgba(1,1,3, 0.45), rgba(1,1,3, 0.4)), url(${darkbg})`,
         backgroundPosition: "left",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+
+        a: {
+          color: colors.grey[400],
+          "&:hover": {
+            color: colors.goldAccent[300],
+            transform: "translateY(-3px)",
+          },
+        },
       }}
       pt={4}
     >
@@ -69,10 +116,10 @@ function Footer(props) {
                 <StyledTitle variant="smText" colors={colors}>
                   Quick Links
                 </StyledTitle>
-                <LinkBox text="Home" link="" />
-                <LinkBox text="About" link="" />
-                <LinkBox text="Portfolio" link="" />
-                <LinkBox text="Blog" link="" />
+                <LinkBox text="Home" link="./" />
+                <LinkBox text="About" link="./about" />
+                <LinkBox text="Portfolio" link="./project" />
+                {/* <LinkBox text="Blog" link="" /> */}
               </Stack>
 
               {/* --------2 */}
@@ -80,10 +127,16 @@ function Footer(props) {
                 <StyledTitle variant="smText" colors={colors}>
                   Socials
                 </StyledTitle>
-                <LinkBox text="GitHub" link="" />
-                <LinkBox text="LinkedIn" link="" />
-                <LinkBox text="Twitter" link="" />
-                <LinkBox text="DevTo" link="" />
+                <LinkBox text="GitHub" link="https://github.com/Hestia-Arc" />
+                <LinkBox
+                  text="LinkedIn"
+                  link="https://www.linkedin.com/in/hestiaarc00"
+                />
+                <LinkBox
+                  text="Twitter"
+                  link="https://twitter.com/arc_hestia00"
+                />
+                {/* <LinkBox text="DevTo" link="" /> */}
               </Stack>
 
               {/* --------3*/}
@@ -91,8 +144,8 @@ function Footer(props) {
                 <StyledTitle variant="smText" colors={colors}>
                   Infos
                 </StyledTitle>
-                <LinkBox text="Resume" link="" />
-                <LinkBox text="LinkTree" link="" />
+                <LinkBox text="Resume" link={CV} />
+                {/* <LinkBox text="LinkTree" link="" /> */}
                 {/* <LinkBox text='Home' link='' /> */}
                 {/* <LinkBox text='Home' link='' /> */}
               </Stack>
@@ -117,79 +170,115 @@ function Footer(props) {
                   Get in Touch
                 </StyledTitle>
 
-                <Stack id="contact"
-                  spacing={2}
-                  sx={{
-                    backgroundColor: "rgb(17,22,27)",
-                    color: colors.grey[200],
-                    padding: { xs: 2, sm: 1.5 },
-                    borderRadius: 1.4,
-                  }}
+                <form
+                  method="POST"
+                  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQypqz8TD8RBGnLfzJfb1ZkKpcOTGIeH9ABIrN02CuIqzkfQ/formResponse"
                 >
-                  <TextField
-                    required
-                    label="Name"
-                    variant="outlined"
-                    color="inputs"
-                    focused
-                    size="small"
-                    inputProps={{
-                      style: {
-                        color: colors.grey[300],
-                        fontWeight: 300,
-                        fontSize: "0.85rem",
-                      },
-                    }}
-                  />
-                  <TextField
-                    required
-                    label="Email"
-                    variant="outlined"
-                    color="inputs"
-                    focused
-                    size="small"
-                    inputProps={{
-                      style: {
-                        color: colors.grey[300],
-                        fontWeight: 300,
-                        fontSize: "0.85rem",
-                      },
-                    }}
-                  />
-                  <TextField
-                    id="outlined-multiline-static"
-                    label="Message"
-                    multiline
-                    rows={2}
-                    placeholder="Your message"
-                    color="inputs"
-                    focused
-                    size="small"
-                    inputProps={{
-                      style: {
-                        color: colors.grey[300],
-                        fontWeight: 300,
-                        fontSize: "0.85rem",
-                      },
-                      label: {
-                        color: "#ffffff",
-                      },
-                    }}
-                  />
-                  <Button
-                    variant="contained"
-                    size="small"
-                    // startIcon={<ArticleRoundedIcon />}
+                  <Stack
+                    id="contact"
+                    spacing={2}
                     sx={{
-                      width: "100%",
-                      background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
-                      border: `0.5px solid ${colors.grey[800]}`,
-                      textTransform: "capitalize",
+                      backgroundColor: "rgb(17,22,27)",
+                      color: colors.grey[200],
+                      padding: { xs: 2, sm: 1.5 },
+                      borderRadius: 1.4,
                     }}
                   >
-                    Submit
-                  </Button>
-                </Stack>
+                    <TextField
+                      required
+                      id="Name"
+                      name="entry.1849029163"
+                      // onChange={(e) => {
+                      //   setName(e.target.value);
+                      // }}
+                      label="Name"
+                      variant="outlined"
+                      color="inputs"
+                      focused
+                      size="small"
+                      inputProps={{
+                        style: {
+                          color: colors.grey[300],
+                          fontWeight: 300,
+                          fontSize: "0.85rem",
+                        },
+                      }}
+                      sx={{}}
+                    />
+                    <TextField
+                      required
+                      id="Email"
+                      name="entry.1384134702"
+                      // // onChange={(e) => {
+                      //   setEmail(e.target.value);
+                      // }}
+                      label="Email"
+                      variant="outlined"
+                      color="inputs"
+                      focused
+                      size="small"
+                      inputProps={{
+                        style: {
+                          color: colors.grey[300],
+                          fontWeight: 300,
+                          fontSize: "0.85rem",
+                        },
+                      }}
+                    />
+                    <TextField
+                      id="Message"
+                      name="entry.1528635215"
+                      // onChange={(e) => {
+                      //   setMessage(e.target.value);
+                      // }}
+                      // id="outlined-multiline-static"
+                      label="Message"
+                      multiline
+                      rows={3}
+                      placeholder="Your message"
+                      color="inputs"
+                      focused
+                      size="small"
+                      inputProps={{
+                        style: {
+                          color: colors.grey[300],
+                          fontWeight: 300,
+                          fontSize: "0.85rem",
+                        },
+                        label: {
+                          color: "#ffffff",
+                        },
+                      }}
+                    />
+                    <Button
+                      variant="contained"
+                      type="submit"
+                      size="small"
+                      // startIcon={<ArticleRoundedIcon />}
+                      sx={{
+                        width: "100%",
+                        background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
+                        border: `0.5px solid ${colors.grey[800]}`,
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      Submit
+                    </Button>
+                  </Stack>
+                </form>
+                <iframe
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSeQypqz8TD8RBGnLfzJfb1ZkKpcOTGIeH9ABIrN02CuIqzkfQ/viewform?embedded=true"
+                  title="google form"
+                  nmae="googleForm"
+                  width="700"
+                  height="520"
+                  frameborder="0"
+                  marginheight="0"
+                  marginwidth="0"
+                  style={{ display: "none" }}
+                >
+                  Loading…
+                </iframe>
               </Stack>
 
               {/* --------CONTACT 5*/}

@@ -30,7 +30,7 @@ const AboutBox = styled(Box)((props) => ({
   position: "relative",
   minHeight: "50rem",
   background: "#ccc",
-  backgroundImage: `linear-gradient(to right, rgba(1,1,2, 0.5), rgba(1,1,3, 0.6)), url(${darkbg})`,
+  backgroundImage: `linear-gradient(to right, rgba(1,1,2, 0.3), rgba(1,1,3, 0.4)), url(${darkbg})`,
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
