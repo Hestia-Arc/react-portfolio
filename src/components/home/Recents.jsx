@@ -18,7 +18,7 @@ function Recents() {
 
 export default Recents;
 
-function Card(props) {
+export function Card(props) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const { id, title, img, link, desc, stack } = props.project;
@@ -41,7 +41,7 @@ function Card(props) {
         sx={{
           height: "195px",
           //   border: `1px solid ${colors.grey[300]}`,
-          background: `url(${img})`,
+          background: img.length === 0 ? colors.grey[300] : `url(${img})`,
           backgroundPosition: "top center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -56,7 +56,7 @@ function Card(props) {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Typography variant="mdText" fontWeight={600}>
+            <Typography variant="mdText" fontWeight={600} >
               {title}
             </Typography>
 

@@ -23,7 +23,8 @@ import CV from "../../data/Resume-Afolabi Esther.pdf";
 // import bimg from "../../images/bimg.jpg";
 // import darkbg from "../../images/cv1-01.jpg";
 import darkbg from "../../data/c-bg.png";
-import Recents from "./Recents";
+import Recents, { Card } from "./Recents";
+import { projects } from "../../data/projectData";
 
 const HomeContainer = styled(Box)((props) => ({
   // border: '1px solid black'
@@ -330,21 +331,21 @@ export default function Home() {
         sx={{
           height: "fit-content",
           background: `url(${bimg2})`,
-          backgroundPosition: "70% -60px",
+          backgroundPosition: "90% -60px",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           position: "relative",
           marginTop: "-100px",
-          marginBottom: "-50px",
+          marginBottom: "-65px",
           color:
             theme.palette.mode === "dark" ? colors.grey[200] : colors.grey[900],
 
           [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
-            marginBottom: "-141px",
+            marginBottom: "-211px",
           },
         }}
         pt={14}
-        pb={{xs:25, sm:14}}
+        pb={{ xs: 30, sm: 14 }}
       >
         {/* <Overlay sx={{padding: { xs: 1, lg: 4 }}}> */}
         <PaddedBox>
@@ -374,10 +375,26 @@ export default function Home() {
         </PaddedBox>
         {/* </Overlay> */}
       </Box>
-      {/* 
-      <Box
-        sx={{ height: "400px", backgroundColor: colors.goldAccent[800] }}
-      ></Box> */}
+
+      {/* CURRENTLY DEVELOPING */}
+
+      <Box sx={{ height: "fit-content", backgroundColor: colors.goldAccent[400], }} py={10}>
+        <PaddedBox>
+          <Stack spacing={1} mb={2} sx={{color: colors.grey[100] }}>
+            <Typography variant="xsDisplay" fontWeight={500}>
+              Current Project
+            </Typography>
+            <Typography
+              variant="smText"
+              // sx={{ borderBottom: "1px solid #ebebeb" }}
+            >
+              Projects I'm currently working on.
+            </Typography>
+          </Stack>
+
+          <Card project={projects[6]} />
+        </PaddedBox>
+      </Box>
 
       {/* footer */}
       <Footer bg={true} />

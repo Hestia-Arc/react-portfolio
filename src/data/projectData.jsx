@@ -4,7 +4,7 @@ import Nature from "../images/Weather-Application.resized.png";
 import Recipe from "../images/Recipe-app.resized.png";
 import Restaurant from "../images/Mia-s-Kitn.resized.png";
 import Clearlink from "../images/ClearLink.resized.png";
-import Portfolio from "../images/Portfolio.resized.png"
+// import Portfolio from "../images/Portfolio.resized.png"
 
 
 
@@ -15,7 +15,7 @@ export const projects = [
     title: "Restaurant Landing page",
     img: Restaurant,
     link: "https://mias-restuarant.vercel.app/",
-    desc: "Restaurant Landing page",
+    desc: "A landing page for a restaurant business that provide information about the it and market its products.",
     stack: ['React', 'Material UI', 'Vite'],
     src: "",
   },
@@ -24,7 +24,7 @@ export const projects = [
     title: "Recipe App",
     img: Recipe,
     link: "https://recipe-app-three-kohl.vercel.app/",
-    desc: "Recipe App",
+    desc: "A recipe application that allows user search meals by categories and present ingredients and methods of cooking each meal.",
     stack: ['HTML','TailwindCSS', 'Typescript', 'theMealDB'],
     src: "",
   },
@@ -51,7 +51,7 @@ export const projects = [
     title: "ClearLink Landing page",
     img: Clearlink,
     link: "https://clearlink-alpha.vercel.app/",
-    desc: "ClearLink Landing page",
+    desc: "A landing page built for TalentSync project assessment.",
     stack: ['React', 'Material UI', 'Vite'],
     src: "",
   },
@@ -66,13 +66,22 @@ export const projects = [
   },
   {
     id: 7,
-    title: "Portfolio",
-    img: Portfolio,
-    link: "https://season-gallery.vercel.app/gallery",
-    desc: "A responsive portfolio",
-    stack: ["React", "MUI"],
+    title: "Blog Application",
+    img: "",
+    link: "#",
+    desc: "In progress...",
+    stack: [],
     src: "",
   },
+  // {
+  //   id: 7,
+  //   title: "Portfolio",
+  //   img: Portfolio,
+  //   link: "https://season-gallery.vercel.app/gallery",
+  //   desc: "A responsive portfolio",
+  //   stack: ["React", "MUI"],
+  //   src: "",
+  // },
   // {
   //   id: 8,
   //   title: "Weather App",

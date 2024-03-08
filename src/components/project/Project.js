@@ -102,6 +102,10 @@ export default function Project() {
           a: {
             textDecoration: "none",
             color: colors.grey[200],
+            "&:hover": {
+              color: colors.goldAccent[300],
+              transform: "translateY(-3px)",
+            },
           },
         }}
       >
@@ -147,8 +151,7 @@ export default function Project() {
 
             <Typography variant="smText" sx={{color: colors.grey[400]}}>
               {" "}
-              My skills in action: a showcase of impactful projects I've been a
-              part of.
+              My skills in action: a showcase projects I've built.
             </Typography>
           </Stack>
         </PaddedBox>
@@ -239,9 +242,11 @@ function ProjectBox(props) {
           // border: "1px solid blue",
           width: "fit-content",
           marginRight: "9px",
-          backgroundColor: props.active && colors.grey[800],
-          borderLeft: props.active && "1px solid white",
-          padding: props.active && "0.8rem 0 0 0.8rem",
+          // backgroundColor: props.active && colors.goldAccent[800],
+          borderTop: props.active && `4px solid ${colors.goldAccent[200]}`,
+          padding: props.active && "0.8rem 0 0 0",
+          transition: "all 300ms ease-in-out",
+
 
           [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]: {
             display: "none",
@@ -384,6 +389,12 @@ function ProjectBox(props) {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             // border: "1px solid black",
+
+            "&:hover": {
+              opacity: props.active ? 1 : 0.4,
+            },
+
+            transition: "all 300ms ease-in-out"
           }}
         ></Box>
       </Box>
@@ -396,7 +407,8 @@ const DisplayMobileProject = (props) => {
   const { title, img, desc, link, stack } = props.data;
 
   return (
-    <Stack spacing={2} sx={{ width: "100%", height: "100%" }} p={1}>
+    <Stack spacing={2} sx={{ width: "100%", height: "100%",            transition: "all 300ms ease-in-out"
+  }} p={1}>
       <Box
         sx={{
           height: "185px",

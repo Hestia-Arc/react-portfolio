@@ -68,7 +68,6 @@ const TextBox = styled(Typography)({
   // lineHeight: "1.8rem",
 });
 
-
 export default function About() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -148,8 +147,8 @@ export default function About() {
             >
               {/* --------1 */}
               <Stack
-                direction={{xs: "column",sm:"row"}}
-                spacing={{xs:4, sm: 2, md:2}}
+                direction={{ xs: "column", sm: "row" }}
+                spacing={{ xs: 4, sm: 2, md: 2 }}
                 sx={{
                   // border: `solid 1px ${colors.grey[900]}`,
                   boxShadow: "2px 6px 12px rgba(0,0,0,.1)",
@@ -158,27 +157,27 @@ export default function About() {
                   // padding: 4,
                   // width: { xs: "100%", sm: "60%" },
                 }}
-                mt={{xs: 3,sm: 13.5}}
+                mt={{ xs: 3, sm: 13.5 }}
               >
                 <TextBox variant="baseText">
                   {" "}
-                  As a driven and detail-oriented Frontend Developer, I leverage
-                  my experience in building user-friendly web interfaces that
-                  drive results.
+                  As a driven and detail-oriented Frontend Developer, I am
+                  dedicated to building functional web solutions that deliver on
+                  your specific needs. I leverage my experience in building
+                  intuitive web interfaces that drive results.
                 </TextBox>
 
                 <TextBox variant="baseText">
                   Adept in building modern, responsive and functional UIs using
-                  React, MUI, tailored to specific user needs,
-                  ensuring an accessible and seamless experience across all
-                  devices.
+                  React, MUI, tailored to specific user needs, ensuring an
+                  accessible and seamless experience across all devices.
                 </TextBox>
               </Stack>
 
               {/* ---------2 */}
               <Stack
-                direction={{xs: "column",sm:"row"}}
-                spacing={{xs:4, sm: 2, md:2}}
+                direction={{ xs: "column", sm: "row" }}
+                spacing={{ xs: 4, sm: 2, md: 2 }}
                 sx={{
                   // border: `solid 1px ${colors.grey[900]}`,
                   boxShadow: "2px 6px 12px rgba(0,0,0,.1)",
@@ -191,27 +190,40 @@ export default function About() {
               >
                 <Stack
                   sx={{
-                    height: "280px",
+                    // height: "280px",
                     width: "100%",
                     backgroundColor: colors.grey[900],
-                    // color: colors.grey[900],
-                    // opacity: 0.5
+                    border: `1px solid ${colors.grey[800]}`,
+                    borderRadius: "3px"
                   }}
                   p={2}
                 >
-                  <TextBox variant="baseText">- Writes clean code.</TextBox>
-                  <TextBox variant="baseText">- Adopt best practices and design principles.</TextBox>
-                  <TextBox variant="baseText">- User-centric design principles.</TextBox>
-                  <TextBox variant="baseText"></TextBox>
+                  <TextBox variant="baseText">
+                    - Writes clean and maintainable code.
+                  </TextBox>
+                  <TextBox variant="baseText">- Adopts best practices.</TextBox>
+                  <TextBox variant="baseText">
+                    - User-centric design principles.
+                  </TextBox>
+                  <TextBox variant="baseText">
+                    - Optimization and performance.
+                  </TextBox>
+                  <TextBox variant="baseText">- Testing</TextBox>
+                  <TextBox variant="baseText">
+                    - Version control system (Git/Github)
+                  </TextBox>
+                  {/* <TextBox variant="baseText">- </TextBox> */}
                 </Stack>
 
+                {/* soft skills */}
                 <Stack
                   sx={{
-                    height: "280px",
+                    height: "fit-content",
                     width: "100%",
                     backgroundColor: colors.grey[400],
                     color: colors.grey[900],
-
+                    border: `1px solid ${colors.grey[900]}`,
+                    borderRadius: "3px"
                     // opacity: 0.5
                   }}
                   p={2}
@@ -222,75 +234,46 @@ export default function About() {
                   <TextBox variant="baseText">
                     - Effective time management
                   </TextBox>
-                  <TextBox variant="baseText">- Great analytical skill</TextBox>
-                  <TextBox variant="baseText">- collaborative
-                  with great communication skills</TextBox>
-                  <TextBox variant="baseText"></TextBox>
+                  <TextBox variant="baseText">
+                    - Analytical mindset adept at identifying and resolving
+                    frontend issues efficiently and independently.
+                  </TextBox>
+                  <TextBox variant="baseText">- Collaborative</TextBox>
+                  <TextBox variant="baseText">- Adaptability</TextBox>
+                  <TextBox variant="baseText">
+                    - Creative problem solving{" "}
+                  </TextBox>
+                  <TextBox variant="baseText">
+                    - Minimal supervision, maximum impact
+                  </TextBox>
+
+                  {/* <TextBox variant="baseText"></TextBox> */}
                 </Stack>
+              </Stack>
 
-                {/* <TextBox variant="baseText">
-                  {" "}
-                  <TaskAltRoundedIcon color="blue" /> Effective time management{" "}
-                </TextBox>
+              {/* ---------3 */}
+              <Stack spacing={2} mt={3} sx={{
+                                  color: colors.grey[400],
 
-                <TextBox variant="baseText">
-                  {" "}
-                  <TaskAltRoundedIcon color="blue" /> Writes clean &
-                  maintainable code.
-                </TextBox>
+              }}>
 
-                <TextBox variant="baseText">
-                  <TaskAltRoundedIcon />A passion for exploring emerging
-                  technologies.
-                </TextBox>
+                <Typography variant="baseText">
+                  I am an avid learner who is constantly learning and evolving,
+                  open to feedback and guidance to deliver the best possible results.
+                </Typography>
 
-                <Stack>
-                  More in my toolbelt includes; <br />
-                  <TextBox>-HTML,CSS3, JavaScript.</TextBox>
-                  <TextBox variant="baseText">
-                    {" "}
-                    -CSS Preprocessor/framework (SASS & Bootstrap){" "}
-                  </TextBox>
-                  <TextBox variant="baseText">
-                    {" "}
-                    -Version control system (Git)
-                  </TextBox>
-                  <TextBox variant="baseText"> -React Query </TextBox>
-                  <TextBox variant="baseText">
-                    {" "}
-                    -Testing framework (Jest) for code quality assurance.
-                  </TextBox>
-                  <TextBox variant="baseText">
-                    {" "}
-                    -User-centric design principles.
-                  </TextBox>
-                  <TextBox variant="baseText">
-                    I thrive in collaborative environments where I can learn
-                    from others and continuously challenge myself.
-                  </TextBox>
-                  <TextBox variant="baseText">
-                    Seeking exciting frontend challenges! Share your current
-                    project's UI pain points and let's brainstorm solutions
-                    together. Don't hesitate to reach out - I'm happy to help!
-                  </TextBox>
-                </Stack>
-
-                <TextBox variant="baseText">
-                  I am an avid learner who is genuinely interested in technology
-                  and passionate about bringing digital experiences to life.
-                </TextBox>
-                <TextBox variant="baseText">
-                  Keen to evaluate and learn new technologies, collaborative
-                  with great communication skills. Focused on developing high
-                  quality products and services.{" "}
-                </TextBox> */}
+                <Typography  variant="baseText">
+                  <strong>P.S</strong>... I also bring a healthy dose of humor 😄 and
+                  enthusiasm to the table, making the development process an
+                  enjoyable and productive experience for everyone involved,
+                </Typography>
               </Stack>
             </Box>
 
             {/* ==================== */}
             {/* AVATAR */}
             <Stack
-              alignItems={{xs: "center",sm:"flex-end"}}
+              alignItems={{ xs: "center", sm: "flex-end" }}
               sx={{
                 flex: 1,
                 // border: "1px solid white",
@@ -304,11 +287,17 @@ export default function About() {
                 mt={6}
                 pb={1}
                 mb={1}
-                sx={{width: "100%", borderBottom: `0.5px solid ${colors.grey[800]}` }}
+                sx={{
+                  width: "100%",
+                  borderBottom: `0.5px solid ${colors.grey[800]}`,
+                }}
               >
                 <Typography variant="xsDisplay">Meet me</Typography>
                 {/* <Divider orientation="vertical" variant="middle" flexItem /> */}
-                <Typography variant="smText" sx={{ color: colors.goldAccent[400] }}>
+                <Typography
+                  variant="smText"
+                  sx={{ color: colors.goldAccent[400] }}
+                >
                   Creativity. Reliability. Competent.
                 </Typography>
               </Stack>
@@ -318,14 +307,17 @@ export default function About() {
                 src={picture}
                 variant="square"
                 alt="Developer's"
-                sx={{ width: {xs: 310, sm: 195,md: 231,lg:300}, height: {xs: 320, sm: 233, md: 269,lg: 320 }}}
+                sx={{
+                  width: { xs: 310, sm: 195, md: 231, lg: 300 },
+                  height: { xs: 320, sm: 233, md: 269, lg: 320 },
+                }}
                 loading="lazy"
               />
 
               <Stack
                 spacing={1}
                 alignItems="center"
-                sx={{ width: { xs: "100%", sm: 195,md: 231,lg:300} }}
+                sx={{ width: { xs: "100%", sm: 195, md: 231, lg: 300 } }}
                 mt={2}
               >
                 <a href={CV} download="Esther's Cv" style={{ width: "100%" }}>
@@ -405,16 +397,20 @@ export default function About() {
                 Skills
               </Typography>
 
-              <Box sx={{ width: { xs: "100%", sm: "200px",md: "325px",lg:"400px" }, color: colors.grey[400] }}>
+              <Box
+                sx={{
+                  width: { xs: "100%", sm: "200px", md: "325px", lg: "400px" },
+                  color: colors.grey[400],
+                }}
+              >
                 <Typography
                   variant="smText"
                   // sx={{ borderBottom: "1px solid #ebebeb" }}
                 >
-                  Check out skills in my toolkit for developing intuitive user interfaces and
-                  bringing digital experiences to life.
-                  I am an avid learner who is genuinely interested in technology,
-                  keen to evaluate and learn new technologies. 
-                  
+                  Check out skills in my toolkit for developing intuitive user
+                  interfaces and bringing digital experiences to life. I am an
+                  avid learner who is genuinely interested in technology, keen
+                  to evaluate and learn new technologies.
                 </Typography>
               </Box>
             </Stack>
@@ -422,14 +418,14 @@ export default function About() {
             {/* BOX-2 */}
             <Box
               sx={{
-                flex: {xs:1, sm: 2, md: 1},
+                flex: { xs: 1, sm: 2, md: 1 },
                 display: { xs: "flex", sm: "block" },
                 overflowX: "auto",
                 borderBottom: {
                   xs: `1px solid ${colors.grey[800]}`,
                   sm: "none",
                 },
-                
+
                 // position: "absolute",
                 // top: 0,
                 // right: 0,
@@ -439,7 +435,7 @@ export default function About() {
               }}
               p={1}
               pt={8}
-              ml={{sm:3, md:0}}
+              ml={{ sm: 3, md: 0 }}
             >
               <Grid
                 container
@@ -455,7 +451,7 @@ export default function About() {
               >
                 {/* row-1 */}
                 <Grid item xs={12}>
-                  <BrickDesignTwo tag1="Jest" tag2="Firebase" tag3="Vite" />
+                  <BrickDesignTwo tag1="Postman" tag2="Firebase" tag3="Vite" />
                 </Grid>
 
                 {/* row-2 */}
@@ -464,6 +460,7 @@ export default function About() {
                     tag1="React Query"
                     tag2="Git/GitHub"
                     tag3="Fetch API/ Axios"
+                    tag4="Jest"
                   />
                 </Grid>
 
@@ -518,12 +515,18 @@ export default function About() {
                 Experiences
               </Typography>
 
-              <Box sx={{ width: { xs: "100%", sm: "200px",md: "325px",lg:"400px" }, color: colors.grey[400] }}>
+              <Box
+                sx={{
+                  width: { xs: "100%", sm: "200px", md: "325px", lg: "400px" },
+                  color: colors.grey[400],
+                }}
+              >
                 <Typography
                   variant="smText"
                   // sx={{ borderBottom: "1px solid #ebebeb" }}
                 >
-                 Where my skills meet purpose: a journey through places I've leveraged my skills.
+                  Where my skills meet purpose: a journey through places I've
+                  leveraged my skills.
                   {/* and contributing to
                   impactful projects. */}
                 </Typography>
@@ -533,7 +536,7 @@ export default function About() {
             {/* BOX-2 */}
             <Box
               sx={{
-                flex: {xs:1, sm: 2, md: 1},
+                flex: { xs: 1, sm: 2, md: 1 },
                 // position: "absolute",
                 // top: 0,
                 // right: 0,
@@ -543,7 +546,7 @@ export default function About() {
               }}
               p={1}
               pt={8}
-              ml={{sm:5, md:0}}
+              ml={{ sm: 5, md: 0 }}
             >
               {/* exp 1 */}
               <Stack
@@ -558,35 +561,58 @@ export default function About() {
                   <Typography>
                     Front-end Developer | Lagos, Nigeria | 2022 - present
                   </Typography>
-                  <Stack direction='row' spacing={1}
+                  <Stack
+                    direction="row"
+                    spacing={1}
                     sx={{ backgroundColor: colors.grey[900], padding: 1 }}
                   >
                     <HandymanRoundedIcon fontSize="small" color="primary" />
-                    <Typography variant="smText" sx={{color: colors.grey[400]}}>HTML | CSS | SASS | ReactJS | React-Query | Firebase </Typography>
+                    <Typography
+                      variant="smText"
+                      sx={{ color: colors.grey[400] }}
+                    >
+                      HTML | CSS | SASS | Bootstrap | Material UI | ReactJS |
+                      ContextAPI | React-Query | Firebase | Git/GitHub
+                    </Typography>
                   </Stack>
                 </Stack>
 
                 {/* -..... */}
-                <Stack sx={{color: colors.grey[400]}}>
+                <Stack spacing={1} sx={{ color: colors.grey[400] }}>
+                  <Typography variant="smText">
+                    - Work with UI designer to transform high-fidelity Figma
+                    designs into responsive and functional user interfaces.
+                  </Typography>
                   <Typography variant="smText">
                     - Contributed to the development of client-side web
-                    applications <br />
-                    using Reactjs and other Frontend technologies.
+                    applications and websites using HTML, CSS, JavaScript,
+                    Reactjs and other Frontend technologies.
+                  </Typography>
+                  <Typography variant="smText">
+                    - Built reusable and accessible user interface components
+                    with Material UI (MUI) library for maintainability and
+                    scalability.
+                  </Typography>
+                  <Typography variant="smText">
+                    - Integrated Redux Toolkit/Context API for efficient global
+                    management of data across the code, ensuring proper
+                    separation of concerns within the application.
+                  </Typography>
+                  <Typography variant="smText">
+                    - Interact with backend APIs from the front end using Fetch
+                    API and React query (Tanstack).
+                  </Typography>
+                  <Typography variant="smText">
+                    - Engage in weekly demo sessions to iron out issues and
+                    present tasks assigned.
                   </Typography>
                   <Typography>
                     -Implemented responsive designs on multiple projects <br />
                     resulting in improved user experience and engagement.
                   </Typography>
-                  <Typography>
-                    -Implemented dynamic and interactive pages.
-                  </Typography>
-                  <Typography>
-                    -Implemented dynamic and interactive pages.
-                  </Typography>
-                  {/* <Typography></Typography> */}
-                  {/* <Typography></Typography> */}
-                  {/* <Typography></Typography> */}
-                  {/* <Typography></Typography> */}
+
+                  {/* <Typography variant="smText"></Typography>
+                  <Typography variant="smText"></Typography> */}
                 </Stack>
               </Stack>
 
@@ -595,36 +621,35 @@ export default function About() {
                 <Typography variant="xxlText">Zuri Internship HNGx</Typography>
                 <Stack>
                   <Typography>
-                    Front-end Development | Remote | Oct 2022
+                    Front-end Development | Remote | Sept 2022
                   </Typography>
-                  <Typography
+                  <Stack
+                    direction="row"
+                    spacing={1}
                     sx={{ backgroundColor: colors.grey[900], padding: 1 }}
                   >
                     <HandymanRoundedIcon fontSize="small" color="primary" />
-                  </Typography>
+                    <Typography
+                      variant="smText"
+                      sx={{ color: colors.grey[400] }}
+                    >
+                      HTML | CSS | JavaScript(ReactJS) | Material UI | Git |
+                      GitHub | Fetch API | API | Vercel
+                    </Typography>
+                  </Stack>
                 </Stack>
 
                 {/* -..... */}
-                <Stack sx={{color: colors.grey[400]}}>
+                <Stack spacing={1} sx={{ color: colors.grey[400] }}>
                   <Typography variant="smText">
-                    - Contributed to the development of client-side web
-                    applications <br />
-                    using Reactjs and other Frontend technologies.
+                    - Participated and completed tasks given.
                   </Typography>
-                  <Typography>
-                    -Implemented responsive designs on multiple projects <br />
-                    resulting in improved user experience and engagement.
+                  <Typography variant="smText">
+                    - Worked with backend developers to building a chrome
+                    extension(HelpMeOut)
                   </Typography>
-                  <Typography>
-                    -Implemented dynamic and interactive pages.
-                  </Typography>
-                  <Typography>
-                    -Implemented dynamic and interactive pages.
-                  </Typography>
-                  {/* <Typography></Typography> */}
-                  {/* <Typography></Typography> */}
-                  {/* <Typography></Typography> */}
-                  {/* <Typography></Typography> */}
+                  {/* <Typography variant="smText"></Typography> */}
+                  {/* <Typography variant="smText"></Typography> */}
                 </Stack>
               </Stack>
             </Box>
@@ -652,20 +677,20 @@ function BrickDesignOne({ tag1, tag2, tag3, tag4 }) {
   return (
     <Stack
       direction="row"
-      spacing={{xs:2, sm: 1, md:2}}
+      spacing={{ xs: 2, sm: 1, md: 2 }}
       sx={{
         height: "3rem",
         // border: "1px solid white"
       }}
     >
       <StyledBox>
-        <Typography variant='smText'>{tag1}</Typography>
+        <Typography variant="smText">{tag1}</Typography>
       </StyledBox>
       <StyledBox>
-        <Typography variant='smText'>{tag2}</Typography>
+        <Typography variant="smText">{tag2}</Typography>
       </StyledBox>
       <StyledBox>
-        <Typography variant='smText'>{tag3}</Typography>
+        <Typography variant="smText">{tag3}</Typography>
       </StyledBox>
       <Box
         sx={{
@@ -676,7 +701,7 @@ function BrickDesignOne({ tag1, tag2, tag3, tag4 }) {
           justifyContent: "center",
         }}
       >
-        <Typography variant='smText'>{tag4}</Typography>
+        <Typography variant="smText">{tag4}</Typography>
       </Box>
     </Stack>
   );
@@ -692,13 +717,12 @@ function BrickDesignTwo({ tag1, tag2, tag3 }) {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    
   });
 
   return (
     <Stack
       direction="row"
-      spacing={{xs:2, sm: 1, md:2}}
+      spacing={{ xs: 2, sm: 1, md: 2 }}
       sx={{
         height: "3rem",
         // border: "1px solid white"
@@ -712,13 +736,13 @@ function BrickDesignTwo({ tag1, tag2, tag3 }) {
         }}
       ></Box>
       <StyledBox>
-        <Typography variant='smText'>{tag1}</Typography>
+        <Typography variant="smText">{tag1}</Typography>
       </StyledBox>
       <StyledBox>
-        <Typography variant='smText'>{tag2}</Typography>
+        <Typography variant="smText">{tag2}</Typography>
       </StyledBox>
       <StyledBox>
-        <Typography variant='smText'>{tag3}</Typography>
+        <Typography variant="smText">{tag3}</Typography>
       </StyledBox>
       <Box
         sx={{
