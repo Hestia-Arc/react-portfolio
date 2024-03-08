@@ -216,58 +216,69 @@ export default function Home() {
                   }
                 }
               >
-                {isAnimated ? 
-                <Box
-                  sx={{
-                    opacity: isAnimated ? 1 : 0,
-                    transition: "opacity 300ms ease-in",
-                    display: { xs: "block", sm: "flex" },
-                    flexDirection: { sm: "column" },
-                  }}
-                >
-                  <Typography
-                    variant="lgText"
-                    fontWeight={400}
+                {isAnimated ? (
+                  <Box
                     sx={{
-                      color: colors.goldAccent[400],
-                      [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
-                        {
-                          fontSize: "1rem",
-                          lineHeight: "1.3rem",
-                        },
+                      opacity: isAnimated ? 1 : 0,
+                      transition: "opacity 300ms ease-in",
+                      display: { xs: "block", sm: "flex" },
+                      flexDirection: { sm: "column" },
                     }}
                   >
-                    Your vision. Amplified. Seamless interfaces, intuitive
-                    journeys.
-                  </Typography>
+                    <Typography
+                      variant="lgText"
+                      fontWeight={400}
+                      sx={{
+                        color: colors.goldAccent[400],
+                        [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+                          {
+                            fontSize: "1rem",
+                            lineHeight: "1.3rem",
+                          },
+                      }}
+                    >
+                      Your vision. Amplified. Seamless interfaces, intuitive
+                      journeys.
+                    </Typography>
 
-                  <Typography
-                    variant="lgText"
-                    fontWeight={400}
-                    sx={{
-                      color: colors.grey[400],
-                      [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
-                        {
-                          marginLeft: "5px",
-                          fontSize: "1rem",
-                          lineHeight: "1.3rem",
-                        },
-                    }}
-                  >
-                    Building intuitive web experience & innovative solutions.
-                    {/* "Don't watch the clock. Do what it does. Keep going." -Sam
+                    <Typography
+                      variant="lgText"
+                      fontWeight={400}
+                      sx={{
+                        color: colors.grey[400],
+                        [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+                          {
+                            marginLeft: "5px",
+                            fontSize: "1rem",
+                            lineHeight: "1.3rem",
+                          },
+                      }}
+                    >
+                      Building intuitive web experience & innovative solutions.
+                      {/* "Don't watch the clock. Do what it does. Keep going." -Sam
                   Levenson{" "} */}
-                  </Typography>
-                </Box>
-              :
-              <Stack spacing={1} sx={{}}>
-
-<Skeleton variant="text" sx={{width: '500px', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
-<Skeleton variant="text" sx={{width: '420px', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
-
-</Stack>
-} 
-
+                    </Typography>
+                  </Box>
+                ) : (
+                  <Stack spacing={1} sx={{}}>
+                    <Skeleton
+                      variant="text"
+                      sx={{
+                        width: {xs: "80%", sm:"450px", lg: "500px"},
+                        fontSize: "1rem",
+                        backgroundColor: colors.grey[700],
+                      }}
+                    />
+                    <Skeleton
+                      variant="text"
+                      sx={{
+                        width: {xs: "70%", sm:"400px", lg: "420px"},
+                        fontSize: "1rem",
+                        backgroundColor: colors.grey[700],
+                      }}
+                    />
+                  </Stack>
+                )}
 
                 <Stack
                   direction="row"
@@ -304,7 +315,9 @@ export default function Home() {
                   </a>
 
                   <a href={CV} download="Esther's Cv">
-                    <Button variant="outlined" color="secondary">DOWNLOAD CV</Button>
+                    <Button variant="outlined" color="secondary">
+                      DOWNLOAD CV
+                    </Button>
                   </a>
 
                   {/* <FlareRoundedIcon
@@ -388,9 +401,12 @@ export default function Home() {
 
       {/* CURRENTLY DEVELOPING */}
 
-      <Box sx={{ height: "fit-content", backgroundColor: colors.goldAccent[400], }} py={10}>
+      <Box
+        sx={{ height: "fit-content", backgroundColor: colors.goldAccent[400] }}
+        py={10}
+      >
         <PaddedBox>
-          <Stack spacing={1} mb={2} sx={{color: colors.grey[100] }}>
+          <Stack spacing={1} mb={2} sx={{ color: colors.grey[100] }}>
             <Typography variant="xsDisplay" fontWeight={500}>
               Current Project
             </Typography>
