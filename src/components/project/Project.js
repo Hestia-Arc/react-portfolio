@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   Box,
+  Skeleton,
   Stack,
   Tooltip,
   Typography,
@@ -10,7 +11,7 @@ import {
 } from "@mui/material";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
 import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
-import SourceIcon from '@mui/icons-material/Source';
+import SourceIcon from "@mui/icons-material/Source";
 import { Link } from "react-router-dom";
 import { projects } from "../../data/projectData";
 import darkbg from "../../data/c-bg.png";
@@ -55,6 +56,7 @@ export default function Project() {
   const colors = tokens(theme.palette.mode);
   const [scrollActive, setScrollActive] = useState(false);
   const [cardIndex, setCardIndex] = useState(3);
+  
 
   useEffect(() => {
     window.onscroll = () => {
@@ -136,20 +138,22 @@ export default function Project() {
           margin: { xs: "0px", sm: "40px 0 " },
         }}
       >
-        <PaddedBox sx={{
-           [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
-           {
-             display: "none",
-           },
-         [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
-           {
-             display: "block",
-           },
-        }}>
+        <PaddedBox
+          sx={{
+            [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
+              {
+                display: "none",
+              },
+            [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
+              {
+                display: "block",
+              },
+          }}
+        >
           <Stack spacing={2} sx={{ marginBottom: 7 }}>
             <Typography variant="xsDisplay">Projects</Typography>
 
-            <Typography variant="smText" sx={{color: colors.grey[400]}}>
+            <Typography variant="smText" sx={{ color: colors.grey[400] }}>
               {" "}
               My skills in action: a showcase projects I've built.
             </Typography>
@@ -231,6 +235,13 @@ export default function Project() {
 function ProjectBox(props) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsAnimated(true);
+    }, 2000);
+  }, []);
 
   return (
     <>
@@ -247,13 +258,13 @@ function ProjectBox(props) {
           padding: props.active && "0.8rem 0 0 0",
           transition: "all 300ms ease-in-out",
 
-
           [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]: {
             display: "none",
           },
         }}
       >
         {/* PROJECT IMAGE */}
+        {isAnimated ? 
         <Box
           sx={{
             borderRadius: "4px",
@@ -268,6 +279,16 @@ function ProjectBox(props) {
             // border: "1px solid black",
           }}
         ></Box>
+        :
+        <Skeleton
+        variant="rounded"
+        sx={{
+          backgroundColor: colors.grey[700],
+          height: "120px",
+          width: "100px",
+        }}
+        />
+}
       </Box>
 
       {/* ----------big screens */}
@@ -324,16 +345,19 @@ function ProjectBox(props) {
             </Typography>
 
             <span>
-       <a href={props.link} target="_blank" rel="noreferrer">
-           <Tooltip title="Source code"> <SourceIcon color="inputs" fontSize="small" /></Tooltip>
-            </a>
-            <a href={props.link} target="_blank" rel="noreferrer">
-             <Tooltip title="Live page"> <OpenInNewRoundedIcon fontSize="small" color="inputs" /></Tooltip>
-            </a>
-        </span>
-
-
-           
+              <a href={props.link} target="_blank" rel="noreferrer">
+                <Tooltip title="Source code">
+                  {" "}
+                  <SourceIcon color="inputs" fontSize="small" />
+                </Tooltip>
+              </a>
+              <a href={props.link} target="_blank" rel="noreferrer">
+                <Tooltip title="Live page">
+                  {" "}
+                  <OpenInNewRoundedIcon fontSize="small" color="inputs" />
+                </Tooltip>
+              </a>
+            </span>
           </Stack>
 
           <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
@@ -370,33 +394,48 @@ function ProjectBox(props) {
         </Stack>
 
         {/* PROJECT IMAGE */}
-        <Box
-          sx={{
-            borderRadius: "3px",
-            boxShadow: "3px 6px 17px rgba(0,0,0,.3)",
-            // backgroundColor: "rgba(0,0,0,.3)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: props.active
-              ? { sm: "354px", md: "354px", lg: "450px" }
-              : { xs: "120px", lg: "180px" },
-            width: props.active
-              ? { sm: "228px", md: "230px", lg: "310px" }
-              : { xs: "100px", lg: "140px" },
-            background: `url(${props.img})`,
-            backgroundPosition: "top center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            // border: "1px solid black",
+        {isAnimated ? (
+          <Box
+            sx={{
+              borderRadius: "3px",
+              boxShadow: "3px 6px 17px rgba(0,0,0,.3)",
+              // backgroundColor: "rgba(0,0,0,.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: props.active
+                ? { sm: "354px", md: "354px", lg: "450px" }
+                : { xs: "120px", lg: "180px" },
+              width: props.active
+                ? { sm: "228px", md: "230px", lg: "310px" }
+                : { xs: "100px", lg: "140px" },
+              background: `url(${props.img})`,
+              backgroundPosition: "top center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              // border: "1px solid black",
 
-            "&:hover": {
-              opacity: props.active ? 1 : 0.4,
-            },
+              "&:hover": {
+                opacity: props.active ? 1 : 0.4,
+              },
 
-            transition: "all 300ms ease-in-out"
-          }}
-        ></Box>
+              transition: "all 300ms ease-in-out",
+            }}
+          ></Box>
+        ) : (
+          <Skeleton
+            variant="rounded"
+            sx={{
+              backgroundColor: colors.grey[700],
+              height: props.active
+                ? { sm: "354px", md: "354px", lg: "450px" }
+                : { xs: "120px", lg: "180px" },
+              width: props.active
+                ? { sm: "228px", md: "230px", lg: "310px" }
+                : { xs: "100px", lg: "140px" },
+            }}
+          />
+        )}
       </Box>
     </>
   );
@@ -405,10 +444,26 @@ function ProjectBox(props) {
 // --------------------------------------------
 const DisplayMobileProject = (props) => {
   const { title, img, desc, link, stack } = props.data;
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsAnimated(true);
+    }, 2000);
+  }, []);
 
   return (
-    <Stack spacing={2} sx={{ width: "100%", height: "100%",            transition: "all 300ms ease-in-out"
-  }} p={1}>
+    <Stack
+      spacing={2}
+      sx={{
+        width: "100%",
+        height: "100%",
+        transition: "all 300ms ease-in-out",
+      }}
+      p={1}
+    >
+
+      {isAnimated ?
       <Box
         sx={{
           height: "185px",
@@ -419,27 +474,62 @@ const DisplayMobileProject = (props) => {
           backgroundSize: "cover",
         }}
       ></Box>
+      :
+      <Skeleton
+      variant="rounded"
+      sx={{
+        backgroundColor: colors.grey[700],
+        height: "185px",
+      }}
+      />
+}
+
+{isAnimated ? 
       <Stack
         direction="row"
         justifyContent="space-between"
         alignItems="center"
         px={0.5}
       >
-        <Typography variant="mdText" fontWeight={600}>{title}</Typography>
-       
-       <span>
-       <a href={link} target="_blank" rel="noreferrer">
-           <Tooltip title="Source code"> <SourceIcon color="inputs" fontSize="small" /></Tooltip>
-            </a>
-            <a href={link} target="_blank" rel="noreferrer">
-             <Tooltip title="Live page"> <OpenInNewRoundedIcon color="inputs" fontSize="small" /></Tooltip>
-            </a>
+        <Typography variant="mdText" fontWeight={600}>
+          {title}
+        </Typography>
+
+        <span>
+          <a href={link} target="_blank" rel="noreferrer">
+            <Tooltip title="Source code">
+              {" "}
+              <SourceIcon color="inputs" fontSize="small" />
+            </Tooltip>
+          </a>
+          <a href={link} target="_blank" rel="noreferrer">
+            <Tooltip title="Live page">
+              {" "}
+              <OpenInNewRoundedIcon color="inputs" fontSize="small" />
+            </Tooltip>
+          </a>
         </span>
       </Stack>
+:
+<Skeleton variant="text" sx={{width: '80%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
+
+}
+
+
+{isAnimated ? 
       <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
         {desc}
       </Typography>
+      :
+<Stack>
+<Skeleton variant="text" sx={{width: '70%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
+<Skeleton variant="text" sx={{width: '70%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
+<Skeleton variant="text" sx={{width: '70%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
 
+  </Stack>
+}
+
+{isAnimated ? 
       <Stack direction="row" alignItems="center" spacing={1}>
         <Stack
           justifyContent="center"
@@ -461,6 +551,10 @@ const DisplayMobileProject = (props) => {
           );
         })}
       </Stack>
+      :
+<Skeleton variant="text" sx={{width: '80%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
+
+}
     </Stack>
   );
 };

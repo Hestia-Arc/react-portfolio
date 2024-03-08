@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
+  Skeleton,
   Stack,
   Typography,
   styled,
@@ -22,7 +23,7 @@ import CV from "../../data/Resume-Afolabi Esther.pdf";
 // import MainImage from "../../images/idea1.jpg";
 // import bimg from "../../images/bimg.jpg";
 // import darkbg from "../../images/cv1-01.jpg";
-import darkbg from "../../data/c-bg.png";
+// import darkbg from "../../data/c-bg.png";
 import Recents, { Card } from "./Recents";
 import { projects } from "../../data/projectData";
 
@@ -95,7 +96,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIsAnimated(true);
-    }, 200);
+    }, 1000);
   }, []);
 
   return (
@@ -215,7 +216,7 @@ export default function Home() {
                   }
                 }
               >
-                {/* <Zoom in={isAnimated}> */}
+                {isAnimated ? 
                 <Box
                   sx={{
                     opacity: isAnimated ? 1 : 0,
@@ -258,7 +259,15 @@ export default function Home() {
                   Levenson{" "} */}
                   </Typography>
                 </Box>
-                {/* </Zoom> */}
+              :
+              <Stack spacing={1} sx={{}}>
+
+<Skeleton variant="text" sx={{width: '500px', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
+<Skeleton variant="text" sx={{width: '420px', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
+
+</Stack>
+} 
+
 
                 <Stack
                   direction="row"
@@ -277,10 +286,11 @@ export default function Home() {
                   <a href="#contact">
                     <Button
                       variant="contained"
+                      color="secondary"
                       // startIcon={<ArticleRoundedIcon />}
                       sx={{
                         width: "120px",
-                        background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
+                        // background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
                         border: `0.5px solid ${colors.grey[800]}`,
 
                         [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
@@ -294,7 +304,7 @@ export default function Home() {
                   </a>
 
                   <a href={CV} download="Esther's Cv">
-                    <Typography variant="smText">DOWNLOAD CV</Typography>
+                    <Button variant="outlined" color="secondary">DOWNLOAD CV</Button>
                   </a>
 
                   {/* <FlareRoundedIcon

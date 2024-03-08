@@ -9,6 +9,7 @@ import {
   Button,
   useTheme,
   Grid,
+  Skeleton,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
@@ -72,6 +73,14 @@ export default function About() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [scrollActive, setScrollActive] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsAnimated(true);
+    }, 2000);
+  }, []);
+
 
   useEffect(() => {
     window.onscroll = () => {
@@ -303,16 +312,28 @@ export default function About() {
               </Stack>
 
               {/* ------------------- */}
+              {isAnimated ? 
               <Avatar
                 src={picture}
                 variant="square"
                 alt="Developer's"
                 sx={{
+                  
                   width: { xs: 310, sm: 195, md: 231, lg: 300 },
                   height: { xs: 320, sm: 233, md: 269, lg: 320 },
                 }}
                 loading="lazy"
+              /> 
+              : 
+              <Skeleton variant="rounded" 
+              sx={{
+                backgroundColor: colors.grey[700],
+                width: { xs: 310, sm: 195, md: 231, lg: 300 },
+                height: { xs: 320, sm: 233, md: 269, lg: 320 },
+              }}
+              // width={210} height={60} 
               />
+}
 
               <Stack
                 spacing={1}
