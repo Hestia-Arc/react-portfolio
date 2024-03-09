@@ -81,7 +81,6 @@ export default function About() {
     }, 2000);
   }, []);
 
-
   useEffect(() => {
     window.onscroll = () => {
       if (window.scrollY > 10) {
@@ -203,7 +202,7 @@ export default function About() {
                     width: "100%",
                     backgroundColor: colors.grey[900],
                     border: `1px solid ${colors.grey[800]}`,
-                    borderRadius: "3px"
+                    borderRadius: "3px",
                   }}
                   p={2}
                 >
@@ -215,7 +214,11 @@ export default function About() {
                     - User-centric design principles.
                   </TextBox>
                   <TextBox variant="baseText">
-                    - Optimization and performance.
+                    - Security best practices.
+                  </TextBox>
+
+                  <TextBox variant="baseText">
+                    - Performance optimization.
                   </TextBox>
                   <TextBox variant="baseText">- Testing</TextBox>
                   <TextBox variant="baseText">
@@ -232,7 +235,7 @@ export default function About() {
                     backgroundColor: colors.grey[400],
                     color: colors.grey[900],
                     border: `1px solid ${colors.grey[900]}`,
-                    borderRadius: "3px"
+                    borderRadius: "3px",
                     // opacity: 0.5
                   }}
                   p={2}
@@ -261,20 +264,23 @@ export default function About() {
               </Stack>
 
               {/* ---------3 */}
-              <Stack spacing={2} mt={3} sx={{
-                                  color: colors.grey[400],
-
-              }}>
-
+              <Stack
+                spacing={2}
+                mt={3}
+                sx={{
+                  color: colors.grey[400],
+                }}
+              >
                 <Typography variant="baseText">
                   I am an avid learner who is constantly learning and evolving,
-                  open to feedback and guidance to deliver the best possible results.
+                  open to feedback and guidance to deliver the best possible
+                  results.
                 </Typography>
 
-                <Typography  variant="baseText">
-                  <strong>P.S</strong>... I also bring a healthy dose of humor 😄 and
-                  enthusiasm to the table, making the development process an
-                  enjoyable and productive experience for everyone involved,
+                <Typography variant="baseText">
+                  <strong>P.S</strong>... I also bring a healthy dose of humor
+                  😄 and enthusiasm to the table, making the development process
+                  an enjoyable and productive experience for everyone involved,
                 </Typography>
               </Stack>
             </Box>
@@ -312,28 +318,28 @@ export default function About() {
               </Stack>
 
               {/* ------------------- */}
-              {isAnimated ? 
-              <Avatar
-                src={picture}
-                variant="square"
-                alt="Developer's"
-                sx={{
-                  
-                  width: { xs: 310, sm: 195, md: 231, lg: 300 },
-                  height: { xs: 320, sm: 233, md: 269, lg: 320 },
-                }}
-                loading="lazy"
-              /> 
-              : 
-              <Skeleton variant="rounded" 
-              sx={{
-                backgroundColor: colors.grey[700],
-                width: { xs: 310, sm: 195, md: 231, lg: 300 },
-                height: { xs: 320, sm: 233, md: 269, lg: 320 },
-              }}
-              // width={210} height={60} 
-              />
-}
+              {isAnimated ? (
+                <Avatar
+                  src={picture}
+                  variant="square"
+                  alt="Developer's"
+                  sx={{
+                    width: { xs: 310, sm: 195, md: 231, lg: 300 },
+                    height: { xs: 320, sm: 233, md: 269, lg: 320 },
+                  }}
+                  loading="lazy"
+                />
+              ) : (
+                <Skeleton
+                  variant="rounded"
+                  sx={{
+                    backgroundColor: colors.grey[700],
+                    width: { xs: 310, sm: 195, md: 231, lg: 300 },
+                    height: { xs: 320, sm: 233, md: 269, lg: 320 },
+                  }}
+                  // width={210} height={60}
+                />
+              )}
 
               <Stack
                 spacing={1}

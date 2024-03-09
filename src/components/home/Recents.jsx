@@ -29,8 +29,8 @@ export function Card(props) {
       //   justifyContent="space-between"
       //   spacing={2}
       sx={{
-        width: {xs: "285px", sm:"380px"},
-        height: {xs: "395px",sm:"400px"},
+        width: {xs: "320px", sm:"380px"},
+        height: {xs: "460px",sm:"400px"},
         backgroundColor: colors.grey[100],
         border: `1px solid ${colors.grey[200]}`,
         borderRadius: "4px",
@@ -48,15 +48,15 @@ export function Card(props) {
         }}
       ></Box>
 
-      <Stack justifyContent="space-between" sx={{ height: "205px", width: '100%' }}>
-        <Box px={1} pt={1}>
+      <Stack justifyContent="space-between" sx={{ height: "255px", width: '100%' }}>
+        <Stack spacing={1} px={1} pt={1}>
           {/* TITLE */}
           <Stack
             direction="row"
             justifyContent="space-between"
             alignItems="center"
           >
-            <Typography variant="mdText" fontWeight={600} >
+            <Typography variant="xlText" fontWeight={600} >
               {title}
             </Typography>
 
@@ -78,12 +78,13 @@ export function Card(props) {
 
           {/* DESC */}
           <Typography
-            variant="xsText"
-            sx={{ color: colors.grey[500], lineHeight: "0.8px !important" }}
-          >
+            variant="baseText"
+            sx={{ color: colors.grey[500],  }}
+         
+         >
             {desc}
           </Typography>
-        </Box>
+        </Stack>
 
         {/* STACK */}
         <Stack

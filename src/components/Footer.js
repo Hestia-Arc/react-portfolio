@@ -113,7 +113,7 @@ function Footer(props) {
             >
               {/* --------1 */}
               <Stack spacing={1.5}>
-                <StyledTitle variant="smText" colors={colors}>
+                <StyledTitle variant="lgText" colors={colors}>
                   Quick Links
                 </StyledTitle>
                 <LinkBox text="Home" link="./" />
@@ -124,7 +124,7 @@ function Footer(props) {
 
               {/* --------2 */}
               <Stack spacing={1.5}>
-                <StyledTitle variant="smText" colors={colors}>
+                <StyledTitle variant="lgText" colors={colors}>
                   Socials
                 </StyledTitle>
                 <LinkBox text="GitHub" link="https://github.com/Hestia-Arc" />
@@ -141,7 +141,7 @@ function Footer(props) {
 
               {/* --------3*/}
               <Stack spacing={1.5}>
-                <StyledTitle variant="smText" colors={colors}>
+                <StyledTitle variant="lgText" colors={colors}>
                   Infos
                 </StyledTitle>
                 <LinkBox text="Resume" link={CV} />
@@ -153,6 +153,7 @@ function Footer(props) {
 
             {/* --------4   second box*/}
             <Stack
+            
               direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 4, sm: 1 }}
               sx={{ width: { xs: "100%", sm: "58%", md: "50%" } }}
@@ -166,7 +167,7 @@ function Footer(props) {
                   borderLeft: `0.5px solid ${colors.grey[900]}`,
                 }}
               >
-                <StyledTitle variant="smText" colors={colors}>
+                <StyledTitle variant="lgText" colors={colors}>
                   Get in Touch
                 </StyledTitle>
 
@@ -296,14 +297,14 @@ function Footer(props) {
                   // filter: "grayscale(100%)",
                 }}
               >
-                <StyledTitle variant="smText" colors={colors}>
+                <StyledTitle variant="lgText" colors={colors}>
                   Contacts
                 </StyledTitle>
 
-                <Stack>
+                <Stack spacing={1}>
                   <a href="mailto:starafolab@gmail.com">
                     <Typography
-                      variant="xsText"
+                      variant="baseText"
                       sx={{ color: colors.grey[400] }}
                     >
                       Starafolab@gmail.com
@@ -312,7 +313,7 @@ function Footer(props) {
 
                   <a href="tel:2347046564023">
                     <Typography
-                      variant="xsText"
+                      variant="baseText"
                       sx={{ color: colors.grey[400] }}
                     >
                       +234 704 656 4023
