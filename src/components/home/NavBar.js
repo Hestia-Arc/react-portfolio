@@ -101,7 +101,8 @@ function NavBar({ isOpen, handleIsOpen }) {
         <Stack
           alignItems="flex-end"
           sx={{
-            width: 299,
+            // height: isOpen && 60,
+            width: 303,
             backgroundColor: isOpen && colors.grey[900],
             transition: "all 300ms",
             [`@media screen and (min-width: ${theme.breakpoints.values.sm}px)`]:
@@ -109,7 +110,7 @@ function NavBar({ isOpen, handleIsOpen }) {
                 display: "none",
               },
           }}
-          py={1.5}
+          py={1.8}
           pr={isOpen && 1}
           mr={isOpen && -2}
         >
@@ -128,8 +129,8 @@ function NavBar({ isOpen, handleIsOpen }) {
           >
             <Box
               sx={{
-                height: "3px",
-                width: "34px",
+                height: "2px",
+                width: "32px",
                 borderRadius: "30px",
                 backgroundColor: colors.grey[100],
               }}
@@ -137,15 +138,15 @@ function NavBar({ isOpen, handleIsOpen }) {
             <Box
               sx={{
                 height: "3px",
-                width: isOpen ? "29px" : "25px",
+                width: isOpen ? "22px" : "23px",
                 borderRadius: "30px",
                 backgroundColor: colors.grey[100],
               }}
             ></Box>
             <Box
               sx={{
-                height: "3px",
-                width: isOpen ? "22px" : "34px",
+                height: "2px",
+                width: isOpen ? "10px" : "32px",
                 borderRadius: "30px",
                 backgroundColor: colors.grey[100],
               }}
@@ -159,15 +160,16 @@ function NavBar({ isOpen, handleIsOpen }) {
         alignItems="flex-end"
         justifyContent="space-between"
         sx={{
-          // display: isOpen ? "flex" : "none",
+          display: isOpen ? "flex" : "none",
           position: "absolute",
-          top: 61,
-          right: isOpen ? -18 : -999,
+          top: 57.7,
+          right: -16.5, 
           bottom: 0,
-          width: "300px",
+          width: "303.2px",
           height: "87vh",
           backgroundColor: colors.grey[900],
           zIndex: 999,
+          transform: isOpen ? "translateX(-0px)" : "translateX(-200px)",
           transition: "all 500ms",
 
           a: {

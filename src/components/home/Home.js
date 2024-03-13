@@ -35,7 +35,7 @@ const HomeContainer = styled(Box)((props) => ({
   maxWidth: "1400px",
   margin: "0 auto",
   // position: "relative",
-  overflowX: "hidden",
+  // overflowX: "hidden",
   overflowY: props.isOpen && "hidden",
   // backgroundColor: "rgba(0,0,0,0.2)",
 
@@ -79,6 +79,10 @@ const HeaderBox = styled("header")((props) => ({
 
   [props.theme.breakpoints.down("sm")]: {
     height: "40rem",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top",
+
+    // backgroundSize: "cover",
 
     // minWidth: "325px",
     // maxWidth: "1400px",
@@ -135,7 +139,7 @@ export default function Home() {
 
                 [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]:
                   {
-                    height: "553px",
+                    height: "663px",
                   },
               }}
             >
@@ -353,12 +357,13 @@ export default function Home() {
       <Box
         sx={{
           height: "fit-content",
+          backgroundColor: "black",
           background: `url(${bimg2})`,
           backgroundPosition: "90% -60px",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           position: "relative",
-          marginTop: "-100px",
+          marginTop: "-70px",
           marginBottom: "-65px",
           color:
             theme.palette.mode === "dark" ? colors.grey[200] : colors.grey[900],

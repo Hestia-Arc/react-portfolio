@@ -30,7 +30,7 @@ export function Card(props) {
       //   spacing={2}
       sx={{
         width: {xs: "320px", sm:"380px"},
-        height: {xs: "460px",sm:"400px"},
+        height: {xs: "460px",sm:"465px"},
         backgroundColor: colors.grey[100],
         border: `1px solid ${colors.grey[200]}`,
         borderRadius: "4px",

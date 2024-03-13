@@ -16,8 +16,8 @@ function App() {
         <GlobalStyles
           styles={{
             "*::-webkit-scrollbar": {
-              width: "7px",
-              height: "4px"
+              width: "3px",
+              height: "3px",
             },
             "*::-webkit-scrollbar-track": {
               "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.4)",
@@ -31,9 +31,14 @@ function App() {
             },
           }}
         />
-        <Box sx={{minWidth: {xs: "320px", sm: "600px", md: "1024px",lg: "1350px"},maxWidth: {xs: "599px", sm: "1023px", md: "1439px",lg:"1440px"}, margin: '0 auto',
-      
-      }}>
+        <Box
+          sx={{
+            // backgroundColor: "#f3f4f6",
+            minWidth: { xs: "320px", sm: "600px", md: "1024px", lg: "1350px" },
+            maxWidth: { xs: "599px", sm: "1023px", md: "1439px", lg: "1440px" },
+            margin: "0 auto",
+          }}
+        >
           <CssBaseline />
           {/* ------------------------------ */}
           {/* ROUTES*/}
