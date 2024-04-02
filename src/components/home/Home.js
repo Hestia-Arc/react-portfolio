@@ -11,11 +11,13 @@ import {
 import NavBar from "./NavBar";
 import MainImageDark from "../../data/bg-4.jpeg";
 import MainImageLight from "../../data/bg-1.jpeg";
-import bimg2 from "../../images/pabrush.png";
+// import bimg2 from "../../images/pabrush.png";
 import Footer from "../Footer";
 import { PaddedBox } from "../../UI/pages";
 import { tokens } from "../../theme";
 import CV from "../../data/Resume-Afolabi Esther.pdf";
+import darkbg from "../../data/c-bg.png";
+
 
 // import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
 
@@ -23,9 +25,8 @@ import CV from "../../data/Resume-Afolabi Esther.pdf";
 // import MainImage from "../../images/idea1.jpg";
 // import bimg from "../../images/bimg.jpg";
 // import darkbg from "../../images/cv1-01.jpg";
-// import darkbg from "../../data/c-bg.png";
-import Recents, { Card } from "./Recents";
 import { projects } from "../../data/projectData";
+import CardBox from "./CardBox";
 
 const HomeContainer = styled(Box)((props) => ({
   // border: '1px solid black'
@@ -34,10 +35,18 @@ const HomeContainer = styled(Box)((props) => ({
   minWidth: "1350px",
   maxWidth: "1400px",
   margin: "0 auto",
+  // -------
+  background: `linear-gradient(to right, rgba(1,1,2, 0.1), rgba(1,1,3, 0.45), rgba(1,1,3, 0.4)), url(${darkbg})`,
+  backgroundPosition: "top left",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  // -------
   // position: "relative",
   // overflowX: "hidden",
   overflowY: props.isOpen && "hidden",
   // backgroundColor: "rgba(0,0,0,0.2)",
+  // backgroundColor: "red",
+
 
   a: {
     textDecoration: "none",
@@ -78,7 +87,7 @@ const HeaderBox = styled("header")((props) => ({
   // fontFamily: "Fredoka",
 
   [props.theme.breakpoints.down("sm")]: {
-    height: "40rem",
+    // height: "40rem",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top",
 
@@ -227,6 +236,7 @@ export default function Home() {
                       transition: "opacity 300ms ease-in",
                       display: { xs: "block", sm: "flex" },
                       flexDirection: { sm: "column" },
+                      fontFamily: "Inter sans-serif"
                     }}
                   >
                     <Typography
@@ -353,39 +363,39 @@ export default function Home() {
         </Box>
       </HeaderBox>
 
-      {/* recents */}
+      {/* CURRENTLY DEVELOPING */}
+
       <Box
         sx={{
           height: "fit-content",
           backgroundColor: "black",
-          background: `url(${bimg2})`,
-          backgroundPosition: "90% -60px",
+          background: `linear-gradient(to right, rgba(1,1,2, 0.1), rgba(1,1,3, 0.45), rgba(1,1,3, 0.4)), url(${darkbg})`,
+          backgroundPosition: "top left",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          position: "relative",
-          marginTop: "-70px",
-          marginBottom: "-65px",
+          // position: "relative",
           color:
             theme.palette.mode === "dark" ? colors.grey[200] : colors.grey[900],
 
           [`@media screen and (max-width: ${theme.breakpoints.values.sm}px)`]: {
-            marginBottom: "-211px",
+            // marginBottom: "-211px",
           },
         }}
-        pt={14}
-        pb={{ xs: 30, sm: 14 }}
+        pt={10}
+        // pb={{ xs: 30, sm: 14 }}
       >
         {/* <Overlay sx={{padding: { xs: 1, lg: 4 }}}> */}
         <PaddedBox>
-          <Stack spacing={1}>
-            <Typography variant="xsDisplay" fontWeight={500}>
-              Recent Projects
+          <Stack spacing={2} >
+            <Typography variant="xsDisplay" fontWeight={500} sx={{color: colors.grey[200]}}>
+              Current Project
             </Typography>
             <Typography
               variant="smText"
+              sx={{color: colors.grey[400]}}
               // sx={{ borderBottom: "1px solid #ebebeb" }}
             >
-              See what projects I've been working
+              What I'm working on
             </Typography>
           </Stack>
 
@@ -394,18 +404,23 @@ export default function Home() {
               display: "flex",
               overflowX: "auto",
               // overflowY: "hidden",
-              borderBottom: { xs: `1px solid ${colors.grey[800]}`, sm: "none" },
+              borderBottom: { xs: `1px solid ${colors.grey[600]}`, },
             }}
-            pb={1}
-          >
-            <Recents />
+            mt={3}
+            pb={{ xs: 10, sm: 14 }}
+            >
+            <CardBox project={projects[4]} />
           </Box>
         </PaddedBox>
         {/* </Overlay> */}
+
+              <Footer/>
+
       </Box>
 
-      {/* CURRENTLY DEVELOPING */}
+            {/* recents */}
 
+{/* 
       <Box
         sx={{ height: "fit-content", backgroundColor: colors.goldAccent[400] }}
         py={10}
@@ -425,10 +440,12 @@ export default function Home() {
 
           <Card project={projects[6]} />
         </PaddedBox>
-      </Box>
+      </Box> */}
 
       {/* footer */}
-      <Footer bg={true} />
+      {/* <Footer/> */}
+      {/* <Footer bg={true} /> */}
+
     </HomeContainer>
   );
 }

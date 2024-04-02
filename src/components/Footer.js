@@ -145,6 +145,8 @@ function Footer(props) {
                   Infos
                 </StyledTitle>
                 <LinkBox text="Resume" link={CV} />
+                <LinkBox text="DevTo" link="https://dev.to/hestia" />
+
                 {/* <LinkBox text="LinkTree" link="" /> */}
                 {/* <LinkBox text='Home' link='' /> */}
                 {/* <LinkBox text='Home' link='' /> */}
@@ -153,7 +155,6 @@ function Footer(props) {
 
             {/* --------4   second box*/}
             <Stack
-            
               direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 4, sm: 1 }}
               sx={{ width: { xs: "100%", sm: "58%", md: "50%" } }}
@@ -253,13 +254,14 @@ function Footer(props) {
                     />
                     <Button
                       variant="contained"
+                      color="secondary"
                       type="submit"
                       size="small"
                       // startIcon={<ArticleRoundedIcon />}
                       sx={{
                         width: "100%",
-                        background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
-                        border: `0.5px solid ${colors.grey[800]}`,
+                        // background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
+                        // border: `0.5px solid ${colors.grey[800]}`,
                         textTransform: "capitalize",
                       }}
                     >

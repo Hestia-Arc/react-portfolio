@@ -258,8 +258,8 @@ export const themeSettings = (mode) => {
           }),
     },
     typography: {
-      fontFamily: ['Fredoka', 'sans-serif'].join(','),
-      allVariants: ["Fredoka", "sans-serif"].join(","),
+      fontFamily: ['Fredoka','Inter', 'sans-serif'].join(','),
+      // allVariants: ["Fredoka", "sans-serif"].join(","),
       lgDisplay: {
         fontSize: "4.5rem",
         lineHeight: 1,

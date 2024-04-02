@@ -11,7 +11,7 @@ import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
 import { tokens } from "../../theme";
 
 const NavContainer = styled("nav")((props) => ({
-  height: "70px",
+  height: "80px",
   padding: "10px 0px",
   // border: "1px solid black",
   display: "flex",
@@ -85,11 +85,11 @@ function NavBar({ isOpen, handleIsOpen }) {
           }}
         >
           <Link to="about">
-            <Typography variant="smText">About</Typography>
+            <Typography variant="baseText">About</Typography>
           </Link>
 
           <Link to="project">
-            <Typography variant="smText">Portfolio</Typography>
+            <Typography variant="baseText">Portfolio</Typography>
           </Link>
 
           {/* <Link to='contact'>

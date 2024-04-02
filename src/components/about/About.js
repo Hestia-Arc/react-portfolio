@@ -18,7 +18,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
-import CV from "../../data/Resume-Afolabi Esther.pdf";
+import CV from "../../data/2Resume-Afolabi Esther.pdf";
 // import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
 import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
 import Footer from "../Footer";
@@ -220,7 +220,7 @@ export default function About() {
                   <TextBox variant="baseText">
                     - Performance optimization.
                   </TextBox>
-                  <TextBox variant="baseText">- Testing</TextBox>
+                  {/* <TextBox variant="baseText">- Testing</TextBox> */}
                   <TextBox variant="baseText">
                     - Version control system (Git/Github)
                   </TextBox>
@@ -350,10 +350,11 @@ export default function About() {
                 <a href={CV} download="Esther's Cv" style={{ width: "100%" }}>
                   <Button
                     variant="contained"
+                    color="secondary"
                     startIcon={<ArticleRoundedIcon />}
                     sx={{
                       width: "100%",
-                      background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
+                      // background: `linear-gradient(to right,rgba(51,53,57, 0.5), rgba(156,163,175, 0.3), rgba(166,201,150, 0.4)), url(${darkbg})`,
                       border: `0.5px solid ${colors.grey[800]}`,
                     }}
                   >
@@ -633,10 +634,10 @@ export default function About() {
                     - Engage in weekly demo sessions to iron out issues and
                     present tasks assigned.
                   </Typography>
-                  <Typography>
+                  {/* <Typography>
                     -Implemented responsive designs on multiple projects <br />
                     resulting in improved user experience and engagement.
-                  </Typography>
+                  </Typography> */}
 
                   {/* <Typography variant="smText"></Typography>
                   <Typography variant="smText"></Typography> */}

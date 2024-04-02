@@ -360,20 +360,20 @@ function ProjectBox(props) {
             </span>
           </Stack>
 
-          <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
+          <Typography variant="xsText" sx={{ color: colors.grey[500] }} pb={3}>
             {props.desc}
           </Typography>
 
           <Stack
             direction="row"
             alignItems="center"
-            flexWrap="wrap"
+            // flexWrap="wrap"
             spacing={1}
           >
             <Stack
               justifyContent="center"
               alignItems="center"
-              flexWrap="wrap"
+              // flexWrap="wrap"
               sx={{
                 padding: "4px",
                 backgroundColor: colors.grey[900],
@@ -383,13 +383,15 @@ function ProjectBox(props) {
             >
               <HandymanRoundedIcon fontSize="small" color="primary" />
             </Stack>
-            {props.stack.map((item) => {
+           <Stack direction="row" flexWrap="wrap">
+           {props.stack.map((item) => {
               return (
                 <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
-                  {item} |
+                  {item} ,
                 </Typography>
               );
             })}
+           </Stack>
           </Stack>
         </Stack>
 

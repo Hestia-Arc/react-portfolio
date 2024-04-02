@@ -33,6 +33,7 @@ function App() {
         />
         <Box
           sx={{
+            
             // backgroundColor: "#f3f4f6",
             minWidth: { xs: "320px", sm: "600px", md: "1024px", lg: "1350px" },
             maxWidth: { xs: "599px", sm: "1023px", md: "1439px", lg: "1440px" },
