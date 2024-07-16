@@ -7,13 +7,14 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import { Link } from "react-router-dom";
-import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
+// import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
 import { tokens } from "../../theme";
+import logo from "../../images/logo-cropped.png" 
 
 const NavContainer = styled("nav")((props) => ({
-  height: "80px",
+  height: "100px",
   padding: "10px 0px",
-  // border: "1px solid black",
+  borderBottom: "1px solid rgba(255,255,255,0.09)",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -73,7 +74,8 @@ function NavBar({ isOpen, handleIsOpen }) {
           width: "100%",
         }}
       >
-        <FlareRoundedIcon sx={{ fontSize: "37px" }} />
+        <img src={logo} alt="icon" style={{height: "48px", borderRadius: "4px"}} />       
+         {/* <FlareRoundedIcon sx={{ fontSize: "37px" }} /> */}
         <Stack
           direction="row"
           spacing={4}

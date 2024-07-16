@@ -11,9 +11,6 @@ import React from "react";
 import darkbg from "../data/c-bg.png";
 import CV from "../data/Resume-Afolabi Esther.pdf";
 
-// import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
-// import PhoneBg from "../images/phone3.jpg";
-
 import { PaddedBox } from "../UI/pages";
 import { tokens } from "../theme";
 

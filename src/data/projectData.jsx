@@ -3,6 +3,7 @@ import Recipe from "../images/Recipe-app.resized.png";
 import Restaurant from "../images/Mia-s-Kitn.resized.png";
 import Clearlink from "../images/ClearLink.resized.png";
 import Cadence from "../images/Cadence-Store.png"
+import Splitify from "../images/Splitify-dashboard.png"
 
 // import Portfolio from "../images/Portfolio.resized.png"
 // import Season from "../images/Gallery.resized.png";
@@ -52,9 +53,22 @@ export const projects = [
     title: "LeCadence store",
     img: Cadence,
     link: "https://cadence-store.vercel.app/",
-    desc: "An e-commerce store ...(in development mode). ",
-    stack: ["Reactjs, Typescript, TailwindCSS, Zustand, Framer-motion, Firebase"],
+    desc: "A PERN e-commerce application ...(in development mode). ",
+    stack: ["Nodejs, Express, PostgreSQL, Reactjs, Typescript, TailwindCSS, ReduxToolkits, Framer-motion, Firebase"],
     src: "https://github.com/Hestia-Arc/cadence-store.git",
+  },
+  {
+    id: 6,
+    title: "Splitify",
+    img: Splitify,
+    link: "https://splitify-frontend.onrender.com",
+    desc: "A MERN stack expense splitting application. It has a landing page and a dashboard. ",
+    stack: ["Reactjs, TailwindCSS, ReduxToolkits, Nodejs, Express, MongoDB, Axios"],
+    src: "https://github.com/Hestia-Arc/splitify_frontend.git",
+    api: "https://github.com/Hestia-Arc/splitify_backend.git",
+    date: "June 2024",
+    p1: "This is a group project from Shecode Africa X FedEx academy cohort 1. I was in the backend development track and gained a lot of valuable experience working on a MERN full-stack application for the first time.",
+    p2: "While I handled the backend operations, I also worked closely with the frontend developer to manage state and integrate the API, since I have experience in frontend development.  "
   },
 ];
 // ===================================================================

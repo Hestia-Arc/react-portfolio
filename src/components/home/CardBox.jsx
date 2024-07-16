@@ -101,7 +101,7 @@ function CardBox(props) {
             <Stack>
             {stack?.map((item, i) => {
               return (
-                <Typography key={i} variant="xsText" sx={{ color: colors.grey[500] }}>
+                <Typography key={i} variant="xsText" sx={{ color: colors.grey[500],  }}>
                   {item} {" "}
                 </Typography>
               );

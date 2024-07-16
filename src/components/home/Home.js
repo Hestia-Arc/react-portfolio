@@ -15,9 +15,8 @@ import MainImageLight from "../../data/bg-1.jpeg";
 import Footer from "../Footer";
 import { PaddedBox } from "../../UI/pages";
 import { tokens } from "../../theme";
-import CV from "../../data/Resume-Afolabi Esther.pdf";
+import CV from "../../data/2Resume-Afolabi Esther.pdf";
 import darkbg from "../../data/c-bg.png";
-
 
 // import FlareRoundedIcon from "@mui/icons-material/FlareRounded";
 
@@ -26,7 +25,8 @@ import darkbg from "../../data/c-bg.png";
 // import bimg from "../../images/bimg.jpg";
 // import darkbg from "../../images/cv1-01.jpg";
 import { projects } from "../../data/projectData";
-import CardBox from "./CardBox";
+// import CardBox from "./CardBox";
+import Card2 from "./Card2";
 
 const HomeContainer = styled(Box)((props) => ({
   // border: '1px solid black'
@@ -46,7 +46,6 @@ const HomeContainer = styled(Box)((props) => ({
   overflowY: props.isOpen && "hidden",
   // backgroundColor: "rgba(0,0,0,0.2)",
   // backgroundColor: "red",
-
 
   a: {
     textDecoration: "none",
@@ -236,7 +235,7 @@ export default function Home() {
                       transition: "opacity 300ms ease-in",
                       display: { xs: "block", sm: "flex" },
                       flexDirection: { sm: "column" },
-                      fontFamily: "Inter sans-serif"
+                      fontFamily: "Inter sans-serif",
                     }}
                   >
                     <Typography
@@ -278,7 +277,7 @@ export default function Home() {
                     <Skeleton
                       variant="text"
                       sx={{
-                        width: {xs: "80%", sm:"450px", lg: "500px"},
+                        width: { xs: "80%", sm: "450px", lg: "500px" },
                         fontSize: "1rem",
                         backgroundColor: colors.grey[700],
                       }}
@@ -286,7 +285,7 @@ export default function Home() {
                     <Skeleton
                       variant="text"
                       sx={{
-                        width: {xs: "70%", sm:"400px", lg: "420px"},
+                        width: { xs: "70%", sm: "400px", lg: "420px" },
                         fontSize: "1rem",
                         backgroundColor: colors.grey[700],
                       }}
@@ -363,7 +362,7 @@ export default function Home() {
         </Box>
       </HeaderBox>
 
-      {/* CURRENTLY DEVELOPING */}
+      {/* PROJECTS */}
 
       <Box
         sx={{
@@ -386,41 +385,101 @@ export default function Home() {
       >
         {/* <Overlay sx={{padding: { xs: 1, lg: 4 }}}> */}
         <PaddedBox>
-          <Stack spacing={2} >
-            <Typography variant="xsDisplay" fontWeight={500} sx={{color: colors.grey[200]}}>
-              Current Project
-            </Typography>
+          <Stack
+            direction="row"
+            spacing={2}
+            mb={10}
+            sx={{
+              position: "relative",
+              borderTop: `1px solid ${colors.grey[600]}`,
+              paddingTop: "4rem",
+            }}
+          >
             <Typography
+              // variant="xsDisplay"
+              fontWeight={500}
+              sx={{
+                position: "absolute",
+                top: "6%",
+                right: 0,
+                padding: "4px 15px",
+                color: colors.grey[200],
+                fontSize: "14px",
+                backgroundColor: colors.grey[900],
+                border: `1px solid ${colors.grey[800]}`,
+                borderRadius: "4px",
+              }}
+            >
+              Development
+            </Typography>
+
+            {/* 1 */}
+            <Box
+              sx={{
+                flex: 1,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                // variant="xsDisplay"
+                fontWeight={500}
+                sx={{ color: colors.grey[200], fontSize: {xs: "2.8rem", sm:"5rem"} }}
+              >
+                Projects
+              </Typography>
+            </Box>
+
+            {/* 2 */}
+            <Box
+              sx={{ flex: 1, borderBottom: `1px solid ${colors.grey[600]}` }}
+            >
+              {/* <Typography>hello</Typography> */}
+            </Box>
+            {/* <Typography
               variant="smText"
               sx={{color: colors.grey[400]}}
               // sx={{ borderBottom: "1px solid #ebebeb" }}
             >
               What I'm working on
-            </Typography>
+            </Typography> */}
           </Stack>
 
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               overflowX: "auto",
               // overflowY: "hidden",
-              borderBottom: { xs: `1px solid ${colors.grey[600]}`, },
+              borderBottom: { xs: `1px solid ${colors.grey[600]}` },
             }}
             mt={3}
             pb={{ xs: 10, sm: 14 }}
-            >
-            <CardBox project={projects[4]} />
+          > */}
+           <Box
+            sx={{
+              // display: "flex",
+              overflowX: "auto",
+              // overflowY: "hidden",
+              borderBottom: { xs: `1px solid ${colors.grey[600]}` },
+            }}
+            mt={3}
+            pb={{ xs: 10, sm: 14 }}
+          >
+            <Card2 project={projects[4]} />
+            <Card2 project={projects[5]} pb="none" />
+
+            {/* <CardBox project={projects[4]} /> */}
           </Box>
         </PaddedBox>
         {/* </Overlay> */}
 
-              <Footer/>
-
+        <Footer />
       </Box>
 
-            {/* recents */}
+      {/* recents */}
 
-{/* 
+      {/* 
       <Box
         sx={{ height: "fit-content", backgroundColor: colors.goldAccent[400] }}
         py={10}
@@ -445,7 +504,6 @@ export default function Home() {
       {/* footer */}
       {/* <Footer/> */}
       {/* <Footer bg={true} /> */}
-
     </HomeContainer>
   );
 }

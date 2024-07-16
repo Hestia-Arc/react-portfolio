@@ -25,6 +25,7 @@ import Footer from "../Footer";
 import darkbg from "../../data/c-bg.png";
 import { tokens } from "../../theme";
 import { PaddedBox } from "../../UI/pages";
+import Title from "../home/Title";
 // import { PaddedBox } from "../../UI/pages";
 
 const AboutBox = styled(Box)((props) => ({
@@ -280,7 +281,7 @@ export default function About() {
                 <Typography variant="baseText">
                   <strong>P.S</strong>... I also bring a healthy dose of humor
                   😄 and enthusiasm to the table, making the development process
-                  an enjoyable and productive experience for everyone involved,
+                  an enjoyable and productive experience for everyone involved.
                 </Typography>
               </Stack>
             </Box>
@@ -406,6 +407,7 @@ export default function About() {
         {/* --------------------------------------- */}
         {/* SKILLS */}
         <PaddedBox mb={5}>
+          <Title text="Skillsets" tag="Tools" />
           <Stack direction={{ xs: "column", sm: "row" }}>
             {/* BOX-1 */}
             <Stack
@@ -418,12 +420,12 @@ export default function About() {
                 marginTop: "20px ",
               }}
             >
-              <Typography
+              {/* <Typography
                 variant="xsDisplay"
                 // sx={{ borderBottom: "1px solid #ebebeb" }}
               >
                 Skills
-              </Typography>
+              </Typography> */}
 
               <Box
                 sx={{
@@ -462,7 +464,7 @@ export default function About() {
                 // border: "1px solid white",
               }}
               p={1}
-              pt={8}
+              // pt={8}
               ml={{ sm: 3, md: 0 }}
             >
               <Grid
@@ -477,7 +479,18 @@ export default function About() {
                   width: { xs: "800px", sm: "100%" },
                 }}
               >
-                {/* row-1 */}
+                {/* row-1a */}
+                <Grid item xs={12}>
+                  <BrickDesignOne
+                    tag1="Framer-Motion"
+                    tag2="MongoDB"
+                    tag3="Expressjs"
+                    tag4="Nodejs"
+                  />
+                  {/* <BrickDesignTwo tag1="Postman" tag2="Firebase" tag3="Vite" /> */}
+                </Grid>
+
+                {/* row-1b */}
                 <Grid item xs={12}>
                   <BrickDesignTwo tag1="Postman" tag2="Firebase" tag3="Vite" />
                 </Grid>
@@ -524,6 +537,8 @@ export default function About() {
         {/*EXPERIENCE  */}
         {/* ------------------------------------- */}
         <PaddedBox mb={5}>
+        <Title text="WorkPlaces" tag="Experiences" />
+
           <Stack direction={{ xs: "column", sm: "row" }}>
             {/* BOX-1 */}
             <Stack
@@ -536,12 +551,12 @@ export default function About() {
                 marginTop: "20px ",
               }}
             >
-              <Typography
+              {/* <Typography
                 variant="xsDisplay"
                 // sx={{ borderBottom: "1px solid #ebebeb" }}
               >
                 Experiences
-              </Typography>
+              </Typography> */}
 
               <Box
                 sx={{
@@ -573,7 +588,7 @@ export default function About() {
                 // border: "1px solid white",
               }}
               p={1}
-              pt={8}
+              // pt={8}
               ml={{ sm: 5, md: 0 }}
             >
               {/* exp 1 */}
@@ -584,10 +599,70 @@ export default function About() {
                   paddingBottom: 3,
                 }}
               >
+                <Typography variant="xxlText">
+                  Netware Innovative Labs
+                </Typography>
+                <Stack>
+                  <Typography>
+                    Front-end Developer (Internship) | Remote | Apr 2024 -
+                    present
+                  </Typography>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    sx={{ backgroundColor: colors.grey[900], padding: 1 }}
+                  >
+                    <HandymanRoundedIcon fontSize="small" color="primary" />
+                    <Typography
+                      variant="smText"
+                      sx={{ color: colors.grey[400] }}
+                    >
+                      HTML | CSS | Material UI | TailwindCSS | ReactJS | Axios |
+                      ReduxToolkits | Git/GitHub | APIs
+                    </Typography>
+                  </Stack>
+                </Stack>
+
+                {/* -..... */}
+                <Stack spacing={1} sx={{ color: colors.grey[400] }}>
+                  <Typography variant="smText">
+                    - Work with UI designer to transform high-fidelity Figma
+                    designs into responsive and functional user interfaces.
+                  </Typography>
+                  <Typography variant="smText">
+                    - Working with Frontend Lead and contributing to the
+                    development of client-side, building reusable and accessible
+                    user interface components with TailwindCSS and Material UI
+                    (MUI) library for maintainability and scalability.
+                  </Typography>
+                  <Typography variant="smText">
+                    - Working with Frontend Lead in integrating APIs and using
+                    ReduxToolkits for efficient global management of data across
+                    the code, ensuring proper separation of concerns within the
+                    help desk (Reydesk) application.
+                  </Typography>
+
+                  <Typography variant="smText">
+                    - Engage in weekly demo sessions to iron out issues and
+                    present tasks assigned.
+                  </Typography>
+                </Stack>
+              </Stack>
+
+              {/* exp 2 */}
+              <Stack
+                spacing={2}
+                mt={5}
+                sx={{
+                  borderBottom: `1px solid ${colors.grey[800]}`,
+                  paddingBottom: 3,
+                }}
+              >
                 <Typography variant="xxlText">Huygensoft Limited</Typography>
                 <Stack>
                   <Typography>
-                    Front-end Developer | Lagos, Nigeria | 2022 - present
+                    Front-end Developer | Lagos, Nigeria (Remote) | Oct 2022 -
+                    Jan 2024
                   </Typography>
                   <Stack
                     direction="row"
@@ -644,7 +719,7 @@ export default function About() {
                 </Stack>
               </Stack>
 
-              {/* exp 2 */}
+              {/* exp 3 */}
               <Stack spacing={2} mt={5}>
                 <Typography variant="xxlText">Zuri Internship HNGx</Typography>
                 <Stack>
@@ -680,6 +755,124 @@ export default function About() {
                   {/* <Typography variant="smText"></Typography> */}
                 </Stack>
               </Stack>
+            </Box>
+          </Stack>
+        </PaddedBox>
+
+         {/* --------------------------------------- */}
+        {/*CERTIFICATIONS  */}
+        {/* ------------------------------------- */}
+        <PaddedBox mb={5}>
+
+        <Title text="Certifications" tag="Learnings" />
+
+          <Stack direction={{ xs: "column", sm: "row" }}>
+            {/* BOX-1 */}
+            <Stack
+              spacing={4}
+              sx={{
+                flex: 1,
+                minHeight: { xs: "fit-content", sm: 400 },
+                // border: "1px solid #ebebeb",
+                borderRadius: "10px",
+                marginTop: "20px ",
+              }}
+            >
+              {/* <Typography
+                variant="xsDisplay"
+                // sx={{ borderBottom: "1px solid #ebebeb" }}
+              >
+                Certifications
+              </Typography> */}
+
+              <Box
+                sx={{
+                  width: { xs: "100%", sm: "200px", md: "325px", lg: "400px" },
+                  color: colors.grey[400],
+                }}
+              >
+                {/* <Typography
+                  variant="smText"
+                  // sx={{ borderBottom: "1px solid #ebebeb" }}
+                >
+                  Where my skills meet purpose: a journey through places I've
+                  leveraged my skills. */}
+                  {/* and contributing to
+                  impactful projects. */}
+                {/* </Typography> */}
+              </Box>
+            </Stack>
+
+            {/* BOX-2 */}
+            <Box
+              sx={{
+                flex: { xs: 1, sm: 2, md: 1 },
+                // position: "absolute",
+                // top: 0,
+                // right: 0,
+                // height: "500px",
+                // width: "500px",
+                // border: "1px solid white",
+              }}
+              p={1}
+              pt={8}
+              ml={{ sm: 5, md: 0 }}
+            >
+              {/* exp 1 */}
+              <Stack
+                spacing={2}
+                sx={{
+                  borderBottom: `1px solid ${colors.grey[800]}`,
+                  paddingBottom: 3,
+                }}
+              >
+                <Typography variant="xxlText">
+                  Backend Development
+                </Typography>
+                <Stack>
+                  <Typography>
+                    SheCode Africa X FedEx Academy Cohort 1 | Remote | Apr -
+                    June 2024
+                  </Typography>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    sx={{ backgroundColor: colors.grey[900], padding: 1 }}
+                  >
+                    <HandymanRoundedIcon fontSize="small" color="primary" />
+                    <Typography
+                      variant="smText"
+                      sx={{ color: colors.grey[400] }}
+                    >
+                      Nodejs | Express | MongoDB | Mongoose | React | Axios |
+                      ReduxToolkits | Git/GitHub | API
+                    </Typography>
+                  </Stack>
+                </Stack>
+
+                {/* -..... */}
+                <Stack spacing={1} sx={{ color: colors.grey[400] }}>
+                  <Typography variant="smText">
+                    - Learnt the basics of backend development.
+                  </Typography>
+                  <Typography variant="smText">
+                    - Learnt how to use MongoDB and Mongosh locally. Also how to connect with a cloud database using Mongoose
+                  </Typography>
+                  <Typography variant="smText">
+                    - Learnt how to structure the application using the MVC architecture .
+                  </Typography>
+
+                  <Typography variant="smText">
+                    - Contributed to a group project "Splitify" a MERN stack expense splitting application, 
+                    where I handled the backend operations and worked closely with the frontend developer to ensure the 
+                    application operates smoothly.
+                  </Typography>
+                </Stack>
+              </Stack>
+
+             
+
+             
             </Box>
           </Stack>
         </PaddedBox>
