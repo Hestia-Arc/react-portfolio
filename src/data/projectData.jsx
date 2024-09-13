@@ -4,6 +4,8 @@ import Restaurant from "../images/Mia-s-Kitn.resized.png";
 import Clearlink from "../images/ClearLink.resized.png";
 import Cadence from "../images/Cadence-Store.png"
 import Splitify from "../images/Splitify-dashboard.png"
+import Spring from "../images/Home-SpringStrategyShot.png"
+import Spring2 from "../images/Home-SpringStrategyPic.png"
 
 // import Portfolio from "../images/Portfolio.resized.png"
 // import Season from "../images/Gallery.resized.png";
@@ -31,6 +33,18 @@ export const projects = [
   },
   {
     id: 3,
+    title: "Spring Strategy",
+    img: Spring,
+    img2: Spring2,
+    link: "https://springstrategy.com.ng",
+    desc: "A responsive website for a consulting firm.",
+    stack: ["HTML, CSS, Vanilla Javascript "],
+    src: "https://github.com/Hestia-Arc/spring-strategy.git",
+    p1: "A responsive website for a consulting firm that conduct research to provide innovative ideas to their clients by analyze market trends, assess operational efficiency, or identify growth opportunities. ",
+
+  },
+  {
+    id: 4,
     title: "ClearLink Landing page",
     img: Clearlink,
     link: "https://clearlink-alpha.vercel.app/",
@@ -38,15 +52,7 @@ export const projects = [
     stack: ["React", "Material UI", "Vite"],
     src: "",
   },
-  {
-    id: 4,
-    title: "Restaurant Landing page",
-    img: Restaurant,
-    link: "https://mias-restuarant.vercel.app/",
-    desc: "A landing page for a restaurant business that provide information about the it and market its products.(...in dev mode)",
-    stack: ["React", "Material UI", "Vite"],
-    src: "",
-  },
+  
 
   {
     id: 5,
@@ -57,19 +63,30 @@ export const projects = [
     stack: ["Nodejs, Express, PostgreSQL, Reactjs, Typescript, TailwindCSS, ReduxToolkits, Framer-motion, Firebase"],
     src: "https://github.com/Hestia-Arc/cadence-store.git",
   },
+
   {
     id: 6,
     title: "Splitify",
     img: Splitify,
     link: "https://splitify-frontend.onrender.com",
     desc: "A MERN stack expense splitting application. It has a landing page and a dashboard. ",
-    stack: ["Reactjs, TailwindCSS, ReduxToolkits, Nodejs, Express, MongoDB, Axios"],
+    stack: ["React.js, TailwindCSS, ReduxToolkits, Node.js, Express, MongoDB, Axios"],
     src: "https://github.com/Hestia-Arc/splitify_frontend.git",
     api: "https://github.com/Hestia-Arc/splitify_backend.git",
     date: "June 2024",
     p1: "This is a group project from Shecode Africa X FedEx academy cohort 1. I was in the backend development track and gained a lot of valuable experience working on a MERN full-stack application for the first time.",
     p2: "While I handled the backend operations, I also worked closely with the frontend developer to manage state and integrate the API, since I have experience in frontend development.  "
   },
+  {
+    id: 7,
+    title: "Restaurant Landing page",
+    img: Restaurant,
+    link: "https://mias-restuarant.vercel.app/",
+    desc: "A landing page for a restaurant business that provide information about the it and market its products.(...in dev mode)",
+    stack: ["React", "Material UI", "Vite"],
+    src: "",
+  },
+  
 ];
 // ===================================================================
 

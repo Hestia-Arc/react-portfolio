@@ -16,8 +16,8 @@ function Card2(props) {
   return (
     <Stack
       key={id}
-      direction={{xs: "column",sm:"row"}}
-      gap={{xs: 5, sm:10}}
+      direction={{ xs: "column", sm: "row" }}
+      gap={{ xs: 5, sm: 10 }}
       spacing={1}
       sx={{
         width: "100%",
@@ -25,7 +25,7 @@ function Card2(props) {
         // backgroundColor: colors.grey[900],
         // border: `1px solid ${colors.grey[700]}`,
         borderBottom: props.pb ? "none" : `1px solid ${colors.grey[700]}`,
-        padding: {xs: "48px 10px" , sm:"68px 38px"},
+        padding: { xs: "48px 10px", sm: "68px 38px" },
         borderRadius: "4px",
       }}
     >
@@ -80,10 +80,10 @@ function Card2(props) {
         {/* STACK */}
         <Stack
           direction="row"
-        //   alignItems="center"
+          //   alignItems="center"
           // flexWrap="wrap"
           spacing={2}
-        //   p={1}
+          //   p={1}
         >
           <Stack
             justifyContent="center"
@@ -97,7 +97,13 @@ function Card2(props) {
           >
             <HandymanRoundedIcon fontSize="small" color="primary" />
           </Stack>
-          <Stack sx={{padding: "14px 0px",borderTop: `1px solid ${colors.grey[800]}`, borderBottom: `1px solid ${colors.grey[800]}`}}>
+          <Stack
+            sx={{
+              padding: "14px 10px",
+              borderTop: `1px solid ${colors.grey[800]}`,
+              borderBottom: `1px solid ${colors.grey[800]}`,
+            }}
+          >
             {stack?.map((item, i) => {
               return (
                 <Typography
@@ -115,19 +121,47 @@ function Card2(props) {
 
       {/*================== 2 */}
       <Box sx={{ flex: 1, color: colors.grey[400] }}>
-        <Stack gap={3} sx={{ width: "100%" }}>
+        <Stack
+          gap={3}
+          sx={{
+            width: "100%",
+            backgroundColor: colors.grey[900],
+            border: `1px solid ${colors.grey[800]}`,
+            padding: "16px",
+            borderRadius: "4px",
+          }}
+        >
           {p1 ? (
             <>
               <Typography>{p1}</Typography>
               <Typography>{p2}</Typography>
-              <Box mt={10} sx={{ display: "flex", alignItems: "center", gap: 5 }}>
-                <a href={api} style={{ textDecoration: "underline" }}>
-                  Link to the API
-                </a>
-                |
-                <span style={{ fontSize: "14px" }}>
-                  <em>{date}</em>
-                </span>
+              <Box
+                mt={10}
+                sx={{ display: "flex", alignItems: "center", gap: 4 }}
+              >
+                <span style={{ fontSize: "14px" }}>Duration: 2 weeks</span>
+
+                {api && (
+                  <>
+                    |
+                    <a
+                      href={api}
+                      style={{ textDecoration: "underline", fontSize: "14px" }}
+                    >
+                      Link to the API
+                    </a>
+                  </>
+                )}
+
+                {date && (
+                  <>
+                    |
+                    <span style={{ fontSize: "14px" }}>
+                      {/* <em>{date}</em> */}
+                      {date}
+                    </span>
+                  </>
+                )}
               </Box>
             </>
           ) : (
@@ -138,9 +172,7 @@ function Card2(props) {
                 collaborators.
               </Typography>
 
-              <Typography>
-                Trying my hands on using SQL.
-              </Typography>
+              <Typography>Trying my hands on using SQL.</Typography>
             </>
           )}
         </Stack>

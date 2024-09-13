@@ -98,11 +98,11 @@ const HeaderBox = styled("header")((props) => ({
   },
 }));
 
-export default function Home() {
+export default function Home({isOpen, setIsOpen}) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   // const colorMode = useContext(ColorModeContext);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
 
   useEffect(() => {
@@ -135,7 +135,9 @@ export default function Home() {
           }}
         >
           <PaddedBox theme={theme}>
-            <NavBar isOpen={isOpen} handleIsOpen={() => setIsOpen(!isOpen)} />
+          <NavBar isOpen={isOpen} handleIsOpen={setIsOpen} />
+
+            {/* <NavBar isOpen={isOpen} handleIsOpen={() => setIsOpen(!isOpen)} /> */}
             <Box
               sx={{
                 // border: "1px solid black",
@@ -446,27 +448,18 @@ export default function Home() {
             </Typography> */}
           </Stack>
 
-          {/* <Box
-            sx={{
-              display: "flex",
-              overflowX: "auto",
-              // overflowY: "hidden",
-              borderBottom: { xs: `1px solid ${colors.grey[600]}` },
-            }}
-            mt={3}
-            pb={{ xs: 10, sm: 14 }}
-          > */}
+         
            <Box
             sx={{
               // display: "flex",
               overflowX: "auto",
-              // overflowY: "hidden",
               borderBottom: { xs: `1px solid ${colors.grey[600]}` },
             }}
             mt={3}
             pb={{ xs: 10, sm: 14 }}
           >
             <Card2 project={projects[4]} />
+            <Card2 project={projects[2]} />
             <Card2 project={projects[5]} pb="none" />
 
             {/* <CardBox project={projects[4]} /> */}

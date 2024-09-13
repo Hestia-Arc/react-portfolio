@@ -56,7 +56,6 @@ export default function Project() {
   const colors = tokens(theme.palette.mode);
   const [scrollActive, setScrollActive] = useState(false);
   const [cardIndex, setCardIndex] = useState(3);
-  
 
   useEffect(() => {
     window.onscroll = () => {
@@ -155,7 +154,7 @@ export default function Project() {
 
             <Typography variant="smText" sx={{ color: colors.grey[400] }}>
               {" "}
-              My skills in action: a showcase projects I've built.
+              My skills in action: a showcase of projects I've built.
             </Typography>
           </Stack>
         </PaddedBox>
@@ -197,7 +196,7 @@ export default function Project() {
           px={7}
         >
           {projects.map((project, key) => {
-            const { id, title, img, link, desc, stack } = project;
+            const { id, title, img, img2, link, desc, stack } = project;
 
             return (
               <ProjectBox
@@ -205,7 +204,7 @@ export default function Project() {
                 handleClick={() => setCardIndex(id)}
                 active={cardIndex === id ? true : false}
                 index={cardIndex === id && cardIndex}
-                img={img}
+                img={title === "Spring Strategy" ? img2 : img}
                 title={title}
                 link={link}
                 desc={desc}
@@ -264,31 +263,31 @@ function ProjectBox(props) {
         }}
       >
         {/* PROJECT IMAGE */}
-        {isAnimated ? 
-        <Box
-          sx={{
-            borderRadius: "4px",
-            boxShadow: "3px 6px 17px rgba(0,0,0,.3)",
-            backgroundColor: "rgba(0,0,0,.3)",
-            height: "120px",
-            width: "100px",
-            background: `url(${props.img})`,
-            backgroundPosition: "top center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            // border: "1px solid black",
-          }}
-        ></Box>
-        :
-        <Skeleton
-        variant="rounded"
-        sx={{
-          backgroundColor: colors.grey[700],
-          height: "120px",
-          width: "100px",
-        }}
-        />
-}
+        {isAnimated ? (
+          <Box
+            sx={{
+              borderRadius: "4px",
+              boxShadow: "3px 6px 17px rgba(0,0,0,.3)",
+              backgroundColor: "rgba(0,0,0,.3)",
+              height: "120px",
+              width: "100px",
+              background: `url(${props.img})`,
+              backgroundPosition: "top center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              // border: "1px solid black",
+            }}
+          ></Box>
+        ) : (
+          <Skeleton
+            variant="rounded"
+            sx={{
+              backgroundColor: colors.grey[700],
+              height: "120px",
+              width: "100px",
+            }}
+          />
+        )}
       </Box>
 
       {/* ----------big screens */}
@@ -383,15 +382,15 @@ function ProjectBox(props) {
             >
               <HandymanRoundedIcon fontSize="small" color="primary" />
             </Stack>
-           <Stack direction="row" flexWrap="wrap">
-           {props.stack.map((item) => {
-              return (
-                <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
-                  {item} ,
-                </Typography>
-              );
-            })}
-           </Stack>
+            <Stack direction="row" flexWrap="wrap">
+              {props.stack.map((item) => {
+                return (
+                  <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
+                    {item} ,
+                  </Typography>
+                );
+              })}
+            </Stack>
           </Stack>
         </Stack>
 
@@ -418,10 +417,10 @@ function ProjectBox(props) {
               // border: "1px solid black",
 
               "&:hover": {
-                opacity: props.active ? 1 : 0.4,
+                opacity: props.active ? 0.8 : 0.5,
               },
 
-              transition: "all 300ms ease-in-out",
+              transition: "all 600ms ease-in",
             }}
           ></Box>
         ) : (
@@ -464,99 +463,129 @@ const DisplayMobileProject = (props) => {
       }}
       p={1}
     >
-
-      {isAnimated ?
-      <Box
-        sx={{
-          height: "185px",
-          border: `1px solid ${colors.grey[800]}`,
-          background: `url(${img})`,
-          backgroundPosition: "top center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      ></Box>
-      :
-      <Skeleton
-      variant="rounded"
-      sx={{
-        backgroundColor: colors.grey[700],
-        height: "185px",
-      }}
-      />
-}
-
-{isAnimated ? 
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        px={0.5}
-      >
-        <Typography variant="mdText" fontWeight={600}>
-          {title}
-        </Typography>
-
-        <span>
-          <a href={link} target="_blank" rel="noreferrer">
-            <Tooltip title="Source code">
-              {" "}
-              <SourceIcon color="inputs" fontSize="small" />
-            </Tooltip>
-          </a>
-          <a href={link} target="_blank" rel="noreferrer">
-            <Tooltip title="Live page">
-              {" "}
-              <OpenInNewRoundedIcon color="inputs" fontSize="small" />
-            </Tooltip>
-          </a>
-        </span>
-      </Stack>
-:
-<Skeleton variant="text" sx={{width: '80%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
-
-}
-
-
-{isAnimated ? 
-      <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
-        {desc}
-      </Typography>
-      :
-<Stack>
-<Skeleton variant="text" sx={{width: '70%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
-<Skeleton variant="text" sx={{width: '70%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
-<Skeleton variant="text" sx={{width: '70%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
-
-  </Stack>
-}
-
-{isAnimated ? 
-      <Stack direction="row" alignItems="center" spacing={1}>
-        <Stack
-          justifyContent="center"
-          alignItems="center"
+      {isAnimated ? (
+        <Box
           sx={{
-            padding: "4px",
-            backgroundColor: colors.grey[900],
+            height: "185px",
             border: `1px solid ${colors.grey[800]}`,
-            borderRadius: "4px",
+            background: `url(${img})`,
+            backgroundPosition: "top center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
           }}
-        >
-          <HandymanRoundedIcon fontSize="small" color="primary" />
-        </Stack>
-        {stack.map((item) => {
-          return (
-            <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
-              {item} |{" "}
-            </Typography>
-          );
-        })}
-      </Stack>
-      :
-<Skeleton variant="text" sx={{width: '80%', fontSize: '1rem', backgroundColor: colors.grey[700] }} />
+        ></Box>
+      ) : (
+        <Skeleton
+          variant="rounded"
+          sx={{
+            backgroundColor: colors.grey[700],
+            height: "185px",
+          }}
+        />
+      )}
 
-}
+      {isAnimated ? (
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          px={0.5}
+        >
+          <Typography variant="mdText" fontWeight={600}>
+            {title}
+          </Typography>
+
+          <span>
+            <a href={link} target="_blank" rel="noreferrer">
+              <Tooltip title="Source code">
+                {" "}
+                <SourceIcon color="inputs" fontSize="small" />
+              </Tooltip>
+            </a>
+            <a href={link} target="_blank" rel="noreferrer">
+              <Tooltip title="Live page">
+                {" "}
+                <OpenInNewRoundedIcon color="inputs" fontSize="small" />
+              </Tooltip>
+            </a>
+          </span>
+        </Stack>
+      ) : (
+        <Skeleton
+          variant="text"
+          sx={{
+            width: "80%",
+            fontSize: "1rem",
+            backgroundColor: colors.grey[700],
+          }}
+        />
+      )}
+
+      {isAnimated ? (
+        <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
+          {desc}
+        </Typography>
+      ) : (
+        <Stack>
+          <Skeleton
+            variant="text"
+            sx={{
+              width: "70%",
+              fontSize: "1rem",
+              backgroundColor: colors.grey[700],
+            }}
+          />
+          <Skeleton
+            variant="text"
+            sx={{
+              width: "70%",
+              fontSize: "1rem",
+              backgroundColor: colors.grey[700],
+            }}
+          />
+          <Skeleton
+            variant="text"
+            sx={{
+              width: "70%",
+              fontSize: "1rem",
+              backgroundColor: colors.grey[700],
+            }}
+          />
+        </Stack>
+      )}
+
+      {isAnimated ? (
+        <Stack direction="row" alignItems="center" spacing={1}>
+          <Stack
+            justifyContent="center"
+            alignItems="center"
+            sx={{
+              padding: "4px",
+              backgroundColor: colors.grey[900],
+              border: `1px solid ${colors.grey[800]}`,
+              borderRadius: "4px",
+            }}
+          >
+            <HandymanRoundedIcon fontSize="small" color="primary" />
+          </Stack>
+          {stack.map((item) => {
+            return (
+              <Typography variant="xsText" sx={{ color: colors.grey[500] }}>
+                {item} |{" "}
+              </Typography>
+            );
+          })}
+        </Stack>
+      ) : (
+        <Skeleton
+          variant="text"
+          sx={{
+            width: "80%",
+            fontSize: "1rem",
+            backgroundColor: colors.grey[700],
+          }}
+        />
+      )}
     </Stack>
   );
 };
