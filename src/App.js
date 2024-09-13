@@ -66,7 +66,7 @@ function App() {
             <Route
               path="/"
               element={
-                <Home isOpen={isOpen} setIsOpen={() => setIsOpen(true)} />
+                <Home isOpen={isOpen} setIsOpen={() => setIsOpen(!isOpen)} />
               }
             />
             <Route path="about" element={<About />} />
@@ -85,7 +85,7 @@ function App() {
               top: 0,
               right: 0,
               left: 0,
-              bottom: 0,
+              // bottom: 0,
             }}
           >
             {/* ------- sidebar */}
@@ -110,7 +110,7 @@ function App() {
                   top: 0,
                   right: 0,
                   left: 0,
-                  bottom: 0,
+                  // bottom: 0,
                   transition: "all 600ms ease-in",
                 }}
 
@@ -168,7 +168,7 @@ function App() {
                     }}
                     px={1.5}
                     pt={3}
-                    pb={2}
+                    pb={4}
                   >
                     <Stack
                       alignItems="flex-end"
@@ -187,7 +187,7 @@ function App() {
                         <Box
                           sx={{ height: "40px", width: "40px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50%", background: colors.grey[800], border: `1px solid ${colors.grey[800]}` }}
                         >
-                        <CloseRoundedIcon sx={{ color: colors.grey[400] }} />
+                        <CloseRoundedIcon onClick={() => setIsOpen(false)} sx={{ color: colors.grey[400] }} />
                         </Box>
                       </Box>
                       {/* ------- */}
