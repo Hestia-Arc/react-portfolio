@@ -406,9 +406,9 @@ export default function About() {
 
         {/* --------------------------------------- */}
         {/* SKILLS */}
-        <PaddedBox mb={5}>
+        <PaddedBox mb={{xs: 8, sm: 5}}>
           <Title text="Skillsets" tag="Tools" />
-          <Stack direction={{ xs: "column", sm: "row" }}>
+          <Stack direction={{ xs: "column", sm: "row" }} gap={{ xs: 3}}>
             {/* BOX-1 */}
             <Stack
               spacing={4}
@@ -475,7 +475,7 @@ export default function About() {
                 alignItems="flex-start"
                 // justifyContent="center"
                 sx={{
-                  height: { xs: "324px", sm: "100%" },
+                  height: { xs: "376px", sm: "100%" },
                   width: { xs: "800px", sm: "100%" },
                 }}
               >
@@ -539,7 +539,7 @@ export default function About() {
         <PaddedBox mb={5}>
         <Title text="WorkPlaces" tag="Experiences" />
 
-          <Stack direction={{ xs: "column", sm: "row" }}>
+          <Stack direction={{ xs: "column", sm: "row" }} gap={{xs:3}}>
             {/* BOX-1 */}
             <Stack
               spacing={4}
@@ -604,7 +604,7 @@ export default function About() {
                 </Typography>
                 <Stack>
                   <Typography>
-                    Front-end Developer (Internship) | Remote | Apr 2024 -
+                    Front-end Developer | Remote | Apr 2024 -
                     present
                   </Typography>
                   <Stack
@@ -639,7 +639,7 @@ export default function About() {
                     - Working with Frontend Lead in integrating APIs and using
                     ReduxToolkits for efficient global management of data across
                     the code, ensuring proper separation of concerns within the
-                    help desk (Reydesk) application.
+                    help desk <a href="https://reydesk.com" target="_blanknpm run d">(Reydesk)</a> application.
                   </Typography>
 
                   <Typography variant="smText">
@@ -815,7 +815,7 @@ export default function About() {
                 // border: "1px solid white",
               }}
               p={1}
-              pt={8}
+              pt={{xs:3, sm:8}}
               ml={{ sm: 5, md: 0 }}
             >
               {/* exp 1 */}

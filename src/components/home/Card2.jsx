@@ -167,12 +167,29 @@ function Card2(props) {
           ) : (
             <>
               <Typography>
+                A modern and minimalist e-commerce web application.
+              </Typography>
+              <Typography>
                 This project serve me as a display of my JavaScript skills in
                 both client and server sides to potential employers or
                 collaborators.
               </Typography>
 
               <Typography>Trying my hands on using SQL.</Typography>
+
+              <div>
+                <p>Features: </p>
+                <ul>
+                  <li>Shopping cart</li>
+                  <li>Shipping options</li>
+                  <li>Order summary</li>
+                  <li>Wishlist</li>
+                  <li>User friendly product filtering and sorting</li>
+                  <li>Flash sales & discounts</li>
+                  <li>... and more.</li>
+                  {/* <li>full responsivenesss</li> */}
+                </ul>
+              </div>
             </>
           )}
         </Stack>
@@ -182,3 +199,113 @@ function Card2(props) {
 }
 
 export default Card2;
+
+export function CardSoon() {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  return (
+    <Stack
+      direction={{ xs: "column", sm: "row" }}
+      alignItems="center"
+      gap={{ xs: 5, sm: 10 }}
+      spacing={1}
+      sx={{
+        width: "100%",
+        minHeight: "400px",
+        backgroundColor: colors.grey[900],
+        border: `1px solid ${colors.grey[700]}`,
+        // borderBottom: props.pb ? "none" : `1px solid ${colors.grey[700]}`,
+        padding: { xs: "48px 10px", sm: "68px 38px" },
+        borderRadius: "4px",
+      }}
+    >
+      <Box
+        sx={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          color: colors.grey[400],
+          // width: "100%",
+          borderRadius: "4px",
+          // textAlign: "center",
+        }}
+      >
+        <h3>Real-Estate CRM Dashboard</h3>
+        <div>Coming soon...</div>
+
+        {/* STACK */}
+        <Stack
+          direction="row"
+          //   alignItems="center"
+          // flexWrap="wrap"
+          spacing={2}
+            mt={3}
+        >
+          <Stack
+            justifyContent="center"
+            alignItems="center"
+            sx={{
+              padding: "4px",
+              backgroundColor: colors.grey[900],
+              border: `1px solid ${colors.grey[800]}`,
+              borderRadius: "4px",
+            }}
+          >
+            <HandymanRoundedIcon fontSize="small" color="primary" />
+          </Stack>
+          <Stack
+            sx={{
+              padding: "14px 10px",
+              borderTop: `1px solid ${colors.grey[800]}`,
+              borderBottom: `1px solid ${colors.grey[800]}`,
+            }}
+          >
+            {["NextJS, TailwindCSS, Zustand ..."]?.map((item, i) => {
+              return (
+                <Typography
+                  key={i}
+                  variant="xsText"
+                  sx={{ color: colors.grey[500] }}
+                >
+                  {item}{" "}
+                </Typography>
+              );
+            })}
+          </Stack>
+        </Stack>
+      </Box>
+
+      {/* ---- */}
+      <Box
+        sx={{
+          flex: 1,
+          color: colors.grey[400],
+          // width: "100%",
+          padding: "16px",
+          borderRadius: "4px",
+        }}
+      >
+        <p>
+          A software solution that helps real estate agents to manage leads,
+          clients and properties effectively.
+        </p>
+        <p>
+          To help agents stay organized and proactive, maintain client
+          engagement, and increase productivity.
+        </p>
+
+        <p>Features:</p>
+        <ul>
+          <li>Lead management</li>
+          <li>Properties listing</li>
+          <li>Scheduler</li>
+          <li>Contact management</li>
+          <li>Sales tracking</li>
+          <li>... and more.</li>
+        </ul>
+      </Box>
+    </Stack>
+  );
+}

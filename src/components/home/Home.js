@@ -26,7 +26,7 @@ import darkbg from "../../data/c-bg.png";
 // import darkbg from "../../images/cv1-01.jpg";
 import { projects } from "../../data/projectData";
 // import CardBox from "./CardBox";
-import Card2 from "./Card2";
+import Card2, { CardSoon } from "./Card2";
 
 const HomeContainer = styled(Box)((props) => ({
   // border: '1px solid black'
@@ -458,6 +458,7 @@ export default function Home({isOpen, setIsOpen}) {
             mt={3}
             pb={{ xs: 10, sm: 14 }}
           >
+            <CardSoon/>
             <Card2 project={projects[4]} />
             <Card2 project={projects[2]} />
             <Card2 project={projects[5]} pb="none" />

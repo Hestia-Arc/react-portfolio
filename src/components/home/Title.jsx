@@ -10,7 +10,7 @@ function Title({ text, tag }) {
     <Stack
       direction="row"
       spacing={2}
-      mb={10}
+      mb={{xs: 4 , sm: 10}}
       sx={{
         position: "relative",
         borderTop: `1px solid ${colors.grey[600]}`,
