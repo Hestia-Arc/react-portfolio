@@ -639,7 +639,7 @@ export default function About() {
                     - Working with Frontend Lead in integrating APIs and using
                     ReduxToolkits for efficient global management of data across
                     the code, ensuring proper separation of concerns within the
-                    help desk <a href="https://reydesk.com" target="_blanknpm run d">(Reydesk)</a> application.
+                    help desk <a href="https://reydesk.com" target="_blank" style={{textDecoration: "underline"}}>(Reydesk)</a> application.
                   </Typography>
 
                   <Typography variant="smText">
