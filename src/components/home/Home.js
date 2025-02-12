@@ -459,9 +459,8 @@ export default function Home({isOpen, setIsOpen}) {
             pb={{ xs: 10, sm: 14 }}
           >
             <CardSoon/>
-            <Card2 project={projects[4]} />
-            <Card2 project={projects[2]} />
-            <Card2 project={projects[5]} pb="none" />
+            <Card2 project={projects[3]} />
+            <Card2 project={projects[4]} pb="none" />
 
             {/* <CardBox project={projects[4]} /> */}
           </Box>

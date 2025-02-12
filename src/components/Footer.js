@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import darkbg from "../data/c-bg.png";
-import CV from "../data/Resume-Afolabi Esther.pdf";
+import CV from "../data/Afolabi_Esther_Resume.pdf";
 
 import { PaddedBox } from "../UI/pages";
 import { tokens } from "../theme";
@@ -29,6 +29,7 @@ const LinkBox = ({ link, text }) => {
 function Footer(props) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const date = new Date()
   // const contactForm = useRef(null)
   // contactForm.target = "_blank"
   // document.getElementById('contact-form').setAttribute('target', "googleForm");
@@ -325,7 +326,7 @@ function Footer(props) {
             </Stack>
           </Stack>
 
-          <Typography variant="xsText">&copy; 2024. Built by Hestia</Typography>
+          <Typography variant="xsText">&copy; {date?.getFullYear()}. Built by Hestia</Typography>
         </Box>
       </PaddedBox>
     </Box>

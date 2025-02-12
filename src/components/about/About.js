@@ -18,7 +18,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import MarkEmailUnreadRoundedIcon from "@mui/icons-material/MarkEmailUnreadRounded";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
-import CV from "../../data/2Resume-Afolabi Esther.pdf";
+import CV from "../../data/Afolabi_Esther_Resume.pdf";
 // import TaskAltRoundedIcon from "@mui/icons-material/TaskAltRounded";
 import HandymanRoundedIcon from "@mui/icons-material/HandymanRounded";
 import Footer from "../Footer";
@@ -639,7 +639,7 @@ export default function About() {
                     - Working with Frontend Lead in integrating APIs and using
                     ReduxToolkits for efficient global management of data across
                     the code, ensuring proper separation of concerns within the
-                    help desk <a href="https://reydesk.com" target="_blank" style={{textDecoration: "underline"}}>(Reydesk)</a> application.
+                    help desk <a href="https://reydesk.com" target="_blank" rel="noreferrer" style={{textDecoration: "underline"}}>(Reydesk)</a> application.
                   </Typography>
 
                   <Typography variant="smText">

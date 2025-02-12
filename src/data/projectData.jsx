@@ -4,9 +4,8 @@ import Restaurant from "../images/Mia-s-Kitn.resized.png";
 import Clearlink from "../images/ClearLink.resized.png";
 import Cadence from "../images/Cadence-Store.png"
 import Splitify from "../images/Splitify-dashboard.png"
-import Spring from "../images/Home-SpringStrategyShot.png"
-import Spring2 from "../images/Home-SpringStrategyPic.png"
-
+// import Spring from "../images/Home-SpringStrategyShot.png"
+// import Spring2 from "../images/Home-SpringStrategyPic.png"
 // import Portfolio from "../images/Portfolio.resized.png"
 // import Season from "../images/Gallery.resized.png";
 // import Nature from "../images/Weather-Application.resized.png";
@@ -31,20 +30,9 @@ export const projects = [
     stack: ["React", "MUI", "Fetch API", "The Movie DB API"],
     src: "",
   },
+  
   {
     id: 3,
-    title: "Spring Strategy",
-    img: Spring,
-    img2: Spring2,
-    link: "https://springstrategy.com.ng",
-    desc: "A responsive website for a consulting firm.",
-    stack: ["HTML, CSS, Vanilla Javascript "],
-    src: "https://github.com/Hestia-Arc/spring-strategy.git",
-    p1: "A responsive website for a consulting firm that conduct research to provide innovative ideas to their clients by analyze market trends, assess operational efficiency, or identify growth opportunities. ",
-
-  },
-  {
-    id: 4,
     title: "ClearLink Landing page",
     img: Clearlink,
     link: "https://clearlink-alpha.vercel.app/",
@@ -55,7 +43,7 @@ export const projects = [
   
 
   {
-    id: 5,
+    id: 4,
     title: "LeCadence store",
     img: Cadence,
     link: "https://cadence-store.vercel.app/",
@@ -65,7 +53,7 @@ export const projects = [
   },
 
   {
-    id: 6,
+    id: 5,
     title: "Splitify",
     img: Splitify,
     link: "https://splitify-frontend.onrender.com",
@@ -78,7 +66,7 @@ export const projects = [
     p2: "While I handled the backend operations, I also worked closely with the frontend developer to manage state and integrate the API, since I have experience in frontend development.  "
   },
   {
-    id: 7,
+    id: 6,
     title: "Restaurant Landing page",
     img: Restaurant,
     link: "https://mias-restuarant.vercel.app/",
@@ -89,6 +77,18 @@ export const projects = [
   
 ];
 // ===================================================================
+// {
+  //   id: 3,
+  //   title: "Spring Strategy",
+  //   img: Spring,
+  //   img2: Spring2,
+  //   link: "https://springstrategy.com.ng",
+  //   desc: "A responsive website for a consulting firm.",
+  //   stack: ["HTML, CSS, Vanilla Javascript "],
+  //   src: "https://github.com/Hestia-Arc/spring-strategy.git",
+  //   p1: "A responsive website for a consulting firm that conduct research to provide innovative ideas to their clients by analyze market trends, assess operational efficiency, or identify growth opportunities. ",
+
+  // },
 
 // {
 //   id: 3,
